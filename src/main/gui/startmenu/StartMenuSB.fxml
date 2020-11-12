@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="534.0" prefWidth="600.0" style="-fx-background-color: #000000;" stylesheets="@StartMenuStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.gui.startmenu.StartMenuController">
+    <children>
+        <Button layoutX="79.0" layoutY="291.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="154.0" style="-fx-border-color: #FF0000; -fx-background-color: #000000;" text="Start Game" textFill="RED">
+            <font>
+                <Font name="Segoe UI Black" size="20.0" />
+            </font>
+        </Button>
+        <Button layoutX="287.0" layoutY="339.0" mnemonicParsing="false" onAction="#openInstructionsMenu" prefHeight="67.0" prefWidth="237.0" style="-fx-background-color: #000000; -fx-border-color: #FF0000;" text="Read Instructions" textFill="RED">
+            <font>
+                <Font name="Segoe UI Black" size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="exitButton" layoutX="79.0" layoutY="391.0" mnemonicParsing="false" onAction="#exitGame" prefHeight="67.0" prefWidth="154.0" style="-fx-background-color: #000000; -fx-border-color: #FF0000;" text="Exit Game" textFill="RED">
+            <font>
+                <Font name="Segoe UI Black" size="20.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>
