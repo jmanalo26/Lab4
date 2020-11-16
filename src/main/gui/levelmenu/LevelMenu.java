@@ -1,4 +1,4 @@
-package main.gui.LevelMenu;
+package main.gui.levelmenu;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -23,15 +23,15 @@ import javafx.stage.Stage;
 import java.io.FileInputStream;
 
 
-public class Main extends Application {
+public class LevelMenu extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("LevelMenuSB.fxml"));
         primaryStage.setTitle("creating buttons");
 
         //Creating an image
-        Image image = new Image(new FileInputStream("src/sample/ProjectZ.png"));
+        Image image = new Image(new FileInputStream("src/main/gui/images/ProjectZ.png"));
 
         //Setting the image view
         ImageView imageView = new ImageView(image);
