@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import main.MainApplication;
 import main.gui.gameovermenu.GameOverMenu;
+import main.gui.gamewonmenu.GameWonMenu;
 import main.gui.startmenu.StartMenu;
 
 import java.util.List;
@@ -226,10 +227,10 @@ public class ShootingGame extends Application {
             timer.stop();
 
             //launches game over menu when game is lost
-            GameOverMenu gameOverMenu = new GameOverMenu();
-            Stage gameOverMenuStage = new Stage();
+            GameWonMenu gameWonMenu = new GameWonMenu();
+            Stage gameWonMenuStage = new Stage();
             try {
-                gameOverMenu.start(gameOverMenuStage);
+                gameWonMenu.start(gameWonMenuStage);
 
             } catch (Exception e) {
                 e.printStackTrace();
