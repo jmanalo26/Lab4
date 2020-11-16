@@ -1,13 +1,19 @@
-package main.gui.shooter;
+package main.games.shooter;
 
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import main.MainApplication;
+import main.gui.gameovermenu.GameOverMenu;
+import main.gui.startmenu.StartMenu;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -28,20 +34,22 @@ public class ShootingGame extends Application {
 
     private static Stage stage;
 
+    public AnimationTimer timer = new AnimationTimer() {
+        @Override
+        public void handle(long l) {
+            update();
+        }
+    };
+
     /**
      * Create pane and add player, enemies, and bullets
+     *
      * @return Shooting game
      */
     private Parent createRoot() {
         root.setPrefSize(600, 575);
         root.getChildren().add(entity);
         //Add animation timer to animate bullet
-        AnimationTimer timer = new AnimationTimer() {
-            @Override
-            public void handle(long l) {
-                update();
-            }
-        };
         timer.start();
         addEnemies();
         return root;
@@ -49,6 +57,7 @@ public class ShootingGame extends Application {
 
     /**
      * Creates a list of entities to help with updates
+     *
      * @return List of entities
      */
     private List<Entity> entities() {
@@ -58,19 +67,21 @@ public class ShootingGame extends Application {
     /**
      * Add enemies, currently set to 10
      */
-    private void addEnemies(){
-        for (int i = 0; i < 10; i++){
-            Entity enemy = new Entity(30 + i*50, 50, 20, 20, "enemy", Color.RED);
+    private void addEnemies() {
+        for (int i = 0; i < 10; i++) {
+            Entity enemy = new Entity(30 + i * 50, 50, 20, 20, "enemy", Color.RED);
             root.getChildren().add(enemy);
         }
     }
 
     /**
      * Start method for shooting game
+     *
      * @param primaryStage Stage object for shooting game
      */
     @Override
     public void start(Stage primaryStage) {
+
         enemyDead.set(0);
         Scene scene = new Scene(createRoot());
         scene.setOnKeyPressed(e -> {
@@ -86,6 +97,7 @@ public class ShootingGame extends Application {
                     break;
             }
         });
+
         stage = primaryStage;
         stage.setTitle("Project Z");
         stage.setScene(scene);
@@ -95,10 +107,12 @@ public class ShootingGame extends Application {
 
     /**
      * Main method to start application
+     *
      * @param args Main arguments
      */
     public static void main(String[] args) {
         launch(args);
+        //MainApplication.launch(ShootingGame.class, args);
     }
 
     /**
@@ -134,6 +148,7 @@ public class ShootingGame extends Application {
 
     /**
      * Create bullet entity objects
+     *
      * @param entity Bullet
      */
     private void shoot(Entity entity) {
@@ -159,7 +174,7 @@ public class ShootingGame extends Application {
                     }
                     break;
 
-                 //Simulate player bullet impact
+                //Simulate player bullet impact
                 case "playerbullet":
                     s.moveUp();
                     entities().stream().filter(e -> e.type.equals("enemy")).forEach(enemy -> {
@@ -171,29 +186,58 @@ public class ShootingGame extends Application {
                     });
                     break;
 
-                 //Simulate enemy bullet impact, have game stop if hits player, adjust later for player health
+                //Simulate enemy bullet impact, have game stop if hits player, adjust later for player health
                 case "enemybullet":
                     s.moveDown();
                     if (s.getBoundsInParent().intersects(entity.getBoundsInParent())) {
                         entity.dead = true;
                         s.dead = true;
                         stage.close();
+
+                        timer.stop();
+
+                        //launches game over menu when game is lost
+                        GameOverMenu gameOverMenu = new GameOverMenu();
+                        Stage gameOverMenuStage = new Stage();
+                        try {
+                            gameOverMenu.start(gameOverMenuStage);
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                     }
                     break;
 
+
             }
+
         });
-        //Remove dead entities
+
+        //Remove dead entities d
         root.getChildren().removeIf(n -> {
             Entity s = (Entity) n;
             return s.dead;
         });
 
-        if (enemyDead.get() == 10){
+        if (enemyDead.get() == 10) {
             System.out.println("All enemies dead");
             stage.close();
+
+            timer.stop();
+
+            //launches game over menu when game is lost
+            GameOverMenu gameOverMenu = new GameOverMenu();
+            Stage gameOverMenuStage = new Stage();
+            try {
+                gameOverMenu.start(gameOverMenuStage);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
+
     }
+
 }
 
 

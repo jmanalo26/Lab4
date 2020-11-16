@@ -5,15 +5,16 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="580.0" prefWidth="500.0" style="-fx-background-color: #000000;" stylesheets="@GameOverMenuStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.gui.gameovermenu.GameOverMenuController">
-   <children>
-      <Button layoutX="180.0" layoutY="374.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="141.0" style="-fx-border-color: #FF0000; -fx-background-color: #000000;" text="Level Select" textFill="RED">
-         <font>
-            <Font size="15.0" />
-         </font></Button>
-      <Button layoutX="180.0" layoutY="445.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="141.0" style="-fx-border-color: #FF0000; -fx-background-color: #000000;" text="Exit Game" textFill="RED">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Button>
-   </children>
+    <children>
+        <Button layoutX="180.0" layoutY="374.0" mnemonicParsing="false" onAction="#openStartMenu" prefHeight="52.0" prefWidth="141.0" style="-fx-border-color: #FF0000; -fx-background-color: #000000;" text="Start Menu" textFill="RED">
+            <font>
+                <Font name="Segoe UI Black" size="15.0" />
+            </font>
+        </Button>
+        <Button layoutX="180.0" layoutY="445.0" mnemonicParsing="false" onAction="#exitGame" prefHeight="52.0" prefWidth="141.0" style="-fx-border-color: #FF0000; -fx-background-color: #000000;" text="Exit Game" textFill="RED">
+            <font>
+                <Font name="Segoe UI Black" size="15.0" />
+            </font>
+        </Button>
+    </children>
 </AnchorPane>

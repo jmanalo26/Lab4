@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -14,6 +15,12 @@ public class InstructionsMenuController implements Initializable {
 
     }
 
+    /**
+     * Method tied to button for exiting the instruction menu
+     *
+     * @param actionEvent
+     * @throws IOException
+     */
     public void exit(ActionEvent actionEvent) {
         ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
     }

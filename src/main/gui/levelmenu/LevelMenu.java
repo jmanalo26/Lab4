@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -74,8 +75,16 @@ public class LevelMenu extends Application {
         EventHandler<ActionEvent> event1 = new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e)
             {
+                try {
+                    LevelMenuController l1 = new LevelMenuController();
+                    l1.openLevelOne(e);
+
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
                 l.setText("Level 1");
                 l.setAlignment(Pos.BASELINE_CENTER);
+
             }
         };
 
