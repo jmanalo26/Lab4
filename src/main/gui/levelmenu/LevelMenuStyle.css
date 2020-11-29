@@ -6,5 +6,5 @@
 #pane{
     -fx-background-image: url("../images/ProjectZ.png");
     -fx-background-repeat: stretch;
-    -fx-background-position: center center;
+    -fx-background-position: bottom center;
 }

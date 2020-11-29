@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.stage.Stage;
 import main.games.shooter.ShootingGame;
+import main.gui.instructionsmenu.InstructionsMenu;
 
 import java.io.IOException;
 import java.net.URL;
@@ -35,4 +36,26 @@ public class LevelMenuController implements Initializable {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Method tied to button for opening the level menu
+     *
+     * @param actionEvent
+     * @throws IOException
+     */
+    @FXML
+    public void openLevelOnePopUp(ActionEvent actionEvent) throws IOException {
+        LevelMenu levelMenu = new LevelMenu();
+        Stage instructionsMenuStage = new Stage();
+        try {
+            levelMenu.start(instructionsMenuStage);
+            ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
 }
