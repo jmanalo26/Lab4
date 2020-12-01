@@ -5,15 +5,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.stage.Stage;
-import main.games.shooter.ShootingGame;
+import main.games.shooter.level1.Level1;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 
-
-    public class LevelPopUpWindowController implements Initializable {
+public class LevelPopUpWindowController implements Initializable {
 
         @Override
         public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -28,10 +27,10 @@ import java.util.ResourceBundle;
          */
         @FXML
         public void openLevelOne(ActionEvent actionEvent) throws IOException {
-            ShootingGame shootingGame = new ShootingGame();
-            Stage shootingGameStage = new Stage();
+            Level1 lvl1 = new Level1();
+            Stage lvl1game = new Stage();
             try {
-                shootingGame.start(shootingGameStage);
+                lvl1.start(lvl1game);
                 ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
             } catch (Exception e) {
                 e.printStackTrace();

@@ -31,7 +31,7 @@ public class Level2PopUp extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("Level2PopUp.fxml"));
         root.setId("pane");
-        primaryStage.setTitle("Level 1");
+        primaryStage.setTitle("Level 2");
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setScene(new Scene(root, 500, 500));
         primaryStage.show();
