@@ -329,10 +329,6 @@ public class Maze extends Application {
         }
     }
 
-    public void remove_obstacles() {
-
-    }
-
     public void addGraphic(Computer c, int x, int y) {
         Image computer = new Image(c.getImage());
         ImageView iv = new ImageView(computer);
