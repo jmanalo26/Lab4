@@ -5,14 +5,16 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.stage.Stage;
-import main.games.shooter.level1.Level1;
+import main.games.shooter.LBossLevel.BossLevel;
+import main.games.shooter.ShootingGame;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class LevelPopUpWindowController implements Initializable {
+
+    public class LevelPopUpWindowController implements Initializable {
 
         @Override
         public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -27,10 +29,28 @@ public class LevelPopUpWindowController implements Initializable {
          */
         @FXML
         public void openLevelOne(ActionEvent actionEvent) throws IOException {
-            Level1 lvl1 = new Level1();
-            Stage lvl1game = new Stage();
+            ShootingGame shootingGame = new ShootingGame();
+            Stage shootingGameStage = new Stage();
             try {
-                lvl1.start(lvl1game);
+                shootingGame.start(shootingGameStage);
+                ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        /**
+         * Method tied to button for opening the first level(Shooting Game)
+         *
+         * @param actionEvent
+         * @throws IOException
+         */
+        @FXML
+        public void openLevelTwo(ActionEvent actionEvent) throws IOException {
+            BossLevel shootingGame = new BossLevel();
+            Stage shootingGameStage = new Stage();
+            try {
+                shootingGame.start(shootingGameStage);
                 ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
             } catch (Exception e) {
                 e.printStackTrace();
