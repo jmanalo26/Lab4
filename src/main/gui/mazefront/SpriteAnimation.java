@@ -41,8 +41,6 @@ public class SpriteAnimation extends Transition {
         if (index != lastIndex) {
             final int x = (index % columns) * width + offsetX;
             final int y = (index / columns) * height + offsetY;
-//            System.out.println(x);
-//            System.out.println(y);
             imageView.setViewport(new Rectangle2D(x, y, width, height));
             lastIndex = index;
         }

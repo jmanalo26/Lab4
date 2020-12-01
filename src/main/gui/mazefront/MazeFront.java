@@ -30,9 +30,6 @@ public class MazeFront extends Application {
     private int HEIGHT = 33;
     private double newY, newX = 0;
 
-//    private int animationState = 0;
-
-
     private boolean movingUp = false;
     private boolean movingDown = false;
     private boolean movingLeft = false;
@@ -51,7 +48,7 @@ public class MazeFront extends Application {
     private int playerMaxSpeed = 6;
     private int playerVelocity = 0;
 
-    final ImageView imageView = new ImageView(IMAGE);
+    private final ImageView imageView = new ImageView(IMAGE);
     private Group playerImageGroup = new Group(imageView);
     private Group bossMage;
     private Group greaterMage;

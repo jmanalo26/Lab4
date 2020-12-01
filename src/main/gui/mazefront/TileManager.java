@@ -150,12 +150,13 @@ public class TileManager {
     }
 
     private void setPane(Pane pane, String layerData) {
+
         String[] individualData = layerData.split(",");
 
         int counter = 0;
         for (String tile : individualData) {
             try {
-                ImageView tempImg = getImageByTileId(Integer.parseInt(tile));
+                ImageView tempImg = getImageByTileId(Integer.parseInt(tile.trim()));
                 int col = counter % width;
                 int row = Math.floorDiv(counter, height);
                 int offsetX = col * blockWidth;
