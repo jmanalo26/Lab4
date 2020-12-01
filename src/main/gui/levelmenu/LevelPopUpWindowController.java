@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.stage.Stage;
+import main.games.shooter.LBossLevel.BossLevel;
 import main.games.shooter.ShootingGame;
 
 import java.io.IOException;
@@ -29,6 +30,24 @@ import java.util.ResourceBundle;
         @FXML
         public void openLevelOne(ActionEvent actionEvent) throws IOException {
             ShootingGame shootingGame = new ShootingGame();
+            Stage shootingGameStage = new Stage();
+            try {
+                shootingGame.start(shootingGameStage);
+                ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        /**
+         * Method tied to button for opening the first level(Shooting Game)
+         *
+         * @param actionEvent
+         * @throws IOException
+         */
+        @FXML
+        public void openLevelTwo(ActionEvent actionEvent) throws IOException {
+            BossLevel shootingGame = new BossLevel();
             Stage shootingGameStage = new Stage();
             try {
                 shootingGame.start(shootingGameStage);

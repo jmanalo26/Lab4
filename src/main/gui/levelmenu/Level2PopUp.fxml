@@ -11,7 +11,7 @@
                 <Font name="Segoe UI Black" size="20.0" />
             </font>
         </Button>
-        <Button fx:id="startButton" layoutX="294.0" layoutY="360.0" mnemonicParsing="false" onAction="#openLevelOne" prefHeight="67.0" prefWidth="154.0" style="-fx-background-color: #000000; -fx-border-color: #FF0000;" text="Start Game" textFill="RED">
+        <Button fx:id="startButton" layoutX="294.0" layoutY="360.0" mnemonicParsing="false" onAction="#openLevelTwo" prefHeight="67.0" prefWidth="154.0" style="-fx-background-color: #000000; -fx-border-color: #FF0000;" text="Start Game" textFill="RED">
             <font>
                 <Font name="Segoe UI Black" size="20.0" />
             </font>
