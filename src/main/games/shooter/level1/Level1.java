@@ -92,7 +92,7 @@ public class Level1 extends Application {
         for (int i = 0; i < 30; i++) {
             int num = random.nextInt(500);
             int num2 = 400 - random.nextInt(300);
-            Entity obstacle = new Entity(num, num2, 30, 30, "obstacle", Color.GREEN);
+            Entity obstacle = new Entity(num, num2, 25, 30, "obstacle", Color.GREEN);
             obstacle.setId("tree");
             obstacle.setFill(obs);
             root.getChildren().add(obstacle);
@@ -171,8 +171,8 @@ public class Level1 extends Application {
             Entity enemy = new Entity(30 + i * 50, 50, 25, 25, "enemy", Color.RED);
             //Entity leftEnemy = new Entity(30, 90 + i * 30, 25, 25, "enemyLeft", Color.RED);
             //Entity rightEnemy = new Entity(30 + 9 * 50, 90 + i * 30, 25, 25, "enemyRight", Color.RED);
-            Entity leftEnemy = new Entity(30 + i * 50, 60, 25, 25, "enemyLeft", Color.RED);
-            Entity rightEnemy = new Entity(30 + i * 50, 70, 25, 25, "enemyRight", Color.RED);
+            Entity leftEnemy = new Entity(30 + i * 50, 70, 25, 25, "enemyLeft", Color.RED);
+            Entity rightEnemy = new Entity(30 + i * 50, 90, 25, 25, "enemyRight", Color.RED);
             enemy.setId("enemy");
             leftEnemy.setId("enemy");
             rightEnemy.setId("enemy");
