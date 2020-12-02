@@ -19,6 +19,10 @@ public class Boss {
         halfHealth = totalHealth/2;
     }
 
+    /**
+     *
+     * @param direction
+     */
     public void movementGoal(int direction){
         if (direction == 1){
             movementCordGoal = 80;
