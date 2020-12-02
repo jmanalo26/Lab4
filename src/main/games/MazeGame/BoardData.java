@@ -6,8 +6,14 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class BoardData {
-    String[][] board;
+    private Maze maze;
+    private String[][] board;
+    private Player player;
+    private Zombie[] zombies;
+    private int computerCounter = 0;
+
     public BoardData(int size_x, int size_y) {
+        maze = Maze.getInstance();
         board = new String[size_x][size_y];
         for(String[] row: board) {
             Arrays.fill(row, "X");
@@ -17,36 +23,16 @@ public class BoardData {
     public void print_board() {
         for(int i = 0; i < board.length; i++) {
             for(int j = 0; j < board[i].length; j++) {
-                System.out.print(board[i][j] + " ");
+                System.out.print(board[j][i] + " ");
             }
             System.out.println();
         }
         System.out.println();
     }
 
-    public void add_player(int i, int j) {
-        board[i][j] = "P";
-    }
-    public void add_enemy(int i, int j) {
-        board[i][j] = "E";
-    }
-
     public int[] getPlayer() {
-        for(int i = 0; i < board.length; i++) {
-            for(int j = 0; j < board[i].length; j++) {
-                if(board[i][j].equals("P")) {
-                    int[] arr = {i,j};
-                    return arr;
-                }
-            }
-        }
-        return new int[0];
-    }
-    public void movePlayer(int x, int y) {
-        int[] arr = getPlayer();
-        board[arr[0]][arr[1]] = "X";
-        board[x][y] = "P";
-
+        int[] pos = {player.getPosX(), player.getPosY()};
+        return pos;
     }
 
     public int[] getRandomSquare() {
@@ -60,5 +46,278 @@ public class BoardData {
         }
         int[] coordinates = {random_x, random_y};
         return coordinates;
+    }
+
+
+
+
+    public void add_enemies(int num) {
+        for(int i = 0; i < num; i++) {
+            int[] pos = getRandomSquare();
+            maze.addGraphic(new Zombie(pos[0], pos[1]), pos[0], pos[1]);
+            board[pos[0]][pos[1]] = "Z";
+        }
+    }
+
+    public void add_player() {
+        player = new Player(1, 1);
+        maze.addGraphic(player);
+        board[1][1] = "P";
+    }
+
+    public void add_perk(int num) {
+        for(int i =0; i < num; i++) {
+            int[] location = getRandomSquare();
+            Perk p = new Perk(location[0], location[1]);
+            maze.addGraphic(p, location[0], location[1]);
+            board[location[0]][location[1]] = "?";
+        }
+
+    }
+
+    public void move_player(String direction) {
+        int currentX = player.getPosX();
+        int currentY = player.getPosY();
+
+        if(direction.equals("DOWN")) {
+            int newX = player.getPosX();
+            int newY = player.getPosY() + 1;
+            if(board[newX][newY].equals("X")) {
+                board[currentX][currentY] = "X";
+                maze.removeGraphic(currentX, currentY);
+                player.setPosX(newX);
+                player.setPosY(newY);
+                board[newX][newY] = "P";
+            }else if(board[newX][newY].equals("?")) {
+                Perk p = new Perk(1,1);
+                String perk = p.getRandomPerk();
+                System.out.println(perk);
+                if (perk.equals("FV")) {
+                    maze.full_visibility();
+                }
+                if (perk.equals("RZ")) {
+                    remove_zombies();
+                }
+                if(perk.equals("MZ")) {
+                    add_enemies(5);
+                }
+                maze.removeGraphic(player.getPosX(), player.getPosY());
+                board[player.getPosX()][player.getPosY()] = "X";
+                player.setPosX(newX);
+                player.setPosY(newY);
+                board[player.getPosX()][player.getPosY()] = "P";
+
+
+            }else if(board[newX][newY].equals("E")) {
+                maze.generatePopup();
+
+
+            }else if(board[newX][newY].equals("C")) {
+                if(computerCounter != 2) {
+                    computerCounter++;
+                }else {
+                    System.out.println("Easter Egg Complete");
+                    maze.full_visibility();
+                    for(int i = 0; i < board.length; i++) {
+                        for(int j = 0; j < board[i].length; j++) {
+                            if(board[i][j].equals("Z")) {
+                                maze.setGraphic(new Person(i,j), i,j);
+                            }
+                        }
+                    }
+                }
+                maze.removeGraphic(player.getPosX(), player.getPosY());
+                board[player.getPosX()][player.getPosY()] = "X";
+                player.setPosX(newX);
+                player.setPosY(newY);
+                board[player.getPosX()][player.getPosY()] = "P";
+            }
+        }
+        if(direction.equals("UP")) {
+            int newX = player.getPosX();
+            int newY = player.getPosY() - 1;
+            if(board[newX][newY].equals("X")) {
+                board[currentX][currentY] = "X";
+                maze.removeGraphic(currentX, currentY);
+                player.setPosX(newX);
+                player.setPosY(newY);
+                board[newX][newY] = "P";
+            } else if(board[newX][newY].equals("?")) {
+                Perk p = new Perk(1,1);
+                String perk = p.getRandomPerk();
+                System.out.println(perk);
+                if (perk.equals("FV")) {
+                    maze.full_visibility();
+                }
+                if (perk.equals("RZ")) {
+                    remove_zombies();
+                }
+                if(perk.equals("MZ")) {
+                    add_enemies(5);
+                }
+                maze.removeGraphic(player.getPosX(), player.getPosY());
+                board[player.getPosX()][player.getPosY()] = "X";
+                player.setPosX(newX);
+                player.setPosY(newY);
+                board[player.getPosX()][player.getPosY()] = "P";
+
+
+            }else if(board[newX][newY].equals("E")) {
+                maze.generatePopup();
+
+
+            }else if(board[newX][newY].equals("C")) {
+                if(computerCounter != 2) {
+                    computerCounter++;
+                }else {
+                    for(int i = 0; i < board.length; i++) {
+                        for(int j = 0; j < board[i].length; j++) {
+                            maze.full_visibility();
+                            if(board[i][j].equals("Z")) {
+                                maze.setGraphic(new Person(i,j), i,j);
+                            }
+                        }
+                    }
+                }
+                maze.removeGraphic(player.getPosX(), player.getPosY());
+                board[player.getPosX()][player.getPosY()] = "X";
+                player.setPosX(newX);
+                player.setPosY(newY);
+                board[player.getPosX()][player.getPosY()] = "P";
+            }
+
+        }
+        if(direction.equals("LEFT")) {
+            int newX = player.getPosX() - 1;
+            int newY = player.getPosY();
+            if(board[newX][newY].equals("X")) {
+                board[currentX][currentY] = "X";
+                maze.removeGraphic(currentX, currentY);
+                player.setPosX(newX);
+                player.setPosY(newY);
+                board[newX][newY] = "P";
+            }else if(board[newX][newY].equals("?")) {
+                Perk p = new Perk(1,1);
+                String perk = p.getRandomPerk();
+                System.out.println(perk);
+                if (perk.equals("FV")) {
+                    maze.full_visibility();
+                }
+                if (perk.equals("RZ")) {
+                    remove_zombies();
+                }
+                if(perk.equals("MZ")) {
+                    add_enemies(5);
+                }
+                maze.removeGraphic(player.getPosX(), player.getPosY());
+                board[player.getPosX()][player.getPosY()] = "X";
+                player.setPosX(newX);
+                player.setPosY(newY);
+                board[player.getPosX()][player.getPosY()] = "P";
+
+
+            }else if(board[newX][newY].equals("E")) {
+                maze.generatePopup();
+
+
+            } else if(board[newX][newY].equals("C")) {
+                if(computerCounter != 2) {
+                    computerCounter++;
+                }else {
+                    for(int i = 0; i < board.length; i++) {
+                        for(int j = 0; j < board[i].length; j++) {
+                            maze.full_visibility();
+                            if(board[i][j].equals("Z")) {
+                                maze.setGraphic(new Person(i,j), i,j);
+                            }
+                        }
+                    }
+                }
+                maze.removeGraphic(player.getPosX(), player.getPosY());
+                board[player.getPosX()][player.getPosY()] = "X";
+                player.setPosX(newX);
+                player.setPosY(newY);
+                board[player.getPosX()][player.getPosY()] = "P";
+            }
+
+        }
+        if(direction.equals("RIGHT")) {
+            int newX = player.getPosX() + 1;
+            int newY = player.getPosY();
+            if(board[newX][newY].equals("X")) {
+                board[currentX][currentY] = "X";
+                maze.removeGraphic(currentX, currentY);
+                player.setPosX(newX);
+                player.setPosY(newY);
+                board[newX][newY] = "P";
+            }else if(board[newX][newY].equals("?")) {
+                Perk p = new Perk(1,1);
+                String perk = p.getRandomPerk();
+                System.out.println(perk);
+                if (perk.equals("FV")) {
+                    maze.full_visibility();
+                }
+                if (perk.equals("RZ")) {
+                    remove_zombies();
+                }
+                if(perk.equals("MZ")) {
+                    add_enemies(5);
+                }
+                maze.removeGraphic(player.getPosX(), player.getPosY());
+                board[player.getPosX()][player.getPosY()] = "X";
+                player.setPosX(newX);
+                player.setPosY(newY);
+                board[player.getPosX()][player.getPosY()] = "P";
+            } else if(board[newX][newY].equals("E")) {
+                maze.generatePopup();
+
+
+            }else if(board[newX][newY].equals("C")) {
+                if(computerCounter != 2) {
+                    computerCounter++;
+                }else {
+                    for(int i = 0; i < board.length; i++) {
+                        for(int j = 0; j < board[i].length; j++) {
+                            maze.full_visibility();
+                            if(board[i][j].equals("Z")) {
+                                maze.setGraphic(new Person(i,j), i,j);
+                            }
+                        }
+                    }
+                }
+                maze.removeGraphic(player.getPosX(), player.getPosY());
+                board[player.getPosX()][player.getPosY()] = "X";
+                player.setPosX(newX);
+                player.setPosY(newY);
+                board[player.getPosX()][player.getPosY()] = "P";
+            }
+        }
+        maze.addGraphic(player);
+        print_board();
+    }
+    public void remove_zombies() {
+        for(int i = 0; i < board.length; i++) {
+            for(int j = 0; j < board[i].length; j++) {
+                if (board[i][j].equals("Z")) {
+                    maze.removeGraphic(i,j);
+                    board[i][j] = "X";
+                }
+            }
+        }
+    }
+    public void add_obstacles(int[][] arr) {
+        for(int i = 0; i < arr.length; i++) {
+            for(int j = 0; j < arr[i].length; j++) {
+                if(arr[i][j] == 1) {
+                    board[i][j] = "O";
+                    maze.addGraphic(new Obstacle(i,j), i, j);
+                } else if(arr[i][j] == -1){
+                    board[i][j] = "E";
+                } else if(arr[i][j] == -2) {
+                    board[i][j] = "C";
+                    maze.addGraphic(new Computer(i,j), i, j);
+                }
+            }
+        }
     }
 }
