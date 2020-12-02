@@ -2,7 +2,7 @@
 /shelf/
 /workspace.xml
 # Datasource local storage ignored files
-/../../../../../../../../../../../../../../:\Users\rhass\Desktop\College\CMSC4380\CMSC4375\src\edu\ben\labs\Lab4Final\Lab4\.idea/dataSources/
+/dataSources/
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/

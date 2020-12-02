@@ -4,8 +4,10 @@ import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import main.games.shooter.Player;
@@ -13,6 +15,7 @@ import main.gui.gameovermenu.GameOverMenu;
 import main.gui.gamewonmenu.GameWonMenu;
 
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
@@ -23,7 +26,9 @@ public class Level1 extends Application {
 
     private Pane root = new Pane();
 
-    private Entity playerEntity = new Entity(275, 450, 15, 15, "player", Color.BLUE);
+    private Entity playerEntity = new Entity(275, 450, 25, 25, "player", Color.CYAN);
+
+    private Entity HPBar;
 
     private Player player;
 
@@ -32,6 +37,8 @@ public class Level1 extends Application {
     private static AtomicInteger enemyDead = new AtomicInteger();
 
     private static Stage stage;
+
+    private static Entity[] bullets = new Entity[6];
 
     public AnimationTimer timer = new AnimationTimer() {
         @Override
@@ -46,13 +53,21 @@ public class Level1 extends Application {
      * @return Shooting game
      */
     private Parent createRoot() {
+        playerEntity.setId("player");
+        Image playerImage = new Image(getClass().getResource("images/player.png").toExternalForm());
+        ImagePattern i = new ImagePattern(playerImage);
+        playerEntity.setFill(i);
         root.setPrefSize(600, 575);
         root.getChildren().add(playerEntity);
-        player = new Player(playerEntity.getX(), playerEntity.getY(), 60, 6);
+        player = new Player(playerEntity.getX(), playerEntity.getY(), 5, 6);
         //Add animation timer to animate bullet
         timer.start();
         addEnemies();
         addObstacles();
+        addHealthBar();
+        dropHealthItem();
+        displayAmmo();
+        root.setId("pane");
         return root;
     }
 
@@ -65,23 +80,126 @@ public class Level1 extends Application {
         return root.getChildren().stream().map(n -> (Entity) n).collect(Collectors.toList());
     }
 
+    /**
+     * Adds random obstacles to game
+     */
     private void addObstacles(){
-         Entity obstacle = new Entity(200, 200, 20, 20, "obstacle", Color.GREEN);
-         root.getChildren().add(obstacle);
+        Random random = new Random();
+        Image obsImage = new Image(getClass().getResource("images/tree.png").toExternalForm());
+        ImagePattern obs = new ImagePattern(obsImage);
+
+        //Player shooting layer
+        for (int i = 0; i < 30; i++) {
+            int num = random.nextInt(500);
+            int num2 = 400 - random.nextInt(300);
+            Entity obstacle = new Entity(num, num2, 25, 30, "obstacle", Color.GREEN);
+            obstacle.setId("tree");
+            obstacle.setFill(obs);
+            root.getChildren().add(obstacle);
+        }
+
+        //Deep Woods Layer
+        for (int i = 0; i < 100; i++) {
+            int num = random.nextInt(650);
+            int num2 = 400 - (random.nextInt(100) + 250);
+            Entity obstacle = new Entity(num, num2, 30, 30, "obstacle", Color.GREEN);
+            obstacle.setId("tree");
+            obstacle.setFill(obs);
+            root.getChildren().add(obstacle);
+        }
     }
+
+    /**
+     * Creates a health bar entity at the bottom of the game window
+     */
+    private void addHealthBar(){
+        HPBar = new Entity(10, 530, 200, 15, "HP", Color.RED);
+        Entity HPBorder = new Entity(0, 500, 1000, 100, "outline", Color.BLACK);
+        HPBorder.setOpacity(0.3);
+        root.getChildren().addAll(HPBar, HPBorder);
+        //root.getChildren().add(HPBar);
+    }
+
+    private void displayAmmo(){
+        for (int i = 0; i < player.getAmmo(); i++) {
+            Entity ammo = new Entity(400 + ( 20 * i), 530, 3, 20, "ammo" + i, Color.WHITE);
+            bullets[i] = ammo;
+            root.getChildren().add(ammo);
+        }
+    }
+
+    private void depleteAmmo(){
+        if (player.getAmmo() < 6) {
+            int ammoUsed = 5 - player.getAmmo();
+            bullets[ammoUsed].dead = true;
+        }
+    }
+
+    private void addAmmo(){
+        if (player.getAmmo() < 6) {
+            int ammoUsed = 6 - player.getAmmo();
+            for (int i = 0; i < ammoUsed; i++){
+                Entity ammo = new Entity(400 + ( 20 * i), 530, 3, 20, "ammo" + i, Color.WHITE);
+                bullets[i] = ammo;
+                root.getChildren().add(ammo);
+            }
+        }
+    }
+
+    private void dropHealthItem(){
+        Random random = new Random();
+        int x = random.nextInt(550);
+        if (x == player.getX()){
+            x += 100;
+        }
+        Image obsImage = new Image(getClass().getResource("images/hp.png").toExternalForm());
+        ImagePattern obs = new ImagePattern(obsImage);
+        Entity itemHP = new Entity(x, 450, 20, 20, "restore", Color.PINK);
+        itemHP.setFill(obs);
+        root.getChildren().add(itemHP);
+        System.out.println("Health Item Dropped");
+    }
+
 
     /**
      * Add enemies, currently set to 10
      */
     private void addEnemies() {
+        Image enemyImage = new Image(getClass().getResource("images/zombie.png").toExternalForm());
+        ImagePattern en = new ImagePattern(enemyImage);
         for (int i = 0; i < 10; i++) {
-            Entity enemy = new Entity(30 + i * 50, 50, 20, 20, "enemy", Color.RED);
-            Entity leftEnemy = new Entity(30, 90 + i * 30, 20, 20, "enemyLeft", Color.RED);
-            Entity rightEnemy = new Entity(30 + 9 * 50, 90 + i * 30, 20, 20, "enemyRight", Color.RED);
+            Entity enemy = new Entity(30 + i * 50, 50, 25, 25, "enemy", Color.RED);
+            //Entity leftEnemy = new Entity(30, 90 + i * 30, 25, 25, "enemyLeft", Color.RED);
+            //Entity rightEnemy = new Entity(30 + 9 * 50, 90 + i * 30, 25, 25, "enemyRight", Color.RED);
+            Entity leftEnemy = new Entity(30 + i * 50, 70, 25, 25, "enemyLeft", Color.RED);
+            Entity rightEnemy = new Entity(30 + i * 50, 90, 25, 25, "enemyRight", Color.RED);
+            enemy.setId("enemy");
+            leftEnemy.setId("enemy");
+            rightEnemy.setId("enemy");
+            enemy.setFill(en);
+            leftEnemy.setFill(en);
+            rightEnemy.setFill(en);
             root.getChildren().add(enemy);
             root.getChildren().add(leftEnemy);
             root.getChildren().add(rightEnemy);
         }
+    }
+
+    /**
+     * Method to simulate Enemy AI movement
+     * @param s Enemy entity
+     */
+    private void enemyTracking(Entity s){
+        if (s.getTranslateX() > playerEntity.getTranslateX()){
+            s.moveLeft();
+        }
+        else if (s.getTranslateX() < playerEntity.getTranslateX()){
+            s.moveRight();
+        }
+        else{
+            s.moveDown();
+        }
+        s.moveDown();
     }
 
     /**
@@ -93,31 +211,32 @@ public class Level1 extends Application {
     public void start(Stage primaryStage) {
         enemyDead.set(0);
         Scene scene = new Scene(createRoot());
+        scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
         System.out.println("Player Starting HP: " + player.getHP());
         scene.setOnKeyPressed(e -> {
             switch (e.getCode()) {
                 case A:
                     playerEntity.moveLeft();
                     player.setX(playerEntity.getTranslateX());
-                    System.out.println(player.getX());
                     break;
 
                 case D:
                     playerEntity.moveRight();
                     player.setX(playerEntity.getTranslateX());
-                    System.out.println(player.getX());
                     break;
 
                 case SPACE:
                     if (player.getAmmo() > 0) {
-                        shoot(playerEntity);
+                        createBullets(playerEntity);
                         player.setAmmo(player.getAmmo() - 1);
-                        System.out.println(player.getAmmo());
+                        System.out.println("Current Ammo: " + player.getAmmo());
+                        depleteAmmo();
                     }
                     break;
                 case R:
+                    addAmmo();
                     player.setAmmo(6);
-                    System.out.println("Player Reloaded: " + player.getAmmo());
+                    System.out.println("Player Reloaded; Current Ammo: " + player.getAmmo());
             }
         });
 
@@ -157,7 +276,7 @@ public class Level1 extends Application {
         }
 
         void moveDown() {
-            setTranslateY(getTranslateY() + 3);
+            setTranslateY(getTranslateY() + 7);
         }
 
         void moveLeft() {
@@ -167,6 +286,8 @@ public class Level1 extends Application {
         void moveRight() {
             setTranslateX(getTranslateX() + 7);
         }
+
+
     }
 
     /**
@@ -174,42 +295,72 @@ public class Level1 extends Application {
      *
      * @param entity Bullet
      */
-    private void shoot(Entity entity) {
-        Entity s = new Entity((int) entity.getTranslateX() + 10, (int) entity.getTranslateY(), 3, 20, entity.type + "bullet", Color.BLACK);
+    private void createBullets(Entity entity) {
+        Entity s = new Entity((int) entity.getTranslateX() + 20, (int) entity.getTranslateY(), 2, 20, entity.type + "bullet", Color.WHITE);
         root.getChildren().add(s);
+    }
+
+    /**
+     * Method to de-increment Player HP, player is dead if 0
+     */
+    private void deIncrementHP() {
+        player.setHP(player.getHP() - 1);
+        System.out.println("Player Hit; " + player.getHP() + " HP remaining");
+        HPBar.setWidth(HPBar.getWidth() - 40);
+        if (player.getHP() <= 0) {
+            playerEntity.dead = true;
+            System.out.println("Player has died");
+            stage.close();
+        }
+    }
+
+    /**
+     * Method to restore player HP when picking up health item
+     */
+    private void incrementHP() {
+        player.setHP(player.getHP() + 1);
+        HPBar.setWidth(HPBar.getWidth() + 40);
     }
 
     /**
      * Update method, has functionality for bullet hits, enemy movement, entity deaths
      */
     private void update() {
-        time += 0.015;
-        //System.out.println(time);
+        time += 1;
+        //Add new enemy wave every 10 seconds
+        if (time % 1000 == 0){
+            addEnemies();
+            //Drop HP item if player is below HP, drop rate should be 30%
+            if (player.getHP() < 5){
+                Random r = new Random();
+                int rNum = r.nextInt(10);
+                if (rNum <= 3){
+                    dropHealthItem();
+                }
+            }
+        }
         entities().forEach(s -> {
             switch (s.type) {
-                //Simulate Enemy movement and shooting
+                //Simulate Enemy movement
                 case "enemy":
-                    if (time > 2) {
-                        if (Math.random() < 0.015) {
-                            s.moveDown();
-                        }
-                    }
-                    break;
-
-                case "enemyLeft":
-                    if (time > 2) {
-                        if (Math.random() < 0.015) {
-                            s.moveRight();
-                            s.moveDown();
-                        }
-                    }
-                    break;
 
                 case "enemyRight":
-                    if (time > 2) {
+
+                case "enemyLeft":
+                    if (time > 200) {
                         if (Math.random() < 0.015) {
-                            s.moveLeft();
-                            s.moveDown();
+                            enemyTracking(s);
+                            entities().stream().filter(e -> e.type.equals("player")).forEach(p -> {
+                                if (s.getBoundsInParent().intersects(p.getBoundsInParent())) {
+                                    deIncrementHP();
+                                    s.dead = true;
+                                }
+                            });
+                            entities().stream().filter(e -> e.type.equals("outline")).forEach(e -> {
+                                if (s.getBoundsInParent().intersects(e.getBoundsInParent())) {
+                                    s.dead = true;
+                                }
+                            });
                         }
                     }
                     break;
@@ -224,6 +375,7 @@ public class Level1 extends Application {
                             enemy.dead = true;
                             s.dead = true;
                             enemyDead.getAndIncrement();
+                            System.out.println("Enemies Killed: " + enemyDead);
                         }
                     });
 
@@ -232,6 +384,7 @@ public class Level1 extends Application {
                             enemy.dead = true;
                             s.dead = true;
                             enemyDead.getAndIncrement();
+                            System.out.println("Enemies Killed: " + enemyDead);
                         }
                     });
 
@@ -240,6 +393,7 @@ public class Level1 extends Application {
                             enemy.dead = true;
                             s.dead = true;
                             enemyDead.getAndIncrement();
+                            System.out.println("Enemies Killed: " + enemyDead);
                         }
                     });
 
@@ -249,6 +403,7 @@ public class Level1 extends Application {
                             s.dead = true;
                         }
                     });
+                    
                     break;
 
                 //Simulate enemy bullet impact, have game stop if hits player, adjust later for player health
@@ -277,6 +432,18 @@ public class Level1 extends Application {
                     }
                     break;
 
+                    // HP item interaction
+                case "restore":
+                    if (s.getBoundsInParent().intersects(playerEntity.getBoundsInParent())) {
+                        if (player.getHP() < 5) {
+                            incrementHP();
+                            System.out.println("+1 HP restored");
+                        } else{
+                            System.out.println("HP Full");
+                        }
+                        s.dead = true;
+                    }
+                    break;
 
             }
 
@@ -288,7 +455,7 @@ public class Level1 extends Application {
             return s.dead;
         });
 
-        if (enemyDead.get() == 10) {
+        if (enemyDead.get() == 25) {
             System.out.println("All enemies dead");
             stage.close();
 
