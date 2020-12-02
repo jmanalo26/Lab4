@@ -1,0 +1,29 @@
+#pane{
+    -fx-background-image: url("images2/background2.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 900 506;
+    -fx-background-position: top center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.6, 0, 0);
+}
+
+#enemy{
+    -fx-effect: dropshadow(three-pass-box, darkred, 10, 0.5, 0, 0);
+}
+
+#rightenemy{
+    -fx-effect: dropshadow(three-pass-box, purple, 20, 0.7, 0, 0);
+}
+
+#rightenemybullet{
+    -fx-effect: dropshadow(three-pass-box, purple, 10, 0.5, 0, 0);
+}
+
+#player{
+    -fx-effect: dropshadow(three-pass-box, dodgerblue, 10, 0.5, 0, 0);
+}
+
+#tree{
+    -fx-effect: dropshadow(three-pass-box, forestgreen, 10, 0.5, 0, 0);
+}
+
+

@@ -15,7 +15,7 @@ public class Player {
      */
     private int HP;
     /**
-     * Player Ammo, INSERT TOTAL AMMO LATER
+     * Player Ammo
      */
     private int ammo;
 
