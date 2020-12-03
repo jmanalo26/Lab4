@@ -11,11 +11,13 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import main.games.shooter.Player;
+import main.games.shooter.level2.Level2;
 import main.gui.gameovermenu.GameOverMenu;
 import main.gui.gamewonmenu.GameWonMenu;
 
 
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
@@ -25,11 +27,15 @@ public class BossLevel extends Application {
 
     private Pane root = new Pane();
 
-    private BossLevel.Entity playerEntity = new BossLevel.Entity(275, 450, 15, 15, "player", Color.BLUE);
+    private BossLevel.Entity playerEntity = new BossLevel.Entity(275, 600, 20, 20, "player", Color.BLUE);
 
-    private  Entity bossEnemy = new Entity(280, 50, 60, 30, "enemy", Color.RED);
+    private  Entity bossEnemy = new Entity(280, 120, 60, 60, "enemy", Color.RED);
 
     private Entity HPBar;
+
+    private Entity BossHPBar;
+
+    private Entity BossName;
 
     private Player player;
 
@@ -38,6 +44,11 @@ public class BossLevel extends Application {
     private double time = 0;
 
     private Boss bigBoss = new Boss();
+
+    private Obstacle obstacle  = new Obstacle();
+
+    private Obstacle obstacle2  = new Obstacle();
+
 
     boolean yGoal = false;
 
@@ -63,13 +74,16 @@ public class BossLevel extends Application {
         Image playerImage = new Image(getClass().getResource("images/player.png").toExternalForm());
         ImagePattern i = new ImagePattern(playerImage);
         playerEntity.setFill(i);
-        root.setPrefSize(600, 575);
+        root.setPrefSize(600, 775);
         root.getChildren().add(playerEntity);
         player = new Player(playerEntity.getX(), playerEntity.getY(), 5, 6);
         //Add animation timer to animate bullet
         timer.start();
+        addBossName();
+        addBossHealthBar();
         addHealthBar();
         displayAmmo();
+        addObstacles();
         root.setId("pane");
         addBoss();
         return root;
@@ -95,14 +109,23 @@ public class BossLevel extends Application {
     }
 
     /**
-     * Creates a health bar entity at the bottom of the game window
+     * Adds random obstacles to game
      */
-    private void addHealthBar() {
-        HPBar = new Entity(10, 530, 200, 15, "HP", Color.RED);
-        Entity HPBorder = new Entity(0, 500, 1000, 100, "outline", Color.BLACK);
-        HPBorder.setOpacity(0.3);
-        root.getChildren().addAll(HPBar, HPBorder);
-        //root.getChildren().add(HPBar);
+    private void addObstacles(){
+        Image obsImage = new Image(getClass().getResource("images/LBossPhase1.png").toExternalForm());
+        ImagePattern obs = new ImagePattern(obsImage);
+
+        Entity obstacle = new Entity(260, 300, 80, 10, "obstacle", Color.PURPLE);
+        obstacle.setId("obstacle1");
+        obstacle.setFill(obs);
+        root.getChildren().add(obstacle);
+
+
+        Entity obstacle2 = new Entity(260, 450, 80, 10, "obstacle2", Color.PURPLE);
+        obstacle2.setId("obstacle2");
+        obstacle2.setFill(obs);
+        root.getChildren().add(obstacle2);
+
     }
 
     /**
@@ -110,7 +133,7 @@ public class BossLevel extends Application {
      */
     private void displayAmmo() {
         for (int i = 0; i < player.getAmmo(); i++) {
-            Entity ammo = new Entity(400 + (20 * i), 530, 3, 20, "ammo" + i, Color.BLACK);
+            Entity ammo = new Entity(400 + (20 * i), 730, 3, 20, "ammo" + i, Color.BLACK);
             bullets[i] = ammo;
             root.getChildren().add(ammo);
         }
@@ -133,7 +156,7 @@ public class BossLevel extends Application {
         if (player.getAmmo() < 6) {
             int ammoUsed = 6 - player.getAmmo();
             for (int i = 0; i < ammoUsed; i++) {
-                Entity ammo = new Entity(400 + (20 * i), 530, 3, 20, "ammo" + i, Color.BLACK);
+                Entity ammo = new Entity(400 + (20 * i), 730, 3, 20, "ammo" + i, Color.BLACK);
                 bullets[i] = ammo;
                 root.getChildren().add(ammo);
             }
@@ -141,11 +164,22 @@ public class BossLevel extends Application {
     }
 
     /**
+     * Creates a health bar entity at the bottom of the game window
+     */
+    private void addHealthBar() {
+        HPBar = new Entity(10, 730, 200, 15, "HP", Color.RED);
+        Entity HPBorder = new Entity(0, 700, 1000, 100, "outline", Color.BLACK);
+        HPBorder.setOpacity(0.3);
+        root.getChildren().addAll(HPBar, HPBorder);
+        //root.getChildren().add(HPBar);
+    }
+
+    /**
      * Method to de-increment Player HP, player is dead if 0
      */
     private void deIncrementHP() {
         player.setHP(player.getHP() - 1);
-        System.out.println("Player Hit; " + player.getHP() + " HP remaining");
+        //System.out.println("Player Hit; " + player.getHP() + " HP remaining");
         HPBar.setWidth(HPBar.getWidth() - 40);
         if (player.getHP() <= 0) {
             playerEntity.dead = true;
@@ -161,6 +195,37 @@ public class BossLevel extends Application {
                 e.printStackTrace();
             }
         }
+    }
+
+    /**
+     * Creates a health bar entity at the bottom of the game window
+     */
+    private void addBossName() {
+        Image obsImage = new Image(getClass().getResource("images/MechaZombieName.png").toExternalForm());
+        ImagePattern obs = new ImagePattern(obsImage);
+
+        BossName = new Entity(55, 15, 490, 40, "Name", Color.RED);
+        BossName.setId("Name");
+        BossName.setFill(obs);
+        root.getChildren().addAll(BossName);
+    }
+
+    /**
+     * Creates a health bar entity at the bottom of the game window
+     */
+    private void addBossHealthBar() {
+        BossHPBar = new Entity(45, 65, 510, 15, "HP", Color.RED);
+        Entity HPBorder = new Entity(0,  0, 1000, 100, "outline", Color.BLACK);
+        HPBorder.setOpacity(0);
+        root.getChildren().addAll(BossHPBar, HPBorder);
+        //root.getChildren().add(HPBar);
+    }
+
+    /**
+     * Method to de-increment Player HP, player is dead if 0
+     */
+    private void deIncrementBossHP() {
+        BossHPBar.setWidth(BossHPBar.getWidth() - 10);
     }
 
     /**
@@ -208,14 +273,14 @@ public class BossLevel extends Application {
                     if (player.getAmmo() > 0) {
                         createBullets(playerEntity);
                         player.setAmmo(player.getAmmo() - 1);
-                        System.out.println("Current Ammo: " + player.getAmmo());
+                        //System.out.println("Current Ammo: " + player.getAmmo());
                         depleteAmmo();
                     }
                     break;
                 case R:
                     addAmmo();
                     player.setAmmo(6);
-                    System.out.println("Player Reloaded; Current Ammo: " + player.getAmmo());
+                    //System.out.println("Player Reloaded; Current Ammo: " + player.getAmmo());
             }
         });
 
@@ -265,6 +330,15 @@ public class BossLevel extends Application {
         void moveRight() {
             setTranslateX(getTranslateX() + 10);
         }
+
+        void slowMoveLeft() {
+            setTranslateX(getTranslateX() - 2);
+        }
+
+        void slowMoveRight() {
+            setTranslateX(getTranslateX() + 2);
+        }
+
 
         void movieDiagonalRightDown() {
             setTranslateX(getTranslateX() + 1);
@@ -318,7 +392,7 @@ public class BossLevel extends Application {
      * @param entity Bullet
      */
     private void bossShoot(BossLevel.Entity entity) {
-        BossLevel.Entity s = new BossLevel.Entity((int) entity.getTranslateX() + 30, (int) entity.getTranslateY() + 20, 3, 20, entity.type + "bullet", Color.BLACK);
+        BossLevel.Entity s = new BossLevel.Entity((int) entity.getTranslateX() + 50, (int) entity.getTranslateY() + 40, 3, 20, entity.type + "bullet", Color.BLACK);
         root.getChildren().add(s);
     }
 
@@ -328,11 +402,11 @@ public class BossLevel extends Application {
      * @param entity Bullet
      */
     private void triShot(BossLevel.Entity entity) {
-        BossLevel.Entity s1 = new BossLevel.Entity((int) entity.getTranslateX() + 20, (int) entity.getTranslateY(), 5, 5, entity.type + "tribulletL", Color.BLACK);
+        BossLevel.Entity s1 = new BossLevel.Entity((int) entity.getTranslateX() + 20, (int) entity.getTranslateY() + 20, 5, 5, entity.type + "tribulletL", Color.BLACK);
         root.getChildren().add(s1);
-        BossLevel.Entity s2 = new BossLevel.Entity((int) entity.getTranslateX() + 30, (int) entity.getTranslateY(), 5, 5, entity.type + "bullet", Color.BLACK);
+        BossLevel.Entity s2 = new BossLevel.Entity((int) entity.getTranslateX() + 30, (int) entity.getTranslateY() + 20, 5, 5, entity.type + "bullet", Color.BLACK);
         root.getChildren().add(s2);
-        BossLevel.Entity s3 = new BossLevel.Entity((int) entity.getTranslateX() + 40, (int) entity.getTranslateY(), 5, 5, entity.type + "tribulletR", Color.BLACK);
+        BossLevel.Entity s3 = new BossLevel.Entity((int) entity.getTranslateX() + 40, (int) entity.getTranslateY() + 20, 5, 5, entity.type + "tribulletR", Color.BLACK);
         root.getChildren().add(s3);
 
     }
@@ -347,7 +421,6 @@ public class BossLevel extends Application {
         root.getChildren().add(s);
     }
 
-
     /**
      * dd
      * Update method, has functionality for bullet hits, enemy movement, entity deaths
@@ -358,7 +431,7 @@ public class BossLevel extends Application {
             switch (s.type) {
                 //Simulate Enemy movement and shooting
                 case "enemy":
-                    if (time > 2) {
+                    if (time > 2d) {
                         if (Math.random() < 0.05) {
                             if (bigBoss.getBossPhase() == 1) {
                                 if (bigBoss.getMovementGoal() == (int) s.getTranslateX()) {
@@ -407,14 +480,50 @@ public class BossLevel extends Application {
                                             triShot(s);
                                         }
                                     }
-
-
                                 }
                             }
+                        }
+                    }
+                    break;
 
+                //moving obstacle 1
+                case "obstacle":
+                    if (bigBoss.getBossPhase() == 2) {
+                        s.dead = true;
+                    }
+                    if (time > 0) {
+                        if (Math.random() < 1) {
+                            if (obstacle.getMovementGoal() == (int) s.getTranslateX()) {
+                                ThreadLocalRandom random = ThreadLocalRandom.current();
+                                int moveGoal = (random.nextInt(1, 3));
+                                System.out.println(moveGoal);
+                                obstacle.movementGoal(moveGoal);
+                            } else if (obstacle.getMovementGoal() < (int) s.getTranslateX()) {
+                                s.slowMoveLeft();
+                            } else if (obstacle.getMovementGoal() > (int) s.getTranslateX()) {
+                                s.slowMoveRight();
+                            }
+                        }
+                    }
+                    break;
 
-                            System.out.println(time);
-                            System.out.println(s.getTranslateX());
+                //moving obstacle 2
+                case "obstacle2":
+                    if (bigBoss.getBossPhase() == 2) {
+                        s.dead = true;
+                    }
+                    if (time > 0) {
+                        if (Math.random() < 1) {
+                            if (obstacle.getMovementGoal2() == (int) s.getTranslateX()) {
+                                ThreadLocalRandom random = ThreadLocalRandom.current();
+                                int moveGoal = (random.nextInt(1, 3));
+                                System.out.println(moveGoal);
+                                obstacle.movementGoal(moveGoal);
+                            } else if (obstacle.getMovementGoal2() < (int) s.getTranslateX()) {
+                                s.slowMoveLeft();
+                            } else if (obstacle.getMovementGoal2() > (int) s.getTranslateX()) {
+                                s.slowMoveRight();
+                            }
                         }
                     }
                     break;
@@ -433,6 +542,7 @@ public class BossLevel extends Application {
                             } else {
                                 s.dead = true;
                                 bigBoss.setHealth(bigBoss.getCurrentHealth() - 1);
+                                deIncrementBossHP();
                                 if (bigBoss.getCurrentHealth() == bigBoss.getHalfHealth()) {
                                     bigBoss.setBossPhase(2);
                                 }
@@ -440,8 +550,32 @@ public class BossLevel extends Application {
                                     Image enemyImage = new Image(getClass().getResource("images/LBossPhase2.png").toExternalForm());
                                     ImagePattern en = new ImagePattern(enemyImage);
                                     bossEnemy.setFill(en);
+
+                                    Image obsImage = new Image(getClass().getResource("images/EnragedMechaZombieName.png").toExternalForm());
+                                    ImagePattern obs = new ImagePattern(obsImage);
+                                    BossName.setFill(obs);
                                 }
                             }
+                        }
+                    });
+
+                    entities().stream().filter(e -> e.type.equals("outline")).forEach(enemy -> {
+                        if (s.getBoundsInParent().intersects(enemy.getBoundsInParent())) {
+                            s.dead = true;
+                        }
+                    });
+
+                    //Bullet Obstacle Interaction
+                    entities().stream().filter(e -> e.type.equals("obstacle")).forEach(enemy -> {
+                        if (s.getBoundsInParent().intersects(enemy.getBoundsInParent())) {
+                            s.dead = true;
+                        }
+                    });
+
+                    //Bullet Obstacle Interaction
+                    entities().stream().filter(e -> e.type.equals("obstacle2")).forEach(enemy -> {
+                        if (s.getBoundsInParent().intersects(enemy.getBoundsInParent())) {
+                            s.dead = true;
                         }
                     });
                     break;
