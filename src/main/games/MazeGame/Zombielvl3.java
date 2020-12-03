@@ -1,18 +1,22 @@
 package main.games.MazeGame;
 
-public class Person {
+public class Zombielvl3 {
 
     private int posX;
     private int posY;
+    private String imageZombie = "main/games/MazeGame/zombielvl3.png";
 
-    public Person(int x, int y) {
+    public Zombielvl3(int x, int y) {
         posX = x;
         posY = y;
     }
     public String getImage() {
-        return "main/games/MazeGame/person.jpg";
+        return imageZombie;
     }
 
+    public void setImage(String image) {
+         imageZombie = image;
+    }
 
     public int getPosX() {
         return posX;

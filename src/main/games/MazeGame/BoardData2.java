@@ -3,21 +3,20 @@ package main.games.MazeGame;
 
 
 import javafx.stage.Stage;
-import main.games.shooter.level1.Level1;
-import main.gui.levelmenu.Level1PopUp;
+import main.games.shooter.level2.Level2;
 
 import java.util.Arrays;
 import java.util.Random;
 
-public class BoardData {
-    private Maze maze;
+public class BoardData2 {
+    private Mazelvl2 maze;
     private String[][] board;
     private Player player;
-    private Zombie[] zombies;
+    private Zombielvl2[] zombies;
     private int computerCounter = 0;
 
-    public BoardData(int size_x, int size_y) {
-        maze = Maze.getInstance();
+    public BoardData2(int size_x, int size_y) {
+        maze = Mazelvl2.getInstance();
         board = new String[size_x][size_y];
         for(String[] row: board) {
             Arrays.fill(row, "X");
@@ -58,7 +57,7 @@ public class BoardData {
     public void add_enemies(int num) {
         for(int i = 0; i < num; i++) {
             int[] pos = getRandomSquare();
-            maze.addGraphic(new Zombie(pos[0], pos[1]), pos[0], pos[1]);
+            maze.addGraphic(new Zombielvl2(pos[0], pos[1]), pos[0], pos[1]);
             board[pos[0]][pos[1]] = "Z";
         }
     }
@@ -116,10 +115,10 @@ public class BoardData {
                 maze.generatePopup();
 
             }else if(board[newX][newY].equals("Z")) {
-                Level1 miniGame = new Level1();
-                Stage lvl1MiniGame = new Stage();
+                Level2 miniGame = new Level2();
+                Stage lvl2MiniGame = new Stage();
                 try {
-                    miniGame.start(lvl1MiniGame);
+                    miniGame.start(lvl2MiniGame);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -185,10 +184,10 @@ public class BoardData {
                 maze.generatePopup();
 
             }else if(board[newX][newY].equals("Z")) {
-                Level1 miniGame = new Level1();
-                Stage lvl1MiniGame = new Stage();
+                Level2 miniGame = new Level2();
+                Stage lvl2MiniGame = new Stage();
                 try {
-                    miniGame.start(lvl1MiniGame);
+                    miniGame.start(lvl2MiniGame);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -198,6 +197,7 @@ public class BoardData {
                 player.setPosX(newX);
                 player.setPosY(newY);
                 board[newX][newY] = "P";
+
 
 
             }else if(board[newX][newY].equals("C")) {
@@ -254,10 +254,10 @@ public class BoardData {
                 maze.generatePopup();
 
             }else if(board[newX][newY].equals("Z")) {
-                Level1 miniGame = new Level1();
-                Stage lvl1MiniGame = new Stage();
+                Level2 miniGame = new Level2();
+                Stage lvl2MiniGame = new Stage();
                 try {
-                    miniGame.start(lvl1MiniGame);
+                    miniGame.start(lvl2MiniGame);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -267,6 +267,7 @@ public class BoardData {
                 player.setPosX(newX);
                 player.setPosY(newY);
                 board[newX][newY] = "P";
+
 
 
             } else if(board[newX][newY].equals("C")) {
@@ -320,6 +321,22 @@ public class BoardData {
             } else if(board[newX][newY].equals("E")) {
                 maze.generatePopup();
 
+            }else if(board[newX][newY].equals("Z")) {
+                Level2 miniGame = new Level2();
+                Stage lvl2MiniGame = new Stage();
+                try {
+                    miniGame.start(lvl2MiniGame);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                board[currentX][currentY] = "X";
+                maze.removeGraphic(currentX, currentY);
+                maze.removeGraphic(newX,newY);
+                player.setPosX(newX);
+                player.setPosY(newY);
+                board[newX][newY] = "P";
+
+
 
             }else if(board[newX][newY].equals("C")) {
                 if(computerCounter != 2) {
@@ -359,7 +376,7 @@ public class BoardData {
             for(int j = 0; j < arr[i].length; j++) {
                 if(arr[i][j] == 1) {
                     board[i][j] = "O";
-                    maze.addGraphic(new Obstacle(i,j), i, j);
+                    maze.addGraphic(new Obstaclelvl2(i,j), i, j);
                 } else if(arr[i][j] == -1){
                     board[i][j] = "E";
                 } else if(arr[i][j] == -2) {

@@ -9,25 +9,23 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.stage.Popup;
 import javafx.stage.Stage;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import java.awt.*;
 
-public class Maze extends Application {
+public class Mazelvl2 extends Application {
     private final int LEVEL_1_BOARD_SIZE = 12;
     private final int LEVEL_2_BOARD_SIZE = 14;
     private final int LEVEL_3_BOARD_SIZE = 20;
     private final int TUTORIAL_BOARD_SIZE = 6;
     private Label[][] labels;
-    private static Maze instance;
+    private static Mazelvl2 instance;
     private boolean fullVis = false;
-    private BoardData bd;
+    private BoardData2 bd;
     private Stage stage;
     private final int[][] TUTORIAL1 = {{1,1,1,1,1,1},
                                         {1,0,0,0,0,1},
@@ -82,17 +80,17 @@ public class Maze extends Application {
                                    {1,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1,1},
                                    {1,1,1,1,1,1,1,1,1,1,1,-1,1,1,1,1,1,1,1,1}};
 
-    public Maze() {
+    public Mazelvl2() {
         instance = this;
     }
 
-    public static Maze getInstance() {
+    public static Mazelvl2 getInstance() {
         return instance;
     }
     @Override
     public void start(Stage s) throws Exception {
         stage = s;
-        bd = new BoardData(LEVEL_2_BOARD_SIZE, LEVEL_2_BOARD_SIZE);
+        bd = new BoardData2(LEVEL_2_BOARD_SIZE, LEVEL_2_BOARD_SIZE);
         Scene scene = loadBoard(stage);
 
 
@@ -123,7 +121,7 @@ public class Maze extends Application {
 
                             @Override
                             public void handle(Event event) {
-                                bd = new BoardData(LEVEL_2_BOARD_SIZE, LEVEL_2_BOARD_SIZE);
+                                bd = new BoardData2(LEVEL_2_BOARD_SIZE, LEVEL_2_BOARD_SIZE);
                                 loadBoard(stage);
                             }
                         });
@@ -259,7 +257,7 @@ public class Maze extends Application {
         stage.setScene(tut);
         stage.show();
 
-        bd.add_obstacles(LEVEL2);
+        bd.add_obstacles(LEVEL1);
         bd.add_player();
         bd.add_enemies(15);
         bd.add_perk(2);
@@ -288,7 +286,8 @@ public class Maze extends Application {
         labels[x][y].setGraphic(null);
     }
 
-    public void addGraphic(Zombie z, int x, int y) {
+    public void addGraphic(Zombielvl2 z, int x, int y) {
+
         Image zombie = new Image(z.getImage());
         ImageView iv = new ImageView(zombie);
         iv.setVisible(false);
@@ -297,7 +296,7 @@ public class Maze extends Application {
         labels[x][y].setGraphic(iv);
     }
 
-    public void addGraphic(Obstacle o, int x, int y) {
+    public void addGraphic(Obstaclelvl2 o, int x, int y) {
         Image obstacle = new Image(o.getImage());
         ImageView iv = new ImageView(obstacle);
         iv.setVisible(false);

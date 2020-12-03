@@ -3,12 +3,17 @@ package main.games.MazeGame;
 public class Player {
     private int posX;
     private int posY;
+    private String imagePlayer = "main/games/MazeGame/sprite1.png";
     public Player(int x, int y) {
         posX = x;
         posY = y;
     }
     public String getImage() {
-        return "main/games/MazeGame/sprite1.png";
+        return imagePlayer;
+    }
+
+    public void setImage(String image) {
+        imagePlayer = image;
     }
 
     public int getPosX() {

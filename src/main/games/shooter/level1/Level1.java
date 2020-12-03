@@ -152,7 +152,7 @@ public class Level1 extends Application {
         if (x == player.getX()){
             x += 100;
         }
-        Image obsImage = new Image(getClass().getResource("images/hp.png").toExternalForm());
+        Image obsImage = new Image(getClass().getResource("images/health.png").toExternalForm());
         ImagePattern obs = new ImagePattern(obsImage);
         Entity itemHP = new Entity(x, 450, 20, 20, "restore", Color.PINK);
         itemHP.setFill(obs);
@@ -455,21 +455,21 @@ public class Level1 extends Application {
             return s.dead;
         });
 
-        if (enemyDead.get() == 25) {
+        if (enemyDead.get() >= 25) {
             System.out.println("All enemies dead");
             stage.close();
 
             timer.stop();
 
-            //launches game over menu when game is lost
-            GameWonMenu gameWonMenu = new GameWonMenu();
-            Stage gameWonMenuStage = new Stage();
-            try {
-                gameWonMenu.start(gameWonMenuStage);
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+//            //launches game over menu when game is lost
+//            GameWonMenu gameWonMenu = new GameWonMenu();
+//            Stage gameWonMenuStage = new Stage();
+//            try {
+//                gameWonMenu.start(gameWonMenuStage);
+//
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
         }
 
     }

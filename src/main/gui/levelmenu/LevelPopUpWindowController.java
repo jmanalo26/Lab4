@@ -5,6 +5,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.stage.Stage;
+import main.games.MazeGame.Maze;
+import main.games.MazeGame.Mazelvl2;
+import main.games.MazeGame.Mazelvl3;
 import main.games.shooter.LBossLevel.BossLevel;
 import main.games.shooter.ShootingGame;
 
@@ -29,10 +32,10 @@ import java.util.ResourceBundle;
          */
         @FXML
         public void openLevelOne(ActionEvent actionEvent) throws IOException {
-            ShootingGame shootingGame = new ShootingGame();
+            Maze game = new Maze();
             Stage shootingGameStage = new Stage();
             try {
-                shootingGame.start(shootingGameStage);
+                game.start(shootingGameStage);
                 ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
             } catch (Exception e) {
                 e.printStackTrace();
@@ -47,10 +50,27 @@ import java.util.ResourceBundle;
          */
         @FXML
         public void openLevelTwo(ActionEvent actionEvent) throws IOException {
-            BossLevel shootingGame = new BossLevel();
+            Mazelvl2 game = new Mazelvl2();
             Stage shootingGameStage = new Stage();
             try {
-                shootingGame.start(shootingGameStage);
+                game.start(shootingGameStage);
+                ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        /**
+         * Method tied to button for opening the first level(Shooting Game)
+         *
+         * @param actionEvent
+         * @throws IOException
+         */
+        @FXML
+        public void openLevelThree(ActionEvent actionEvent) throws IOException {
+            Mazelvl3 game = new Mazelvl3();
+            Stage shootingGameStage = new Stage();
+            try {
+                game.start(shootingGameStage);
                 ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
             } catch (Exception e) {
                 e.printStackTrace();
