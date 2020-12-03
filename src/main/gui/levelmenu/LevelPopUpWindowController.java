@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.stage.Stage;
 import main.games.shooter.LBossLevel.BossLevel;
 import main.games.shooter.ShootingGame;
+import main.games.shooter.level1.Level1;
 
 import java.io.IOException;
 import java.net.URL;
@@ -29,7 +30,7 @@ import java.util.ResourceBundle;
          */
         @FXML
         public void openLevelOne(ActionEvent actionEvent) throws IOException {
-            ShootingGame shootingGame = new ShootingGame();
+            Level1 shootingGame = new Level1();
             Stage shootingGameStage = new Stage();
             try {
                 shootingGame.start(shootingGameStage);

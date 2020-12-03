@@ -27,6 +27,8 @@ public class BossLevel extends Application {
 
     private BossLevel.Entity playerEntity = new BossLevel.Entity(275, 450, 15, 15, "player", Color.BLUE);
 
+    private  Entity bossEnemy = new Entity(280, 50, 60, 30, "enemy", Color.RED);
+
     private Entity HPBar;
 
     private Player player;
@@ -86,8 +88,10 @@ public class BossLevel extends Application {
      * Adds the single boss enemy
      */
     private void addBoss() {
-        Entity enemy = new Entity(280, 50, 60, 30, "enemy", Color.RED);
-        root.getChildren().add(enemy);
+        Image enemyImage = new Image(getClass().getResource("images/LBossPhase1.png").toExternalForm());
+        ImagePattern en = new ImagePattern(enemyImage);
+        bossEnemy.setFill(en);
+        root.getChildren().add(bossEnemy);
     }
 
     /**
@@ -432,6 +436,11 @@ public class BossLevel extends Application {
                                 if (bigBoss.getCurrentHealth() == bigBoss.getHalfHealth()) {
                                     bigBoss.setBossPhase(2);
                                 }
+                                if (bigBoss.getCurrentHealth() == bigBoss.getHalfHealth()) {
+                                    Image enemyImage = new Image(getClass().getResource("images/LBossPhase2.png").toExternalForm());
+                                    ImagePattern en = new ImagePattern(enemyImage);
+                                    bossEnemy.setFill(en);
+                                }
                             }
                         }
                     });
@@ -444,6 +453,11 @@ public class BossLevel extends Application {
                         s.dead = true;
                         deIncrementHP();
                     }
+                    entities().stream().filter(e -> e.type.equals("outline")).forEach(enemy -> {
+                        if (s.getBoundsInParent().intersects(enemy.getBoundsInParent())) {
+                            s.dead = true;
+                        }
+                    });
                     break;
 
                 //Simulate enemy bullet impact, have game stop if hits player, adjust later for player health
@@ -453,6 +467,11 @@ public class BossLevel extends Application {
                         s.dead = true;
                         deIncrementHP();
                     }
+                    entities().stream().filter(e -> e.type.equals("outline")).forEach(enemy -> {
+                        if (s.getBoundsInParent().intersects(enemy.getBoundsInParent())) {
+                            s.dead = true;
+                        }
+                    });
                     break;
 
                 //Simulate enemy bullet impact, have game stop if hits player, adjust later for player health
@@ -462,6 +481,11 @@ public class BossLevel extends Application {
                         s.dead = true;
                         deIncrementHP();
                     }
+                    entities().stream().filter(e -> e.type.equals("outline")).forEach(enemy -> {
+                        if (s.getBoundsInParent().intersects(enemy.getBoundsInParent())) {
+                            s.dead = true;
+                        }
+                    });
                     break;
 
 
