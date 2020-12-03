@@ -10,6 +10,7 @@ import main.games.MazeGame.Mazelvl2;
 import main.games.MazeGame.Mazelvl3;
 import main.games.shooter.LBossLevel.BossLevel;
 import main.games.shooter.ShootingGame;
+import main.games.shooter.level1.Level1;
 
 import java.io.IOException;
 import java.net.URL;
@@ -32,6 +33,7 @@ import java.util.ResourceBundle;
          */
         @FXML
         public void openLevelOne(ActionEvent actionEvent) throws IOException {
+
             Maze game = new Maze();
             Stage shootingGameStage = new Stage();
             try {

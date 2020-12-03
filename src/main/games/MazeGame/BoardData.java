@@ -3,6 +3,7 @@ package main.games.MazeGame;
 
 
 import javafx.stage.Stage;
+import main.games.shooter.LBossLevel.BossLevel;
 import main.games.shooter.level1.Level1;
 import main.gui.levelmenu.Level1PopUp;
 
@@ -113,7 +114,13 @@ public class BoardData {
 
 
             }else if(board[newX][newY].equals("E")) {
-                maze.generatePopup();
+                BossLevel bossLevel = new BossLevel();
+                Stage bossStage = new Stage();
+                try {
+                    bossLevel.start(bossStage);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
             }else if(board[newX][newY].equals("Z")) {
                 Level1 miniGame = new Level1();
@@ -182,7 +189,13 @@ public class BoardData {
 
 
             }else if(board[newX][newY].equals("E")) {
-                maze.generatePopup();
+                BossLevel bossLevel = new BossLevel();
+                Stage bossStage = new Stage();
+                try {
+                    bossLevel.start(bossStage);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
             }else if(board[newX][newY].equals("Z")) {
                 Level1 miniGame = new Level1();
@@ -251,7 +264,13 @@ public class BoardData {
 
 
             }else if(board[newX][newY].equals("E")) {
-                maze.generatePopup();
+                BossLevel bossLevel = new BossLevel();
+                Stage bossStage = new Stage();
+                try {
+                    bossLevel.start(bossStage);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
             }else if(board[newX][newY].equals("Z")) {
                 Level1 miniGame = new Level1();
@@ -318,7 +337,29 @@ public class BoardData {
                 player.setPosY(newY);
                 board[player.getPosX()][player.getPosY()] = "P";
             } else if(board[newX][newY].equals("E")) {
-                maze.generatePopup();
+                BossLevel bossLevel = new BossLevel();
+                Stage bossStage = new Stage();
+                try {
+                    bossLevel.start(bossStage);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }else if(board[newX][newY].equals("Z")) {
+                Level1 miniGame = new Level1();
+                Stage lvl1MiniGame = new Stage();
+                try {
+                    miniGame.start(lvl1MiniGame);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                board[currentX][currentY] = "X";
+                maze.removeGraphic(currentX, currentY);
+                maze.removeGraphic(newX,newY);
+                player.setPosX(newX);
+                player.setPosY(newY);
+                board[newX][newY] = "P";
+
 
 
             }else if(board[newX][newY].equals("C")) {
