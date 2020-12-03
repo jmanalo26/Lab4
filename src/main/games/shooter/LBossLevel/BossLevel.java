@@ -11,7 +11,6 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import main.games.shooter.Player;
-import main.games.shooter.level2.Level2;
 import main.gui.gameovermenu.GameOverMenu;
 import main.gui.gamewonmenu.GameWonMenu;
 
@@ -112,16 +111,16 @@ public class BossLevel extends Application {
      * Adds random obstacles to game
      */
     private void addObstacles(){
-        Image obsImage = new Image(getClass().getResource("images/LBossPhase1.png").toExternalForm());
+        Image obsImage = new Image(getClass().getResource("images/dumpster.png").toExternalForm());
         ImagePattern obs = new ImagePattern(obsImage);
 
-        Entity obstacle = new Entity(260, 300, 80, 10, "obstacle", Color.PURPLE);
+        Entity obstacle = new Entity(260, 300, 40, 30, "obstacle", Color.PURPLE);
         obstacle.setId("obstacle1");
         obstacle.setFill(obs);
         root.getChildren().add(obstacle);
 
 
-        Entity obstacle2 = new Entity(260, 450, 80, 10, "obstacle2", Color.PURPLE);
+        Entity obstacle2 = new Entity(260, 450, 40, 30, "obstacle2", Color.PURPLE);
         obstacle2.setId("obstacle2");
         obstacle2.setFill(obs);
         root.getChildren().add(obstacle2);
@@ -242,7 +241,7 @@ public class BossLevel extends Application {
      * @param entity Bullet
      */
     private void createBullets(Entity entity) {
-        Entity s = new Entity((int) entity.getTranslateX() + 20, (int) entity.getTranslateY(), 2, 20, entity.type + "bullet", Color.BLACK);
+        Entity s = new Entity((int) entity.getTranslateX() + 20, (int) entity.getTranslateY(), 3, 20, entity.type + "bullet", Color.BLACK);
         root.getChildren().add(s);
     }
 
@@ -363,7 +362,7 @@ public class BossLevel extends Application {
         }
 
         void jumpUp() {
-            setTranslateY(50);
+            setTranslateY(120);
         }
 
     }
@@ -392,7 +391,7 @@ public class BossLevel extends Application {
      * @param entity Bullet
      */
     private void bossShoot(BossLevel.Entity entity) {
-        BossLevel.Entity s = new BossLevel.Entity((int) entity.getTranslateX() + 50, (int) entity.getTranslateY() + 40, 3, 20, entity.type + "bullet", Color.BLACK);
+        BossLevel.Entity s = new BossLevel.Entity((int) entity.getTranslateX() + 50, (int) entity.getTranslateY() + 40, 3, 20, entity.type + "bullet", Color.RED);
         root.getChildren().add(s);
     }
 
@@ -402,11 +401,11 @@ public class BossLevel extends Application {
      * @param entity Bullet
      */
     private void triShot(BossLevel.Entity entity) {
-        BossLevel.Entity s1 = new BossLevel.Entity((int) entity.getTranslateX() + 20, (int) entity.getTranslateY() + 20, 5, 5, entity.type + "tribulletL", Color.BLACK);
+        BossLevel.Entity s1 = new BossLevel.Entity((int) entity.getTranslateX() + 20, (int) entity.getTranslateY() + 20, 5, 5, entity.type + "tribulletL", Color.RED);
         root.getChildren().add(s1);
-        BossLevel.Entity s2 = new BossLevel.Entity((int) entity.getTranslateX() + 30, (int) entity.getTranslateY() + 20, 5, 5, entity.type + "bullet", Color.BLACK);
+        BossLevel.Entity s2 = new BossLevel.Entity((int) entity.getTranslateX() + 30, (int) entity.getTranslateY() + 20, 5, 5, entity.type + "bullet", Color.RED);
         root.getChildren().add(s2);
-        BossLevel.Entity s3 = new BossLevel.Entity((int) entity.getTranslateX() + 40, (int) entity.getTranslateY() + 20, 5, 5, entity.type + "tribulletR", Color.BLACK);
+        BossLevel.Entity s3 = new BossLevel.Entity((int) entity.getTranslateX() + 40, (int) entity.getTranslateY() + 20, 5, 5, entity.type + "tribulletR", Color.RED);
         root.getChildren().add(s3);
 
     }
@@ -431,7 +430,7 @@ public class BossLevel extends Application {
             switch (s.type) {
                 //Simulate Enemy movement and shooting
                 case "enemy":
-                    if (time > 2d) {
+                    if (time > 1) {
                         if (Math.random() < 0.05) {
                             if (bigBoss.getBossPhase() == 1) {
                                 if (bigBoss.getMovementGoal() == (int) s.getTranslateX()) {
@@ -451,10 +450,10 @@ public class BossLevel extends Application {
                                 if (Math.random() < 0.10) {
                                     yGoal = true;
                                 } else {
-                                    if (yGoal == true && ((int) s.getTranslateY() < 200)) {
+                                    if (yGoal == true && ((int) s.getTranslateY() < 300)) {
                                         s.moveDown();
                                     }
-                                    if (yGoal == true && (int) s.getTranslateY() == 200) {
+                                    if (yGoal == true && (int) s.getTranslateY() == 300) {
                                         double tempX = s.getTranslateX();
                                         s.jumpUp();
                                         s.jumpLeft();
