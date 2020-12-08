@@ -44,9 +44,6 @@ public class TileManager {
         this.path = xmlPathToTileSheet;
     }
 
-//    public void getMapData(){
-//
-//    }
 
     public void buildMap() {
         init();
