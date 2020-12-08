@@ -1,7 +1,7 @@
 #pane{
-    -fx-background-image: url("images/background.jpg");
+    -fx-background-image: url("images/brickbackground.png");
     -fx-background-repeat: stretch;
-    -fx-background-size: 900 706;
+    -fx-background-size: 600 700;
     -fx-background-position: top center;
     -fx-effect: dropshadow(three-pass-box, black, 30, 0.6, 0, 0);
 }
