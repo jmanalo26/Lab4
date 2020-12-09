@@ -13,15 +13,22 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Pane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import main.gui.mazefront.util.Block;
 
+import java.io.File;
+import java.nio.file.Paths;
+
 public class MazeFront extends Application {
 
-    private static final Image IMAGE = new Image("main/resources/images/spritesheet/battlesprites.png");
-    private SpriteSheet tileSheet = new SpriteSheet(new ImageView("main/resources/images/tilesheet/dungeon_tiles.png"), 16, 16);
+    private static final Image IMAGE = new Image("resources/images/spritesheet/battlesprites.png");
+    private SpriteSheet tileSheet = new SpriteSheet(new ImageView("resources/images/tilesheet/dungeon_tiles.png"), 16, 16);
+//    private Media media = new Media(getClass().getResource("/sound/death_screen.mp3").toExternalForm());
+//    private MediaPlayer player = new MediaPlayer(media);
 
     private int COLUMNS = 10;
     private int COUNT = 10;
@@ -74,7 +81,14 @@ public class MazeFront extends Application {
     }
 
     public void start(Stage primaryStage) {
+//        System.out.println(Paths.get("resources/images/spritesheet/zombie_lvl_1.png").toUri().toString());
+//        File f = new File("resources/images/spritesheet/zombie_lvl_1.png");
+//        if (f.exists()) {
+//            System.out.println("Ye");
+//        }
+
         imageView.setCache(true);
+//        player.play();
 //        StackPane root = new StackPane();
 
 //        ImageView greaterMagePicture = new ImageView("main/gui/resources/spritesheet/mage-1-85x94.png");
@@ -109,7 +123,7 @@ public class MazeFront extends Application {
 //        battleMage.setTranslateX(150);
 //        battleMage.setTranslateY(525);
 //
-        ImageView bossMagePicture = new ImageView(new Image("main/resources/images/spritesheet/zombie_lvl_1.png"));
+        ImageView bossMagePicture = new ImageView(new Image("resources/images/spritesheet/zombie_lvl_1.png"));
         bossMagePicture.setPreserveRatio(true);
         bossMagePicture.setFitWidth(40);
         bossMage = new Group(bossMagePicture);
