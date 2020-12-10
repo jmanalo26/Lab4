@@ -1,4 +1,4 @@
-package main.games.shooter.LBossLevel;
+package main.games.shooter.LBossLevel3;
 
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
@@ -11,27 +11,28 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import main.games.shooter.LBossLevel3.Boss3;
+import main.games.shooter.LBossLevel.Obstacle;
 import main.games.shooter.Player;
 import main.gui.gameovermenu.GameOverMenu;
 import main.gui.gamewonmenu.GameWonMenu;
-import main.gui.music.MusicPlayer;
-
 
 import java.util.List;
-import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 
-public class BossLevel extends Application {
+public class BossLevel3 extends Application {
 
     private static final Paint PURPLE = Color.PURPLE;
+    private static final Paint RED = Color.RED;
+
     private Pane root = new Pane();
 
-    private BossLevel.Entity playerEntity = new BossLevel.Entity(275, 600, 20, 20, "player", Color.BLUE);
+    private BossLevel3.Entity playerEntity = new BossLevel3.Entity(275, 600, 20, 20, "player", Color.BLUE);
 
-    private Entity bossEnemy = new Entity(280, 120, 60, 60, "enemy", Color.RED);
+    private  Entity bossEnemy = new Entity(280, 120, 70, 60, "enemy", Color.RED);
 
     private Entity HPBar;
 
@@ -45,13 +46,11 @@ public class BossLevel extends Application {
 
     private double time = 0;
 
-    private Boss bigBoss = new Boss();
+    private Boss3 bigBoss = new Boss3();
 
-    private Obstacle obstacle = new Obstacle();
+    private Obstacle obstacle  = new Obstacle();
 
-    private Obstacle obstacle2 = new Obstacle();
-
-//    private MusicPlayer musicPlayer = new MusicPlayer();
+    private Obstacle obstacle2  = new Obstacle();
 
 
     boolean yGoal = false;
@@ -74,8 +73,6 @@ public class BossLevel extends Application {
      * @return Shooting game
      */
     private Parent createRoot() {
-        MusicPlayer.setMusicBoss();
-        MusicPlayer.playMusic();
         playerEntity.setId("player");
         Image playerImage = new Image(getClass().getResource("images/player.png").toExternalForm());
         ImagePattern i = new ImagePattern(playerImage);
@@ -89,7 +86,7 @@ public class BossLevel extends Application {
         addBossHealthBar();
         addHealthBar();
         displayAmmo();
-        addObstacles();
+        //addObstacles();
         root.setId("pane");
         addBoss();
         return root;
@@ -108,7 +105,7 @@ public class BossLevel extends Application {
      * Adds the single boss enemy
      */
     private void addBoss() {
-        Image enemyImage = new Image(getClass().getResource("images/LBossPhase1.png").toExternalForm());
+        Image enemyImage = new Image(getClass().getResource("images/LBoss3Phase1.png").toExternalForm());
         ImagePattern en = new ImagePattern(enemyImage);
         bossEnemy.setFill(en);
         root.getChildren().add(bossEnemy);
@@ -117,7 +114,7 @@ public class BossLevel extends Application {
     /**
      * Adds random obstacles to game
      */
-    private void addObstacles() {
+    private void addObstacles(){
         Image obsImage = new Image(getClass().getResource("images/dumpster.png").toExternalForm());
         ImagePattern obs = new ImagePattern(obsImage);
 
@@ -185,7 +182,6 @@ public class BossLevel extends Application {
      */
     private void deIncrementHP() {
         player.setHP(player.getHP() - 1);
-        MusicPlayer.playMusicDamaged();
         //System.out.println("Player Hit; " + player.getHP() + " HP remaining");
         HPBar.setWidth(HPBar.getWidth() - 40);
         if (player.getHP() == 1)
@@ -194,7 +190,6 @@ public class BossLevel extends Application {
         }
         if (player.getHP() <= 0) {
             playerEntity.dead = true;
-            MusicPlayer.playMusicDeath();
             System.out.println("Player has died");
             stage.close();
             timer.stop();
@@ -213,7 +208,7 @@ public class BossLevel extends Application {
      * Creates a health bar entity at the bottom of the game window
      */
     private void addBossName() {
-        Image obsImage = new Image(getClass().getResource("images/MechaZombieName.png").toExternalForm());
+        Image obsImage = new Image(getClass().getResource("images/BruteZombie.png").toExternalForm());
         ImagePattern obs = new ImagePattern(obsImage);
 
         BossName = new Entity(55, 15, 490, 40, "Name", Color.RED);
@@ -226,8 +221,8 @@ public class BossLevel extends Application {
      * Creates a health bar entity at the bottom of the game window
      */
     private void addBossHealthBar() {
-        BossHPBar = new Entity(45, 65, 510, 15, "HP", Color.RED);
-        Entity HPBorder = new Entity(0, 0, 1000, 100, "outline", Color.BLACK);
+        BossHPBar = new Entity(45, 65, 510, 15, "HP", Color.ORANGE);
+        Entity HPBorder = new Entity(0,  0, 1000, 100, "outline", Color.BLACK);
         HPBorder.setOpacity(0);
         root.getChildren().addAll(BossHPBar, HPBorder);
         //root.getChildren().add(HPBar);
@@ -238,7 +233,6 @@ public class BossLevel extends Application {
      */
     private void deIncrementBossHP() {
         BossHPBar.setWidth(BossHPBar.getWidth() - 10);
-        MusicPlayer.playMusicEnemyHit();
     }
 
     /**
@@ -390,8 +384,8 @@ public class BossLevel extends Application {
      *
      * @param entity Bullet
      */
-    private void playerShoot(BossLevel.Entity entity) {
-        BossLevel.Entity s = new BossLevel.Entity((int) entity.getTranslateX() + 10, (int) entity.getTranslateY(), 3, 20, entity.type + "bullet", Color.BLACK);
+    private void playerShoot(BossLevel3.Entity entity) {
+        BossLevel3.Entity s = new BossLevel3.Entity((int) entity.getTranslateX() + 10, (int) entity.getTranslateY(), 3, 20, entity.type + "bullet", Color.BLACK);
         root.getChildren().add(s);
     }
 
@@ -404,8 +398,8 @@ public class BossLevel extends Application {
      *
      * @param entity Bullet
      */
-    private void bossShoot(BossLevel.Entity entity) {
-        BossLevel.Entity s = new BossLevel.Entity((int) entity.getTranslateX() + 50, (int) entity.getTranslateY() + 40, 3, 20, entity.type + "bullet", Color.RED);
+    private void bossShoot(BossLevel3.Entity entity) {
+        BossLevel3.Entity s = new BossLevel3.Entity((int) entity.getTranslateX() + 50, (int) entity.getTranslateY() + 40, 3, 20, entity.type + "bullet", Color.RED);
         root.getChildren().add(s);
     }
 
@@ -414,14 +408,47 @@ public class BossLevel extends Application {
      *
      * @param entity Bullet
      */
-    private void triShot(BossLevel.Entity entity) {
-        BossLevel.Entity s1 = new BossLevel.Entity((int) entity.getTranslateX() + 20, (int) entity.getTranslateY() + 20, 5, 5, entity.type + "tribulletL", Color.RED);
+    private void tunnelShot(BossLevel3.Entity entity) {
+        BossLevel3.Entity s1 = new BossLevel3.Entity((int) entity.getTranslateX() - 50, (int) entity.getTranslateY() + 15, 5, 80, entity.type + "bullet", Color.RED);
         root.getChildren().add(s1);
-        BossLevel.Entity s2 = new BossLevel.Entity((int) entity.getTranslateX() + 30, (int) entity.getTranslateY() + 20, 5, 5, entity.type + "bullet", Color.RED);
+        BossLevel3.Entity s2 = new BossLevel3.Entity((int) entity.getTranslateX() + 100, (int) entity.getTranslateY() + 15, 5, 80, entity.type + "bullet", Color.RED);
         root.getChildren().add(s2);
-        BossLevel.Entity s3 = new BossLevel.Entity((int) entity.getTranslateX() + 40, (int) entity.getTranslateY() + 20, 5, 5, entity.type + "tribulletR", Color.RED);
-        root.getChildren().add(s3);
+    }
 
+    /**
+     * Create trishot bullet entity objects
+     *
+     * @param entity Bullet
+     */
+    private void arrowShot(BossLevel3.Entity entity) {
+        BossLevel3.Entity s1 = new BossLevel3.Entity((int) entity.getTranslateX() + -10, (int) entity.getTranslateY() + 15, 5, 15, entity.type + "bullet", Color.RED);
+        root.getChildren().add(s1);
+        BossLevel3.Entity s2 = new BossLevel3.Entity((int) entity.getTranslateX() + -5, (int) entity.getTranslateY() + 30, 5, 15, entity.type + "bullet", Color.RED);
+        root.getChildren().add(s2);
+        BossLevel3.Entity s3 = new BossLevel3.Entity((int) entity.getTranslateX() + 0, (int) entity.getTranslateY() + 45, 5, 15, entity.type + "bullet", Color.RED);
+        root.getChildren().add(s3);
+        BossLevel3.Entity s4 = new BossLevel3.Entity((int) entity.getTranslateX() + 5, (int) entity.getTranslateY() + 30, 5, 15, entity.type + "bullet", Color.RED);
+        root.getChildren().add(s4);
+        BossLevel3.Entity s5 = new BossLevel3.Entity((int) entity.getTranslateX() + 10, (int) entity.getTranslateY() + 15, 5, 15, entity.type + "bullet", Color.RED);
+        root.getChildren().add(s5);
+    }
+
+    private void triShot(BossLevel3.Entity entity) {
+        BossLevel3.Entity a1 = new BossLevel3.Entity((int) entity.getTranslateX() -30, (int) entity.getTranslateY() + 20, 5, 5, entity.type + "tribulletL", Color.RED);
+        root.getChildren().add(a1);
+        BossLevel3.Entity a3 = new BossLevel3.Entity((int) entity.getTranslateX() + 30, (int) entity.getTranslateY() + 20, 5, 5, entity.type + "tribulletR", Color.RED);
+        root.getChildren().add(a3);
+
+        BossLevel3.Entity s1 = new BossLevel3.Entity((int) entity.getTranslateX() + -10, (int) entity.getTranslateY() + 15, 5, 15, entity.type + "bullet", Color.RED);
+        root.getChildren().add(s1);
+        BossLevel3.Entity s2 = new BossLevel3.Entity((int) entity.getTranslateX() + -5, (int) entity.getTranslateY() + 30, 5, 15, entity.type + "bullet", Color.RED);
+        root.getChildren().add(s2);
+        BossLevel3.Entity s3 = new BossLevel3.Entity((int) entity.getTranslateX() + 0, (int) entity.getTranslateY() + 45, 5, 15, entity.type + "bullet", Color.RED);
+        root.getChildren().add(s3);
+        BossLevel3.Entity s4 = new BossLevel3.Entity((int) entity.getTranslateX() + 5, (int) entity.getTranslateY() + 30, 5, 15, entity.type + "bullet", Color.RED);
+        root.getChildren().add(s4);
+        BossLevel3.Entity s5 = new BossLevel3.Entity((int) entity.getTranslateX() + 10, (int) entity.getTranslateY() + 15, 5, 15, entity.type + "bullet", Color.RED);
+        root.getChildren().add(s5);
     }
 
     /**
@@ -429,9 +456,17 @@ public class BossLevel extends Application {
      *
      * @param entity Bullet
      */
-    private void throwBeam(BossLevel.Entity entity) {
-        BossLevel.Entity s = new BossLevel.Entity((int) entity.getTranslateX() + -20, (int) entity.getTranslateY(), 80, 10, entity.type + "bullet", Color.BLACK);
+    private void throwBeam(BossLevel3.Entity entity) {
+        BossLevel3.Entity s = new BossLevel3.Entity(30, (int) entity.getTranslateY(), 60, 10, entity.type + "bullet", Color.BLACK);
         root.getChildren().add(s);
+        BossLevel3.Entity s1 = new BossLevel3.Entity(150, (int) entity.getTranslateY(), 60, 10, entity.type + "bullet", Color.BLACK);
+        root.getChildren().add(s1);
+        BossLevel3.Entity s2 = new BossLevel3.Entity(270, (int) entity.getTranslateY(), 60, 10, entity.type + "bullet", Color.BLACK);
+        root.getChildren().add(s2);
+        BossLevel3.Entity s3 = new BossLevel3.Entity(390, (int) entity.getTranslateY(), 60, 10, entity.type + "bullet", Color.BLACK);
+        root.getChildren().add(s3);
+        BossLevel3.Entity s4 = new BossLevel3.Entity(510, (int) entity.getTranslateY(), 60, 10, entity.type + "bullet", Color.BLACK);
+        root.getChildren().add(s4);
     }
 
     /**
@@ -451,14 +486,14 @@ public class BossLevel extends Application {
                                     ThreadLocalRandom random = ThreadLocalRandom.current();
                                     int moveGoal = (random.nextInt(1, 6));
                                     System.out.println(moveGoal);
-                                    bossShoot(s);
+                                    tunnelShot(s);
                                     bigBoss.movementGoal(moveGoal);
                                 } else if (bigBoss.getMovementGoal() < (int) s.getTranslateX()) {
                                     s.moveLeft();
-                                    bossShoot(s);
+                                    tunnelShot(s);
                                 } else if (bigBoss.getMovementGoal() > (int) s.getTranslateX()) {
                                     s.moveRight();
-                                    bossShoot(s);
+                                    tunnelShot(s);
                                 }
                             } else {
                                 if (Math.random() < 0.10) {
@@ -470,11 +505,6 @@ public class BossLevel extends Application {
                                     if (yGoal == true && (int) s.getTranslateY() == 300) {
                                         double tempX = s.getTranslateX();
                                         s.jumpUp();
-                                        s.jumpLeft();
-                                        throwBeam(s);
-                                        s.jumpMid();
-                                        throwBeam(s);
-                                        s.jumpRight();
                                         throwBeam(s);
                                         s.setTranslateX(tempX);
                                         yGoal = false;
@@ -560,13 +590,14 @@ public class BossLevel extends Application {
                                     bigBoss.setBossPhase(2);
                                 }
                                 if (bigBoss.getCurrentHealth() == bigBoss.getHalfHealth()) {
-                                    Image enemyImage = new Image(getClass().getResource("images/LBossPhase2.png").toExternalForm());
+                                    Image enemyImage = new Image(getClass().getResource("images/LBoss3Phase2.png").toExternalForm());
                                     ImagePattern en = new ImagePattern(enemyImage);
                                     bossEnemy.setFill(en);
 
-                                    Image obsImage = new Image(getClass().getResource("images/EnragedMechaZombieName.png").toExternalForm());
+                                    Image obsImage = new Image(getClass().getResource("images/EnragedBruteZombie.png").toExternalForm());
                                     ImagePattern obs = new ImagePattern(obsImage);
                                     BossName.setFill(obs);
+                                    BossHPBar.setFill(RED);
                                 }
                             }
                         }
@@ -642,7 +673,7 @@ public class BossLevel extends Application {
 
         //Remove dead entities d
         root.getChildren().removeIf(n -> {
-            BossLevel.Entity s = (BossLevel.Entity) n;
+            BossLevel3.Entity s = (BossLevel3.Entity) n;
             return s.dead;
         });
 
