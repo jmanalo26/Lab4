@@ -8,6 +8,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import main.games.shooter.Player;
@@ -24,6 +25,7 @@ import java.util.stream.Collectors;
 
 public class BossLevel extends Application {
 
+    private static final Paint PURPLE = Color.PURPLE;
     private Pane root = new Pane();
 
     private BossLevel.Entity playerEntity = new BossLevel.Entity(275, 600, 20, 20, "player", Color.BLUE);
@@ -180,6 +182,10 @@ public class BossLevel extends Application {
         player.setHP(player.getHP() - 1);
         //System.out.println("Player Hit; " + player.getHP() + " HP remaining");
         HPBar.setWidth(HPBar.getWidth() - 40);
+        if (player.getHP() == 1)
+        {
+            HPBar.setFill(PURPLE);
+        }
         if (player.getHP() <= 0) {
             playerEntity.dead = true;
             System.out.println("Player has died");
