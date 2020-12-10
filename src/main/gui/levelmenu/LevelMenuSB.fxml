@@ -6,17 +6,17 @@
 
 <AnchorPane prefHeight="534.0" prefWidth="600.0" style="-fx-background-color: #000000;" stylesheets="@LevelMenuStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.gui.levelmenu.LevelPopUpWindowController">
     <children>
-        <Button layoutX="41.0" layoutY="346.0" mnemonicParsing="false" onAction="#openLevelOnePopUp" prefHeight="67.0" prefWidth="154.0" style="-fx-border-color: #FF0000; -fx-background-color: #000000;" text="Level 1" textFill="RED">
+        <Button layoutX="37.0" layoutY="290.0" mnemonicParsing="false" onAction="#openLevelOnePopUp" prefHeight="67.0" prefWidth="154.0" style="-fx-border-color: #FF0000; -fx-background-color: #000000;" text="Level 1" textFill="RED">
             <font>
                 <Font name="Segoe UI Black" size="20.0" />
             </font>
         </Button>
-        <Button layoutX="230.0" layoutY="346.0" mnemonicParsing="false" onAction="#openLevelTwoPopUp" prefHeight="67.0" prefWidth="154.0" style="-fx-background-color: #000000; -fx-border-color: #FF0000;" text="Level 2" textFill="RED">
+        <Button layoutX="223.0" layoutY="290.0" mnemonicParsing="false" onAction="#openLevelTwoPopUp" prefHeight="67.0" prefWidth="154.0" style="-fx-background-color: #000000; -fx-border-color: #FF0000;" text="Level 2" textFill="RED">
             <font>
                 <Font name="Segoe UI Black" size="20.0" />
             </font>
         </Button>
-      <Button layoutX="420.0" layoutY="346.0" mnemonicParsing="false" onAction="#openLevelThreePopUp" prefHeight="67.0" prefWidth="154.0" style="-fx-background-color: #000000; -fx-border-color: #FF0000;" text="Level 3" textFill="RED">
+      <Button layoutX="410.0" layoutY="290.0" mnemonicParsing="false" onAction="#openLevelThreePopUp" prefHeight="67.0" prefWidth="154.0" style="-fx-background-color: #000000; -fx-border-color: #FF0000;" text="Level 3" textFill="RED">
          <font>
             <Font name="Segoe UI Black" size="20.0" />
          </font>
