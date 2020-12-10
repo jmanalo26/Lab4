@@ -282,10 +282,15 @@ public class Maze extends Application {
     }
 
     public void addGraphic(Player p) {
-        Image player = new Image(p.getImage());
-        ImageView iv = new ImageView(player);
+//        Image player = new Image(p.getImage());
+//        ImageView iv = new ImageView(player);
+
+        ImageView iv = new ImageView("resources/images/spritesheet/battlesprites.png");
+        iv.setPreserveRatio(true);
         iv.setFitHeight(45);
-        iv.setFitWidth(45);
+        SpriteAnimation playerAnimation = new SpriteAnimation(iv, Duration.millis(700), 10, 10, 15, 8, 24, 33);
+        playerAnimation.setCycleCount(Animation.INDEFINITE);
+        playerAnimation.play();
         labels[p.getPosX()][p.getPosY()].setGraphic(iv);
         int[] pos = {p.getPosX(), p.getPosY()};
         if (!fullVis) {

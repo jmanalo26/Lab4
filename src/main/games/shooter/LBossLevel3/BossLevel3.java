@@ -16,6 +16,7 @@ import main.games.shooter.LBossLevel.Obstacle;
 import main.games.shooter.Player;
 import main.gui.gameovermenu.GameOverMenu;
 import main.gui.gamewonmenu.GameWonMenu;
+import main.gui.music.MusicPlayer;
 
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
@@ -182,6 +183,7 @@ public class BossLevel3 extends Application {
      */
     private void deIncrementHP() {
         player.setHP(player.getHP() - 1);
+        MusicPlayer.playMusicDamaged();
         //System.out.println("Player Hit; " + player.getHP() + " HP remaining");
         HPBar.setWidth(HPBar.getWidth() - 40);
         if (player.getHP() == 1)
@@ -190,6 +192,8 @@ public class BossLevel3 extends Application {
         }
         if (player.getHP() <= 0) {
             playerEntity.dead = true;
+            MusicPlayer.playMusicDeath();
+            MusicPlayer.stopMusic();
             System.out.println("Player has died");
             stage.close();
             timer.stop();
@@ -233,6 +237,7 @@ public class BossLevel3 extends Application {
      */
     private void deIncrementBossHP() {
         BossHPBar.setWidth(BossHPBar.getWidth() - 10);
+        MusicPlayer.playMusicEnemyHit();
     }
 
     /**
@@ -261,6 +266,9 @@ public class BossLevel3 extends Application {
      */
     @Override
     public void start(Stage primaryStage) {
+        MusicPlayer.stopMusic();
+        MusicPlayer.setMusicBoss();
+        MusicPlayer.playMusic();
         enemyDead.set(0);
         Scene scene = new Scene(createRoot());
         scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
@@ -679,6 +687,8 @@ public class BossLevel3 extends Application {
 
         if (enemyDead.get() == 1) {
             System.out.println("The boss is dead");
+            MusicPlayer.playMusicWinRound();
+            MusicPlayer.stopMusic();
             stage.close();
 
             timer.stop();
