@@ -133,6 +133,7 @@ public class TileManager {
     public Block[][] getBlocks() {
         init();
         Block[][] blockArray = new Block[width][height];
+//        System.out.println(data[0]);
         for (int i = 0; i < data[0].length(); i++) {
             String[] individualData = data[0].split(",");
             int counter = 0;
@@ -143,12 +144,8 @@ public class TileManager {
                     ImageView tempImg = getImageByTileId(blockId);
                     int col = counter % width;
                     int row = Math.floorDiv(counter, height);
-                    int offsetX = col * blockWidth;
-                    int offsetY = row * blockHeight;
-
-                    tempImg.setX(offsetX);
-                    tempImg.setY(offsetY);
-
+//                    int offsetX = col * blockWidth;
+//                    int offsetY = row * blockHeight;
                     Block block;
                     if (blockId == 0 || blockId == 1) {
                         block = new Block(tempImg, row, col, 1);
