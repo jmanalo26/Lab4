@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.stage.Stage;
 import main.gui.instructionsmenu.InstructionsMenu;
+import main.gui.instructionsmenu2.InstructionsMenu2;
 import main.gui.levelmenu.LevelMenu;
 
 import java.io.IOException;
@@ -49,6 +50,23 @@ public class StartMenuController implements Initializable {
         Stage instructionsMenuStage = new Stage();
         try {
             instructionsMenu.start(instructionsMenuStage);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Method tied to button for opening instructions menu
+     *
+     * @param actionEvent
+     * @throws IOException
+     */
+    @FXML
+    public void openInstructionsMenu2(ActionEvent actionEvent) throws IOException {
+        InstructionsMenu2 instructionsMenu2 = new InstructionsMenu2();
+        Stage instructionsMenuStage2 = new Stage();
+        try {
+            instructionsMenu2.start(instructionsMenuStage2);
         } catch (Exception e) {
             e.printStackTrace();
         }

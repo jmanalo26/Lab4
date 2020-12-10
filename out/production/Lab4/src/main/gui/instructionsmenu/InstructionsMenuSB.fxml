@@ -6,7 +6,7 @@
 
 <AnchorPane prefHeight="580.0" prefWidth="500.0" style="-fx-background-color: #000000;" stylesheets="@InstructionsMenuStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.gui.instructionsmenu.InstructionsMenuController">
    <children>
-      <Text fill="RED" layoutX="72.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Use WASD to move your character through the maze" wrappingWidth="249.802734375">
+      <Text fill="RED" layoutX="72.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Use A and D to move your character and use R to reload" wrappingWidth="249.802734375">
          <font>
             <Font name="Segoe UI Semibold" size="20.0" />
          </font>
@@ -21,7 +21,7 @@
             <Font name="Segoe UI Semibold" size="20.0" />
          </font>
       </Text>
-      <Text fill="RED" layoutX="72.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Touch an enemy to start battle" wrappingWidth="204.802734375">
+      <Text fill="RED" layoutX="72.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Touch a heart to gain 1 HP" wrappingWidth="204.802734375">
          <font>
             <Font name="Segoe UI Semibold" size="20.0" />
          </font>
