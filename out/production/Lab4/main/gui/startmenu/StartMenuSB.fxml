@@ -11,7 +11,7 @@
                 <Font name="Segoe UI Black" size="20.0" />
             </font>
         </Button>
-        <Button layoutX="287.0" layoutY="339.0" mnemonicParsing="false" onAction="#openInstructionsMenu" prefHeight="67.0" prefWidth="237.0" style="-fx-background-color: #000000; -fx-border-color: #FF0000;" text="Read Instructions" textFill="RED">
+        <Button layoutX="287.0" layoutY="391.0" mnemonicParsing="false" onAction="#openInstructionsMenu" prefHeight="67.0" prefWidth="252.0" style="-fx-background-color: #000000; -fx-border-color: #FF0000;" text="Shooting Instructions" textFill="RED">
             <font>
                 <Font name="Segoe UI Black" size="20.0" />
             </font>
@@ -21,5 +21,10 @@
                 <Font name="Segoe UI Black" size="20.0" />
             </font>
         </Button>
+      <Button layoutX="287.0" layoutY="291.0" mnemonicParsing="false" onAction="#openInstructionsMenu2" prefHeight="67.0" prefWidth="252.0" style="-fx-background-color: #000000; -fx-border-color: #FF0000;" text="Maze Instructions" textFill="RED">
+         <font>
+            <Font name="Segoe UI Black" size="20.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

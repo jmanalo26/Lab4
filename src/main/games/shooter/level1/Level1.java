@@ -6,6 +6,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
@@ -13,6 +15,7 @@ import javafx.stage.Stage;
 import main.games.shooter.Player;
 import main.gui.gameovermenu.GameOverMenu;
 import main.gui.gamewonmenu.GameWonMenu;
+import main.gui.music.MusicPlayer;
 
 import java.util.List;
 import java.util.Random;
@@ -49,6 +52,8 @@ public class Level1 extends Application {
         }
     };
     private Image bullet = new Image(getClass().getResource("images/bullet.png").toExternalForm());
+
+//    private MusicPlayer musicPlayer = new MusicPlayer();
 
     /**
      * Create pane and add player, enemies, and bullets
@@ -87,7 +92,7 @@ public class Level1 extends Application {
     /**
      * Adds random obstacles to game
      */
-    private void addObstacles(){
+    private void addObstacles() {
         Random random = new Random();
         Image obsImage = new Image(getClass().getResource("images/tree.png").toExternalForm());
         ImagePattern obs = new ImagePattern(obsImage);
@@ -205,14 +210,12 @@ public class Level1 extends Application {
      * Method to simulate Enemy AI movement
      * @param s Enemy entity
      */
-    private void enemyTracking(Entity s){
-        if (s.getTranslateX() > playerEntity.getTranslateX()){
+    private void enemyTracking(Entity s) {
+        if (s.getTranslateX() > playerEntity.getTranslateX()) {
             s.moveLeft();
-        }
-        else if (s.getTranslateX() < playerEntity.getTranslateX()){
+        } else if (s.getTranslateX() < playerEntity.getTranslateX()) {
             s.moveRight();
-        }
-        else{
+        } else {
             s.moveDown();
         }
         s.moveDown();
@@ -225,6 +228,10 @@ public class Level1 extends Application {
      */
     @Override
     public void start(Stage primaryStage) {
+        MusicPlayer.stopMusic();
+        MusicPlayer.setMusicShooter();
+        MusicPlayer.playMusic();
+
         enemyDead.set(0);
         Scene scene = new Scene(createRoot());
         scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
@@ -321,6 +328,7 @@ public class Level1 extends Application {
      */
     private void deIncrementHP() {
         player.setHP(player.getHP() - 1);
+        MusicPlayer.playMusicDamaged();
         System.out.println("Player Hit; " + player.getHP() + " HP remaining");
         HPBar.setWidth(HPBar.getWidth() - 40);
         if (player.getHP() <= 3 && player.getHP() > 1){
@@ -332,6 +340,10 @@ public class Level1 extends Application {
         if (player.getHP() <= 0) {
             playerEntity.dead = true;
             System.out.println("Player has died");
+            MusicPlayer.playMusicDeath();
+            MusicPlayer.stopMusic();
+            MusicPlayer.setMusicMaze();
+            MusicPlayer.playMusic();
             stage.close();
             timer.stop();
             GameOverMenu gameOverMenu = new GameOverMenu();
@@ -416,6 +428,7 @@ public class Level1 extends Application {
                             enemy.dead = true;
                             s.dead = true;
                             enemyDead.getAndIncrement();
+                            MusicPlayer.playMusicEnemyHit();
                             System.out.println("Enemies Killed: " + enemyDead);
                         }
                     });
@@ -425,6 +438,7 @@ public class Level1 extends Application {
                             enemy.dead = true;
                             s.dead = true;
                             enemyDead.getAndIncrement();
+                            MusicPlayer.playMusicEnemyHit();
                             System.out.println("Enemies Killed: " + enemyDead);
                         }
                     });
@@ -434,6 +448,7 @@ public class Level1 extends Application {
                             enemy.dead = true;
                             s.dead = true;
                             enemyDead.getAndIncrement();
+                            MusicPlayer.playMusicEnemyHit();
                             System.out.println("Enemies Killed: " + enemyDead);
                         }
                     });
@@ -442,9 +457,10 @@ public class Level1 extends Application {
                     entities().stream().filter(e -> e.type.equals("obstacle")).forEach(enemy -> {
                         if (s.getBoundsInParent().intersects(enemy.getBoundsInParent())) {
                             s.dead = true;
+
                         }
                     });
-                    
+
                     break;
 
                 //Simulate enemy bullet impact, have game stop if hits player, adjust later for player health
@@ -456,6 +472,7 @@ public class Level1 extends Application {
                         if (player.getHP() <= 0) {
                             playerEntity.dead = true;
                             s.dead = true;
+
                             stage.close();
 
                             timer.stop();
@@ -498,6 +515,11 @@ public class Level1 extends Application {
 
         if (enemyDead.get() >= 30) {
             System.out.println("All enemies dead");
+            MusicPlayer.stopMusic();
+            MusicPlayer.setMusicMaze();
+            MusicPlayer.playMusic();
+            MusicPlayer.playMusicWinRound();
+
             stage.close();
 
             timer.stop();

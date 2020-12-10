@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="580.0" prefWidth="500.0" style="-fx-background-color: #000000;" stylesheets="@InstructionsMenu2Style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.gui.instructionsmenu.InstructionsMenuController">
+   <children>
+      <Text fill="RED" layoutX="72.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Use WASD to move your character through the maze" wrappingWidth="249.802734375">
+         <font>
+            <Font name="Segoe UI Semibold" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="RED" layoutX="72.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Use arrow keys to move your flashlight" wrappingWidth="239.802734375">
+         <font>
+            <Font name="Segoe UI Semibold" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="RED" layoutX="72.0" layoutY="433.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Try to find the exit and avoid zombies" wrappingWidth="204.802734375">
+         <font>
+            <Font name="Segoe UI Semibold" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="RED" layoutX="72.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Touching an enemy will start battle" wrappingWidth="204.802734375">
+         <font>
+            <Font name="Segoe UI Semibold" size="20.0" />
+         </font>
+      </Text>
+      <Button layoutX="182.0" layoutY="499.0" mnemonicParsing="false" onAction="#exit" prefHeight="36.0" prefWidth="135.0" style="-fx-background-color: #000000; -fx-border-color: #FF0000;" text="Close Instructions" textFill="RED">
+         <font>
+            <Font name="Segoe UI Semibold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

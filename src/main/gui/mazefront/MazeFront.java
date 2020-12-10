@@ -13,15 +13,20 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Pane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import main.gui.mazefront.util.Block;
 
+import java.io.File;
+import java.nio.file.Paths;
+
 public class MazeFront extends Application {
 
-    private static final Image IMAGE = new Image("main/resources/images/spritesheet/battlesprites.png");
-    private SpriteSheet tileSheet = new SpriteSheet(new ImageView("main/resources/images/tilesheet/dungeon_tiles.png"), 16, 16);
+    private static final Image IMAGE = new Image("resources/images/spritesheet/battlesprites.png");
+    private SpriteSheet tileSheet = new SpriteSheet(new ImageView("resources/images/tilesheet/dungeon_tiles.png"), 16, 16);
 
     private int COLUMNS = 10;
     private int COUNT = 10;
@@ -74,7 +79,14 @@ public class MazeFront extends Application {
     }
 
     public void start(Stage primaryStage) {
+//        System.out.println(Paths.get("resources/images/spritesheet/zombie_lvl_1.png").toUri().toString());
+//        File f = new File("resources/images/spritesheet/zombie_lvl_1.png");
+//        if (f.exists()) {
+//            System.out.println("Ye");
+//        }
+
         imageView.setCache(true);
+//        player.play();
 //        StackPane root = new StackPane();
 
 //        ImageView greaterMagePicture = new ImageView("main/gui/resources/spritesheet/mage-1-85x94.png");
@@ -109,7 +121,7 @@ public class MazeFront extends Application {
 //        battleMage.setTranslateX(150);
 //        battleMage.setTranslateY(525);
 //
-        ImageView bossMagePicture = new ImageView(new Image("main/resources/images/spritesheet/zombie_lvl_1.png"));
+        ImageView bossMagePicture = new ImageView(new Image("resources/images/spritesheet/zombie_lvl_1.png"));
         bossMagePicture.setPreserveRatio(true);
         bossMagePicture.setFitWidth(40);
         bossMage = new Group(bossMagePicture);
@@ -149,25 +161,25 @@ public class MazeFront extends Application {
 
         root.getChildren().add(canvas);
 
+//        SpriteSheet tileSheet = new SpriteSheet(new ImageView("resources/images/tilesheet/level2texresource.png"), 16, 16);
+//        TileManager t = new TileManager(root, tileSheet, "resources/level/Winter.xml");
+//        t.buildMap();
 
-        TileManager t = new TileManager(root, tileSheet, "main/resources/level/level2.xml");
-        t.buildMap();
+        TileManager t = new TileManager(tileSheet, "main/resources/level/Winter.xml");
+        Block[][] temp = t.getBlocks();
+        for (int i = 0; i < temp.length; i++) {
+            for (int j = 0; j < temp[i].length; j++) {
+                if (temp[i][j].getImg() != null) {
+                    System.out.println("Block image true!");
+                } else {
+                    System.out.println("Block image false!");
+                }
 
-//        TileManager t = new TileManager(tileSheet, "main/resources/level/level2.xml");
-//        Block[][] temp = t.getBlocks();
-//        for (int i = 0; i < temp.length; i++) {
-//            for (int j = 0; j < temp[i].length; j++) {
-//                if (temp[i][j].getImg() != null) {
-//                    System.out.println("Block image true!");
-//                } else {
-//                    System.out.println("Block image false!");
-//                }
-//
-//                System.out.println("Block row: " + temp[i][j].getRow());
-//                System.out.println("Block col: " + temp[i][j].getColumn());
-//                System.out.println("Block value: " + temp[i][j].getValue());
-//            }
-//        }
+                System.out.println("Block row: " + temp[i][j].getRow());
+                System.out.println("Block col: " + temp[i][j].getColumn());
+                System.out.println("Block value: " + temp[i][j].getValue());
+            }
+        }
 
 
         // player Object

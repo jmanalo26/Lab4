@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="85fc612d-93d7-4169-9e13-5ba06e51792c" name="Default Changelist" comment="gitignore">
+      <change afterPath="$PROJECT_DIR$/src/main/gui/images/LevelSelect.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Maze.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Maze.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl2$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl2$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl2$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl2$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl2$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl2$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl2$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl2$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl2$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl2$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl2$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl3$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl3$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl3$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl3$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl3$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl3$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl3$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl3$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl3$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl3$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl3$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl3$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/LBossLevel/BossLevel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/LBossLevel/BossLevel$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/LBossLevel/BossLevel$Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/LBossLevel/BossLevel$Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/LBossLevel/BossLevel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/LBossLevel/BossLevel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/LBossLevel2/BossLevel2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/LBossLevel2/BossLevel2$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/LBossLevel2/BossLevel2$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/LBossLevel2/BossLevel2$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/LBossLevel2/BossLevel2$Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/LBossLevel2/BossLevel2$Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/LBossLevel2/BossLevel2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/LBossLevel2/BossLevel2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level1/Level1$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level1/Level1$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level1/Level1$Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level1/Level1$Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level1/Level1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level1/Level1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level2/Level2$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level2/Level2$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level2/Level2$Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level2/Level2$Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level2/Level2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level2/Level2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level3/Level3$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level3/Level3$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level3/Level3$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level3/Level3$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level3/Level3$Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level3/Level3$Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level3/Level3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level3/Level3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/levelmenu/LevelMenuStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/levelmenu/LevelMenuStyle.css" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="ProjZ-88-Link_Maze_lvl_Games" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1kfGOmISl1sujfcUnnY4wjegwFA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/gui/images" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15527344" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Liam\IdeaProjects\Lab4\src\main\gui\images" />
+      <recent name="C:\Users\Liam\IdeaProjects\Lab4\src\main\gui\instructionsmenu2" />
+      <recent name="C:\Users\Liam\IdeaProjects\Lab4\src\main\games\shooter\LBossLevel3\images" />
+      <recent name="C:\Users\Liam\IdeaProjects\Lab4\src\main\games\shooter\LBossLevel3" />
+      <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\src\main\resources\level" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="main.gui.instructionsmenu2" />
+      <recent name="main.games.shooter.LBossLevel3" />
+      <recent name="main.games.shooter.LBossLevel3.images" />
+      <recent name="main.games.MazeGame" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\src\main\resources\level" />
+      <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\src\main\resources\images\tilesheet" />
+      <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\src\main\resources\images\spritesheet" />
+      <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\src\main\gui\resources\spritesheet" />
+      <recent name="C:\Users\rhass\Desktop\College\CMSC4380\CMSC4375\src\edu\ben\labs\Lab4Final\Lab4" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.MainApplication">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BossLevel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.games.shooter.LBossLevel.BossLevel" />
+      <module name="Lab4" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files (x86)\javafx-sdk-11.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media --add-exports javafx.graphics/com.sun.javafx.sg.prism=ALL-UNNAMED" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.games.shooter.LBossLevel.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BossLevel3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.games.shooter.LBossLevel3.BossLevel3" />
+      <module name="Lab4" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files (x86)\javafx-sdk-11.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml --add-exports javafx.graphics/com.sun.javafx.sg.prism=ALL-UNNAMED" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.games.shooter.LBossLevel3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameWonMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.gui.gamewonmenu.GameWonMenu" />
+      <module name="Lab4" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files (x86)\javafx-sdk-11.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml --add-exports javafx.graphics/com.sun.javafx.sg.prism=ALL-UNNAMED" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.gui.gamewonmenu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.MainApplication" />
+      <module name="Lab4" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files (x86)\javafx-sdk-11.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media --add-exports javafx.graphics/com.sun.javafx.sg.prism=ALL-UNNAMED" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StartMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.gui.startmenu.StartMenu" />
+      <module name="Lab4" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files (x86)\javafx-sdk-11.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media --add-exports javafx.graphics/com.sun.javafx.sg.prism=ALL-UNNAMED" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.gui.startmenu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.BossLevel3" />
+      <item itemvalue="Application.MainApplication" />
+      <item itemvalue="Application.GameWonMenu" />
+      <item itemvalue="Application.BossLevel" />
+      <item itemvalue="Application.StartMenu" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MainApplication" />
+        <item itemvalue="Application.StartMenu" />
+        <item itemvalue="Application.BossLevel" />
+        <item itemvalue="Application.BossLevel3" />
+        <item itemvalue="Application.GameWonMenu" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="85fc612d-93d7-4169-9e13-5ba06e51792c" name="Default Changelist" comment="" />
+      <created>1606084202733</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606084202733</updated>
+      <workItem from="1606084204175" duration="2789000" />
+      <workItem from="1606515158330" duration="7301000" />
+      <workItem from="1606545079149" duration="3667000" />
+      <workItem from="1606548909389" duration="58196000" />
+    </task>
+    <task id="LOCAL-00001" summary="Level Menu Redesign">
+      <created>1606614115270</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1606614115270</updated>
+    </task>
+    <task id="LOCAL-00002" summary="link mini game and updated theme for lvls">
+      <created>1606974342794</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1606974342794</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Formatted the TileManager so it can work with any tilesheet and any level. Also, added some functionality to retrieve the information needed for the backend.">
+      <created>1607386026941</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1607386026941</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Formatted the TileManager so it can work with any tilesheet and any level. Also, added some functionality to retrieve the information needed for the backend.">
+      <created>1607386043181</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1607386043181</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added boss level 3">
+      <created>1607561987793</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1607561987793</updated>
+    </task>
+    <task id="LOCAL-00006" summary="gitignore">
+      <created>1607566223235</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1607566223235</updated>
+    </task>
+    <task id="LOCAL-00007" summary="gitignore">
+      <created>1607566272132</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1607566272132</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added extra instruction menu and updated old one">
+      <created>1607571444909</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1607571444909</updated>
+    </task>
+    <task id="LOCAL-00009" summary="gitignore">
+      <created>1607571576864</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1607571576865</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.fxml" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Level Menu Redesign" />
+    <MESSAGE value="link mini game and updated theme for lvls" />
+    <MESSAGE value="Formatted the TileManager so it can work with any tilesheet and any level. Also, added some functionality to retrieve the information needed for the backend." />
+    <MESSAGE value="Added boss level 3" />
+    <MESSAGE value="Added extra instruction menu and updated old one" />
+    <MESSAGE value="gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="gitignore" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="416" y="178" width="1174" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607568185754">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="416" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606619434253" />
+    <state x="-1504" y="185" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1607012861438" />
+    <state x="333" y="148" width="1174" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1607131273541" />
+    <state x="416" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1607568185754" />
+    <state x="742" y="231" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1606545157993">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="742" y="231" key="#com.intellij.ide.macro.MacrosDialog/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606545157993" />
+    <state x="613" y="191" key="#com.intellij.ide.util.MemberChooser" timestamp="1607384182563">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="766" y="232" key="#com.intellij.ide.util.MemberChooser/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606598482336" />
+    <state x="613" y="191" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1607384182563" />
+    <state x="-1107" y="295" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1606953844850">
+      <screen x="-1920" y="5" width="1920" height="1050" />
+    </state>
+    <state x="813" y="290" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606084396621" />
+    <state x="-1107" y="295" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1606953844850" />
+    <state x="641" y="261" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1606544925452">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="641" y="261" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606544925452" />
+    <state x="743" y="414" width="433" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1607546517683">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="743" y="414" width="433" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1607546517683" />
+    <state x="353" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1607547640936">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="282" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.864@0.0.1536.864" timestamp="1607385862180" />
+    <state x="353" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1607547640936" />
+    <state x="691" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606613314969">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="691" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606613314969" />
+    <state x="-1207" y="356" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1606953847331">
+      <screen x="-1920" y="5" width="1920" height="1050" />
+    </state>
+    <state x="713" y="351" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606084398642" />
+    <state x="-1207" y="356" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1606953847331" />
+    <state x="-1439" y="95" key="CommitChangelistDialog2" timestamp="1606974341859">
+      <screen x="-1920" y="5" width="1920" height="1050" />
+    </state>
+    <state x="481" y="90" key="CommitChangelistDialog2/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606614114623" />
+    <state x="-1439" y="95" key="CommitChangelistDialog2/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1606974341859" />
+    <state x="685" y="335" key="FileChooserDialogImpl" timestamp="1607543423390">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="685" y="338" key="FileChooserDialogImpl/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606084394412" />
+    <state x="-1235" y="343" key="FileChooserDialogImpl/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1606953837715" />
+    <state x="548" y="278" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1607131390944" />
+    <state x="685" y="335" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1607543423390" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1607573216004">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="285" key="GridCell.Tab.0.bottom/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606623506422" />
+    <state width="1877" height="96" key="GridCell.Tab.0.bottom/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1607012865773" />
+    <state width="1238" height="87" key="GridCell.Tab.0.bottom/0.0.1280.690/-1920.5.1920.1050@0.0.1280.690" timestamp="1607016954196" />
+    <state width="1493" height="229" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1607386818162" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1607573216004" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1607573216003">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="285" key="GridCell.Tab.0.center/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606623506422" />
+    <state width="1877" height="96" key="GridCell.Tab.0.center/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1607012865773" />
+    <state width="1238" height="87" key="GridCell.Tab.0.center/0.0.1280.690/-1920.5.1920.1050@0.0.1280.690" timestamp="1607016954194" />
+    <state width="1493" height="229" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1607386818161" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1607573216003" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1607573216003">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="285" key="GridCell.Tab.0.left/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606623506422" />
+    <state width="1877" height="96" key="GridCell.Tab.0.left/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1607012865773" />
+    <state width="1238" height="87" key="GridCell.Tab.0.left/0.0.1280.690/-1920.5.1920.1050@0.0.1280.690" timestamp="1607016954194" />
+    <state width="1493" height="229" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1607386818161" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1607573216003" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1607573216004">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="285" key="GridCell.Tab.0.right/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606623506422" />
+    <state width="1877" height="96" key="GridCell.Tab.0.right/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1607012865773" />
+    <state width="1238" height="87" key="GridCell.Tab.0.right/0.0.1280.690/-1920.5.1920.1050@0.0.1280.690" timestamp="1607016954195" />
+    <state width="1493" height="229" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1607386818161" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1607573216004" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1607546998472">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="173" key="GridCell.Tab.1.bottom/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1606935869306" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1607546998472" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1607546998472">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="173" key="GridCell.Tab.1.center/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1606935869306" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1607546998472" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1607546998472">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="173" key="GridCell.Tab.1.left/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1606935869306" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1607546998472" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1607546998472">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="173" key="GridCell.Tab.1.right/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1606935869306" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1607546998472" />
+    <state x="349" y="167" key="IDE.errors.dialog" timestamp="1607383847554">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="349" y="167" key="IDE.errors.dialog/0.0.1536.864@0.0.1536.864" timestamp="1607383847554" />
+    <state x="598" y="283" key="MultipleFileMergeDialog" timestamp="1607571488449">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1322" y="291" key="MultipleFileMergeDialog/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1606858120664" />
+    <state x="598" y="283" key="MultipleFileMergeDialog/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1607571488449" />
+    <state x="621" y="228" key="RollbackChangesDialog" timestamp="1606545939094">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="621" y="228" key="RollbackChangesDialog/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606545939094" />
+    <state x="463" y="17" key="SettingsEditor" timestamp="1607562128523">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="462" y="170" key="SettingsEditor/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606548751578" />
+    <state x="-1458" y="175" key="SettingsEditor/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1606953852423" />
+    <state x="370" y="14" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1607131366142" />
+    <state x="463" y="17" key="SettingsEditor/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1607562128523" />
+    <state x="747" y="236" key="VCS.ChangeListViewerDialog" timestamp="1607566151438">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="747" y="236" key="VCS.ChangeListViewerDialog/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1607566151438" />
+    <state x="451" y="199" width="986" height="533" key="Vcs.Push.Dialog.v2" timestamp="1607571596112">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="361" y="165" width="986" height="533" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1607386097521" />
+    <state x="451" y="199" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1607571596112" />
+    <state x="779" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607571453544">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="778" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606623205497" />
+    <state x="-1141" y="443" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1606953669489" />
+    <state x="519" y="288" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.690/-1920.5.1920.1050@0.0.1280.690" timestamp="1606765677613" />
+    <state x="623" y="360" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864@0.0.1536.864" timestamp="1607386056077" />
+    <state x="779" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1607571453544" />
+    <state x="-1415" y="266" width="909" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1606958227166">
+      <screen x="-1920" y="5" width="1920" height="1050" />
+    </state>
+    <state x="-1415" y="266" width="909" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1606958227166" />
+    <state x="-1304" y="245" key="run.anything.popup" timestamp="1606966498786">
+      <screen x="-1920" y="5" width="1920" height="1050" />
+    </state>
+    <state x="-1304" y="245" key="run.anything.popup/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1606966498786" />
+    <state x="623" y="228" key="search.everywhere.popup" timestamp="1606548643673">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="623" y="228" key="search.everywhere.popup/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606548643673" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

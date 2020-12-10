@@ -1,5 +1,6 @@
 package main.games.MazeGame;
 
+import javafx.animation.Animation;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -16,6 +17,9 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.util.Duration;
+import main.gui.mazefront.SpriteAnimation;
+import main.gui.music.MusicPlayer;
 
 public class Mazelvl2 extends Application {
     private final int LEVEL_1_BOARD_SIZE = 12;
@@ -92,6 +96,8 @@ public class Mazelvl2 extends Application {
         stage = s;
         bd = new BoardData2(LEVEL_2_BOARD_SIZE, LEVEL_2_BOARD_SIZE);
         Scene scene = loadBoard(stage);
+        MusicPlayer.setMusicMaze();
+        MusicPlayer.playMusic();
 
 
 
@@ -272,10 +278,12 @@ public class Mazelvl2 extends Application {
     }
 
     public void addGraphic(Player p) {
-        Image player = new Image(p.getImage());
-        ImageView iv = new ImageView(player);
+        ImageView iv = new ImageView("resources/images/spritesheet/battlesprites.png");
+        iv.setPreserveRatio(true);
         iv.setFitHeight(45);
-        iv.setFitWidth(45);
+        SpriteAnimation playerAnimation = new SpriteAnimation(iv, Duration.millis(700), 10, 10, 15, 8, 24, 33);
+        playerAnimation.setCycleCount(Animation.INDEFINITE);
+        playerAnimation.play();
         labels[p.getPosX()][p.getPosY()].setGraphic(iv);
         int[] pos = {p.getPosX(), p.getPosY()};
         if(!fullVis) {
@@ -288,8 +296,10 @@ public class Mazelvl2 extends Application {
 
     public void addGraphic(Zombielvl2 z, int x, int y) {
 
-        Image zombie = new Image(z.getImage());
-        ImageView iv = new ImageView(zombie);
+        ImageView iv = new ImageView(new Image("resources/images/spritesheet/zombie_christmas.png"));
+        SpriteAnimation zombieAnimation = new SpriteAnimation(iv, Duration.millis(700), 5, 5, 23, 192, 134, 171);
+        zombieAnimation.setCycleCount(Animation.INDEFINITE);
+        zombieAnimation.play();
         iv.setVisible(false);
         iv.setFitHeight(45);
         iv.setFitWidth(45);

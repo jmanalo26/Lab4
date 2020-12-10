@@ -8,11 +8,14 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import main.games.shooter.LBossLevel2.BossLevel2;
 import main.games.shooter.Player;
 import main.gui.gameovermenu.GameOverMenu;
 import main.gui.gamewonmenu.GameWonMenu;
+import main.gui.music.MusicPlayer;
 
 
 import java.util.List;
@@ -24,11 +27,16 @@ import java.util.stream.Collectors;
 
 public class BossLevel extends Application {
 
+    private static final Paint ORANGERED = Color.ORANGERED;
+    private static final Paint RED = Color.RED;
+    private static final Paint ORANGE = Color.ORANGE;
     private Pane root = new Pane();
 
     private BossLevel.Entity playerEntity = new BossLevel.Entity(275, 600, 20, 20, "player", Color.BLUE);
 
-    private  Entity bossEnemy = new Entity(280, 120, 60, 60, "enemy", Color.RED);
+    private Entity bossEnemy = new Entity(280, 120, 60, 60, "enemy", Color.RED);
+
+    private Image bullet = new Image(getClass().getResource("images/bullet2.png").toExternalForm());
 
     private Entity HPBar;
 
@@ -44,9 +52,11 @@ public class BossLevel extends Application {
 
     private Boss bigBoss = new Boss();
 
-    private Obstacle obstacle  = new Obstacle();
+    private Obstacle obstacle = new Obstacle();
 
-    private Obstacle obstacle2  = new Obstacle();
+    private Obstacle obstacle2 = new Obstacle();
+
+//    private MusicPlayer musicPlayer = new MusicPlayer();
 
 
     boolean yGoal = false;
@@ -69,6 +79,7 @@ public class BossLevel extends Application {
      * @return Shooting game
      */
     private Parent createRoot() {
+
         playerEntity.setId("player");
         Image playerImage = new Image(getClass().getResource("images/player.png").toExternalForm());
         ImagePattern i = new ImagePattern(playerImage);
@@ -110,7 +121,7 @@ public class BossLevel extends Application {
     /**
      * Adds random obstacles to game
      */
-    private void addObstacles(){
+    private void addObstacles() {
         Image obsImage = new Image(getClass().getResource("images/dumpster.png").toExternalForm());
         ImagePattern obs = new ImagePattern(obsImage);
 
@@ -131,8 +142,10 @@ public class BossLevel extends Application {
      * Displays ammo count
      */
     private void displayAmmo() {
+        ImagePattern b = new ImagePattern(bullet);
         for (int i = 0; i < player.getAmmo(); i++) {
-            Entity ammo = new Entity(400 + (20 * i), 730, 3, 20, "ammo" + i, Color.BLACK);
+            Entity ammo = new Entity(400 + (20 * i), 715, 30, 40, "ammo" + i, Color.BLACK);
+            ammo.setFill(b);
             bullets[i] = ammo;
             root.getChildren().add(ammo);
         }
@@ -152,10 +165,12 @@ public class BossLevel extends Application {
      * Ammo reloads for player
      */
     private void addAmmo() {
+        ImagePattern b = new ImagePattern(bullet);
         if (player.getAmmo() < 6) {
             int ammoUsed = 6 - player.getAmmo();
             for (int i = 0; i < ammoUsed; i++) {
-                Entity ammo = new Entity(400 + (20 * i), 730, 3, 20, "ammo" + i, Color.BLACK);
+                Entity ammo = new Entity(400 + (20 * i), 715, 30, 40, "ammo" + i, Color.BLACK);
+                ammo.setFill(b);
                 bullets[i] = ammo;
                 root.getChildren().add(ammo);
             }
@@ -166,7 +181,7 @@ public class BossLevel extends Application {
      * Creates a health bar entity at the bottom of the game window
      */
     private void addHealthBar() {
-        HPBar = new Entity(10, 730, 200, 15, "HP", Color.RED);
+        HPBar = new Entity(10, 730, 200, 15, "HP", Color.GREEN);
         Entity HPBorder = new Entity(0, 700, 1000, 100, "outline", Color.BLACK);
         HPBorder.setOpacity(0.3);
         root.getChildren().addAll(HPBar, HPBorder);
@@ -178,10 +193,21 @@ public class BossLevel extends Application {
      */
     private void deIncrementHP() {
         player.setHP(player.getHP() - 1);
+        MusicPlayer.playMusicDamaged();
         //System.out.println("Player Hit; " + player.getHP() + " HP remaining");
         HPBar.setWidth(HPBar.getWidth() - 40);
+        if (player.getHP() == 1)
+        {
+            HPBar.setFill(RED);
+        }
+        if (player.getHP() == 3)
+        {
+            HPBar.setFill(ORANGE);
+        }
         if (player.getHP() <= 0) {
             playerEntity.dead = true;
+            MusicPlayer.stopMusic();
+            MusicPlayer.playMusicDeath();
             System.out.println("Player has died");
             stage.close();
             timer.stop();
@@ -213,8 +239,8 @@ public class BossLevel extends Application {
      * Creates a health bar entity at the bottom of the game window
      */
     private void addBossHealthBar() {
-        BossHPBar = new Entity(45, 65, 510, 15, "HP", Color.RED);
-        Entity HPBorder = new Entity(0,  0, 1000, 100, "outline", Color.BLACK);
+        BossHPBar = new Entity(45, 65, 510, 15, "HP", Color.ORANGERED);
+        Entity HPBorder = new Entity(0, 0, 1000, 100, "outline", Color.BLACK);
         HPBorder.setOpacity(0);
         root.getChildren().addAll(BossHPBar, HPBorder);
         //root.getChildren().add(HPBar);
@@ -225,6 +251,7 @@ public class BossLevel extends Application {
      */
     private void deIncrementBossHP() {
         BossHPBar.setWidth(BossHPBar.getWidth() - 10);
+        MusicPlayer.playMusicEnemyHit();
     }
 
     /**
@@ -253,6 +280,9 @@ public class BossLevel extends Application {
      */
     @Override
     public void start(Stage primaryStage) {
+        MusicPlayer.stopMusic();
+        MusicPlayer.setMusicBoss();
+        MusicPlayer.playMusic();
         enemyDead.set(0);
         Scene scene = new Scene(createRoot());
         scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
@@ -421,7 +451,6 @@ public class BossLevel extends Application {
     }
 
     /**
-     * dd
      * Update method, has functionality for bullet hits, enemy movement, entity deaths
      */
     private void update() {
@@ -553,6 +582,7 @@ public class BossLevel extends Application {
                                     Image obsImage = new Image(getClass().getResource("images/EnragedMechaZombieName.png").toExternalForm());
                                     ImagePattern obs = new ImagePattern(obsImage);
                                     BossName.setFill(obs);
+                                    BossHPBar.setFill(RED);
                                 }
                             }
                         }
@@ -634,6 +664,7 @@ public class BossLevel extends Application {
 
         if (enemyDead.get() == 1) {
             System.out.println("The boss is dead");
+            MusicPlayer.playMusicWinRound();
             stage.close();
 
             timer.stop();

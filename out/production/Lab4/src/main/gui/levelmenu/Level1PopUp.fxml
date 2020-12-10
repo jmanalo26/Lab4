@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="461.0" prefWidth="494.0" style="-fx-background-color: #000000;" stylesheets="@Level1PopUpStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.gui.levelmenu.LevelPopUpWindowController">
+    <children>
+        <Button layoutX="45.0" layoutY="360.0" mnemonicParsing="false" onAction="#openLevelMenu" prefHeight="67.0" prefWidth="154.0" style="-fx-border-color: #FF0000; -fx-background-color: #000000;" text="Go Back" textFill="RED">
+            <font>
+                <Font name="Segoe UI Black" size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="startButton" layoutX="294.0" layoutY="360.0" mnemonicParsing="false" onAction="#openLevelOne" prefHeight="67.0" prefWidth="154.0" style="-fx-background-color: #000000; -fx-border-color: #FF0000;" text="Start Game" textFill="RED">
+            <font>
+                <Font name="Segoe UI Black" size="20.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>
