@@ -297,7 +297,7 @@ public class Mazelvl2 extends Application {
     public void addGraphic(Zombielvl2 z, int x, int y) {
 
         ImageView iv = new ImageView(new Image("resources/images/spritesheet/zombie_christmas.png"));
-        SpriteAnimation zombieAnimation = new SpriteAnimation(iv, Duration.millis(700), 5, 5, 23, 192, 134, 171);
+        SpriteAnimation zombieAnimation = new SpriteAnimation(iv, Duration.millis(700), 2, 2, 23, 192, 132, 171);
         zombieAnimation.setCycleCount(Animation.INDEFINITE);
         zombieAnimation.play();
         iv.setVisible(false);

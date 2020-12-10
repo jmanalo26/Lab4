@@ -31,4 +31,9 @@ public class Block {
     public int getValue() {
         return value;
     }
+
+    @Override
+    public String toString() {
+        return "value: " + this.value;
+    }
 }

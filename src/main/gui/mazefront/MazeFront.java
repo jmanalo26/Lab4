@@ -121,15 +121,15 @@ public class MazeFront extends Application {
 //        battleMage.setTranslateX(150);
 //        battleMage.setTranslateY(525);
 //
-        ImageView bossMagePicture = new ImageView(new Image("resources/images/spritesheet/zombie_lvl_1.png"));
-        bossMagePicture.setPreserveRatio(true);
-        bossMagePicture.setFitWidth(40);
-        bossMage = new Group(bossMagePicture);
-        SpriteAnimation bossMageAnimation = new SpriteAnimation(bossMagePicture, Duration.millis(700), 5, 5, 23, 192, 134, 171);
-        bossMageAnimation.setCycleCount(Animation.INDEFINITE);
-        bossMageAnimation.play();
-        bossMage.setTranslateX(395);
-        bossMage.setTranslateY(650);
+//        ImageView bossMagePicture = new ImageView(new Image("resources/images/spritesheet/zombie_lvl_1.png"));
+//        bossMagePicture.setPreserveRatio(true);
+//        bossMagePicture.setFitWidth(40);
+//        bossMage = new Group(bossMagePicture);
+//        SpriteAnimation bossMageAnimation = new SpriteAnimation(bossMagePicture, Duration.millis(700), 5, 5, 23, 192, 134, 171);
+//        bossMageAnimation.setCycleCount(Animation.INDEFINITE);
+//        bossMageAnimation.play();
+//        bossMage.setTranslateX(395);
+//        bossMage.setTranslateY(650);
 
 //        bossTransition.setNode(bossMage);
 
@@ -154,37 +154,73 @@ public class MazeFront extends Application {
 //        animation.setCycleCount(1);
         animation.play();
 
+
         final Canvas canvas = new Canvas(800, 800);
         GraphicsContext gc = canvas.getGraphicsContext2D();
         gc.setFill(Color.valueOf("#2a2a2a"));
         gc.fillRect(0, 0, 800, 800);
-
+//
         root.getChildren().add(canvas);
+
+        SpriteSheet tileSheet = new SpriteSheet(new ImageView("resources/images/tilesheet/furute_tex.png"), 16, 16);
+        TileManager t = new TileManager(root, tileSheet, "resources/level/Future.xml");
+        t.buildMap();
 
 //        SpriteSheet tileSheet = new SpriteSheet(new ImageView("resources/images/tilesheet/level2texresource.png"), 16, 16);
 //        TileManager t = new TileManager(root, tileSheet, "resources/level/Winter.xml");
 //        t.buildMap();
 
-        TileManager t = new TileManager(tileSheet, "main/resources/level/Winter.xml");
-        Block[][] temp = t.getBlocks();
-        for (int i = 0; i < temp.length; i++) {
-            for (int j = 0; j < temp[i].length; j++) {
-                if (temp[i][j].getImg() != null) {
-                    System.out.println("Block image true!");
-                } else {
-                    System.out.println("Block image false!");
-                }
+//        Block[][] temp = t.getBlocks();
+//        for (int i = 0; i < temp.length; i++) {
+//            for (int j = 0; j < temp[i].length; j++) {
+//                if (temp[i][j].getImg() != null) {
+//                    System.out.println("Block image true!");
+//                } else {
+//                    System.out.println("Block image false!");
+//                }
+//
+//                System.out.println("Block row: " + temp[i][j].getRow());
+//                System.out.println("Block col: " + temp[i][j].getColumn());
+//                System.out.println("Block value: " + temp[i][j].getValue());
+//            }
+//        }
 
-                System.out.println("Block row: " + temp[i][j].getRow());
-                System.out.println("Block col: " + temp[i][j].getColumn());
-                System.out.println("Block value: " + temp[i][j].getValue());
-            }
-        }
 
+//        ImageView iv = temp[5][5].getImg();
+//        iv.setX(0);
+//        iv.setY(0);
+//        root.getChildren().add(iv);
+
+//        bossMage = new Group(iv);
+//        bossMage.setTranslateX(200);
+//        bossMage.setTranslateY(200);
+
+
+//        Group test = new Group(iv);
+//        test.setTranslateX(300);
+//        test.setTranslateY(300);
+
+
+//        TileManager t = new TileManager(tileSheet, "main/resources/level/Winter.xml");
+//        Block[][] temp = t.getBlocks();
+//        for (int i = 0; i < temp.length; i++) {
+//            for (int j = 0; j < temp[i].length; j++) {
+//                if (temp[i][j].getImg() != null) {
+//                    System.out.println("Block image true!");
+//                } else {
+//                    System.out.println("Block image false!");
+//                }
+//
+//                System.out.println("Block row: " + temp[i][j].getRow());
+//                System.out.println("Block col: " + temp[i][j].getColumn());
+//                System.out.println("Block value: " + temp[i][j].getValue());
+//            }
+//        }
 
         // player Object
         Pane spritePane = new Pane();
-        spritePane.getChildren().addAll(bossMage, playerImageGroup);
+        spritePane.getChildren().add(playerImageGroup);
+
 //        spritePane.getChildren().add(playerImageGroup);
         root.getChildren().add(spritePane);
 
