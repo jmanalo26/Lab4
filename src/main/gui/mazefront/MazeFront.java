@@ -16,11 +16,12 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import main.gui.mazefront.util.Block;
 
 public class MazeFront extends Application {
 
-    private static final Image IMAGE = new Image("main/gui/resources/spritesheet/battlesprites.png");
-    private SpriteSheet tileSheet = new SpriteSheet(new ImageView("main/gui/resources/spritesheet/dungeon_tiles.png"), 16, 16);
+    private static final Image IMAGE = new Image("main/resources/images/spritesheet/battlesprites.png");
+    private SpriteSheet tileSheet = new SpriteSheet(new ImageView("main/resources/images/tilesheet/dungeon_tiles.png"), 16, 16);
 
     private int COLUMNS = 10;
     private int COUNT = 10;
@@ -108,13 +109,15 @@ public class MazeFront extends Application {
 //        battleMage.setTranslateX(150);
 //        battleMage.setTranslateY(525);
 //
-//        ImageView bossMagePicture = new ImageView(new Image("main/gui/resources/spritesheet/mage-3-87x110.png"));
-//        bossMage = new Group(bossMagePicture);
-//        SpriteAnimation bossMageAnimation = new SpriteAnimation(bossMagePicture, Duration.millis(3000), 8, 4, 0, 0, 87, 110);
-//        bossMageAnimation.setCycleCount(Animation.INDEFINITE);
-//        bossMageAnimation.play();
-//        bossMage.setTranslateX(395);
-//        bossMage.setTranslateY(650);
+        ImageView bossMagePicture = new ImageView(new Image("main/resources/images/spritesheet/zombie_lvl_1.png"));
+        bossMagePicture.setPreserveRatio(true);
+        bossMagePicture.setFitWidth(40);
+        bossMage = new Group(bossMagePicture);
+        SpriteAnimation bossMageAnimation = new SpriteAnimation(bossMagePicture, Duration.millis(700), 5, 5, 23, 192, 134, 171);
+        bossMageAnimation.setCycleCount(Animation.INDEFINITE);
+        bossMageAnimation.play();
+        bossMage.setTranslateX(395);
+        bossMage.setTranslateY(650);
 
 //        bossTransition.setNode(bossMage);
 
@@ -147,14 +150,30 @@ public class MazeFront extends Application {
         root.getChildren().add(canvas);
 
 
-        TileManager t = new TileManager(root, tileSheet, "main/gui/resources/tilesheet/level2.xml");
+        TileManager t = new TileManager(root, tileSheet, "main/resources/level/level2.xml");
         t.buildMap();
+
+//        TileManager t = new TileManager(tileSheet, "main/resources/level/level2.xml");
+//        Block[][] temp = t.getBlocks();
+//        for (int i = 0; i < temp.length; i++) {
+//            for (int j = 0; j < temp[i].length; j++) {
+//                if (temp[i][j].getImg() != null) {
+//                    System.out.println("Block image true!");
+//                } else {
+//                    System.out.println("Block image false!");
+//                }
+//
+//                System.out.println("Block row: " + temp[i][j].getRow());
+//                System.out.println("Block col: " + temp[i][j].getColumn());
+//                System.out.println("Block value: " + temp[i][j].getValue());
+//            }
+//        }
 
 
         // player Object
         Pane spritePane = new Pane();
-//        spritePane.getChildren().addAll(lesserMage, battleMage, greaterMage, bossMage, playerImageGroup);
-        spritePane.getChildren().add(playerImageGroup);
+        spritePane.getChildren().addAll(bossMage, playerImageGroup);
+//        spritePane.getChildren().add(playerImageGroup);
         root.getChildren().add(spritePane);
 
 
