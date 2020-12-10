@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 import main.games.shooter.Player;
 import main.gui.gameovermenu.GameOverMenu;
 import main.gui.gamewonmenu.GameWonMenu;
+import main.gui.music.MusicPlayer;
 
 import java.util.List;
 import java.util.Random;
@@ -241,6 +242,9 @@ public class Level2 extends Application {
     @Override
     public void start(Stage primaryStage) {
         enemyDead.set(0);
+        MusicPlayer.setMusicShooter();
+        MusicPlayer.playMusic();
+
         Scene scene = new Scene(createRoot());
         scene.getStylesheets().addAll(this.getClass().getResource("style2.css").toExternalForm());
         System.out.println("Player Starting HP: " + player.getHP());
@@ -341,6 +345,7 @@ public class Level2 extends Application {
      */
     private void deIncrementHP() {
         player.setHP(player.getHP() - 1);
+        MusicPlayer.playMusicDamaged();
         System.out.println("Player Hit; " + player.getHP() + " HP remaining");
         HPBar.setWidth(HPBar.getWidth() - 40);
         if (player.getHP() <= 3 && player.getHP() > 1){
@@ -352,6 +357,10 @@ public class Level2 extends Application {
         if (player.getHP() <= 0) {
             playerEntity.dead = true;
             System.out.println("Player has died");
+            MusicPlayer.playMusicDeath();
+            MusicPlayer.stopMusic();
+            MusicPlayer.setMusicMaze();
+            MusicPlayer.playMusic();
             stage.close();
             timer.stop();
             GameOverMenu gameOverMenu = new GameOverMenu();
@@ -370,6 +379,7 @@ public class Level2 extends Application {
      */
     private void incrementHP() {
         player.setHP(player.getHP() + 1);
+        MusicPlayer.playMusicDamaged();
         HPBar.setWidth(HPBar.getWidth() + 40);
         if (player.getHP() > 3){
             HPBar.setFill(Color.LIMEGREEN);
@@ -412,6 +422,7 @@ public class Level2 extends Application {
                                 if (s.getBoundsInParent().intersects(p.getBoundsInParent())) {
                                     deIncrementHP();
                                     s.dead = true;
+                                    MusicPlayer.playMusicEnemyHit();
                                 }
                             });
                             entities().stream().filter(e -> e.type.equals("outline")).forEach(e -> {
@@ -431,6 +442,7 @@ public class Level2 extends Application {
                                 entities().stream().filter(e -> e.type.equals("obstacle")).forEach(e -> {
                                     if (s.getBoundsInParent().intersects(e.getBoundsInParent()) && s.getTranslateY() > 180) {
                                         e.dead = true;
+//                                        MusicPlayer.playMusicEnemyHit();
                                     }
                                 });
                             } else {
@@ -458,6 +470,7 @@ public class Level2 extends Application {
                             enemy.dead = true;
                             s.dead = true;
                             enemyDead.getAndIncrement();
+                            MusicPlayer.playMusicEnemyHit();
                             System.out.println("Enemies Killed: " + enemyDead);
                         }
                     });
@@ -467,6 +480,7 @@ public class Level2 extends Application {
                             enemy.dead = true;
                             s.dead = true;
                             enemyDead.getAndIncrement();
+                            MusicPlayer.playMusicEnemyHit();
                             System.out.println("Enemies Killed: " + enemyDead);
                         }
                     });
@@ -479,6 +493,7 @@ public class Level2 extends Application {
                             if (enemy.hp == 0) {
                                 enemy.dead = true;
                                 enemyDead.getAndIncrement();
+                                MusicPlayer.playMusicEnemyHit();
                                 System.out.println("Enemies Killed: " + enemyDead);
                             }
                         }
@@ -542,6 +557,10 @@ public class Level2 extends Application {
 
         if (enemyDead.get() >= 30) {
             System.out.println("All enemies dead");
+            MusicPlayer.stopMusic();
+            MusicPlayer.setMusicMaze();
+            MusicPlayer.playMusic();
+            MusicPlayer.playMusicWinRound();
             stage.close();
 
             timer.stop();

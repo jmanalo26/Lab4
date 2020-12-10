@@ -16,6 +16,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import main.gui.music.MusicPlayer;
 
 public class Mazelvl2 extends Application {
     private final int LEVEL_1_BOARD_SIZE = 12;
@@ -92,6 +93,8 @@ public class Mazelvl2 extends Application {
         stage = s;
         bd = new BoardData2(LEVEL_2_BOARD_SIZE, LEVEL_2_BOARD_SIZE);
         Scene scene = loadBoard(stage);
+        MusicPlayer.setMusicMaze();
+        MusicPlayer.playMusic();
 
 
 

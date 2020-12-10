@@ -27,8 +27,6 @@ public class MazeFront extends Application {
 
     private static final Image IMAGE = new Image("resources/images/spritesheet/battlesprites.png");
     private SpriteSheet tileSheet = new SpriteSheet(new ImageView("resources/images/tilesheet/dungeon_tiles.png"), 16, 16);
-//    private Media media = new Media(getClass().getResource("/sound/death_screen.mp3").toExternalForm());
-//    private MediaPlayer player = new MediaPlayer(media);
 
     private int COLUMNS = 10;
     private int COUNT = 10;
@@ -163,25 +161,25 @@ public class MazeFront extends Application {
 
         root.getChildren().add(canvas);
 
+//        SpriteSheet tileSheet = new SpriteSheet(new ImageView("resources/images/tilesheet/level2texresource.png"), 16, 16);
+//        TileManager t = new TileManager(root, tileSheet, "resources/level/Winter.xml");
+//        t.buildMap();
 
-        TileManager t = new TileManager(root, tileSheet, "main/resources/level/level2.xml");
-        t.buildMap();
+        TileManager t = new TileManager(tileSheet, "main/resources/level/Winter.xml");
+        Block[][] temp = t.getBlocks();
+        for (int i = 0; i < temp.length; i++) {
+            for (int j = 0; j < temp[i].length; j++) {
+                if (temp[i][j].getImg() != null) {
+                    System.out.println("Block image true!");
+                } else {
+                    System.out.println("Block image false!");
+                }
 
-//        TileManager t = new TileManager(tileSheet, "main/resources/level/level2.xml");
-//        Block[][] temp = t.getBlocks();
-//        for (int i = 0; i < temp.length; i++) {
-//            for (int j = 0; j < temp[i].length; j++) {
-//                if (temp[i][j].getImg() != null) {
-//                    System.out.println("Block image true!");
-//                } else {
-//                    System.out.println("Block image false!");
-//                }
-//
-//                System.out.println("Block row: " + temp[i][j].getRow());
-//                System.out.println("Block col: " + temp[i][j].getColumn());
-//                System.out.println("Block value: " + temp[i][j].getValue());
-//            }
-//        }
+                System.out.println("Block row: " + temp[i][j].getRow());
+                System.out.println("Block col: " + temp[i][j].getColumn());
+                System.out.println("Block value: " + temp[i][j].getValue());
+            }
+        }
 
 
         // player Object

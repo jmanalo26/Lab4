@@ -8,6 +8,11 @@ public class MusicPlayer {
 
     private static Media media = new Media(MusicPlayer.class.getResource("/sound/mazeTheme.mp3").toExternalForm());
     private static MediaPlayer player = new MediaPlayer(media);
+    private static MediaPlayer death = new MediaPlayer(new Media(MusicPlayer.class.getResource("/sound/death_sound.mp3").toExternalForm()));
+    private static MediaPlayer playerDamaged = new MediaPlayer(new Media(MusicPlayer.class.getResource("/sound/player_damaged.mp3").toExternalForm()));
+    private static MediaPlayer win = new MediaPlayer(new Media(MusicPlayer.class.getResource("/sound/round_win.mp3").toExternalForm()));
+    private static MediaPlayer enemyHit = new MediaPlayer(new Media(MusicPlayer.class.getResource("/sound/enemyhit.mp3").toExternalForm()));
+
 
     public MusicPlayer() {
         if (media != null) {
@@ -15,68 +20,70 @@ public class MusicPlayer {
         }
     }
 
-    public void playMusic() {
+    public static void playMusic() {
         player.setAutoPlay(true);
-        player.setOnEndOfMedia(new Runnable() {
-            public void run() {
-                player.seek(Duration.ZERO);
-            }
-        });
+        player.setOnEndOfMedia(() -> player.seek(Duration.ZERO));
         player.play();
     }
 
-    public void playMusicDeath() {
-        MediaPlayer death = new MediaPlayer(new Media(MusicPlayer.class.getResource("/sound/death_sound.mp3").toExternalForm()));
-        death.setCycleCount(1);
+    public static void playMusicDeath() {
+        death = new MediaPlayer(new Media(MusicPlayer.class.getResource("/sound/death_sound.mp3").toExternalForm()));
         death.play();
+        death.setOnEndOfMedia(() -> {
+            death.seek(Duration.ZERO);
+            death.stop();
+        });
     }
 
-    public void playMusicWinRound() {
-        MediaPlayer win = new MediaPlayer(new Media(MusicPlayer.class.getResource("/sound/round_win.mp3").toExternalForm()));
+    public static void playMusicWinRound() {
+        win = new MediaPlayer(new Media(MusicPlayer.class.getResource("/sound/round_win.mp3").toExternalForm()));
         win.setVolume(1);
-        win.setCycleCount(1);
         win.play();
+        win.setOnEndOfMedia(() -> {
+            win.seek(Duration.ZERO);
+            win.stop();
+        });
     }
- 
-    public void playMusicDamaged() {
-        MediaPlayer playerDamaged = new MediaPlayer(new Media(MusicPlayer.class.getResource("/sound/player_damaged.mp3").toExternalForm()));
-        playerDamaged.setCycleCount(1);
+
+    public static void playMusicDamaged() {
+        playerDamaged = new MediaPlayer(new Media(MusicPlayer.class.getResource("/sound/player_damaged.mp3").toExternalForm()));
         playerDamaged.play();
+        playerDamaged.setOnEndOfMedia(() -> {
+            playerDamaged.seek(Duration.ZERO);
+            playerDamaged.stop();
+        });
     }
 
-    public void playMusicEnemyHit() {
-        MediaPlayer enemyHit = new MediaPlayer(new Media(MusicPlayer.class.getResource("/sound/enemyhit.mp3").toExternalForm()));
+    public static void playMusicEnemyHit() {
         enemyHit.setVolume(1);
-        enemyHit.setCycleCount(1);
         enemyHit.play();
+        enemyHit.setOnEndOfMedia(() -> {
+            enemyHit.seek(Duration.ZERO);
+            enemyHit.stop();
+        });
     }
 
-    public void stopMusic() {
+    public static void stopMusic() {
         player.stop();
     }
-//
-//    public void setMusicDeath() {
-//        media = new Media(getClass().getResource("/sound/death_sound.mp3").toExternalForm());
-//        player = new MediaPlayer(media);
-//    }
 
-    public void setMusicMaze() {
-        media = new Media(getClass().getResource("/sound/mazeTheme.mp3").toExternalForm());
+    public static void setMusicMaze() {
+        media = new Media(MusicPlayer.class.getResource("/sound/mazeTheme.mp3").toExternalForm());
         player = new MediaPlayer(media);
     }
 
-    public void setMusicDeathScreen() {
-        media = new Media(getClass().getResource("/sound/death_screen.mp3").toExternalForm());
+    public static void setMusicDeathScreen() {
+        media = new Media(MusicPlayer.class.getResource("/sound/death_screen.mp3").toExternalForm());
         player = new MediaPlayer(media);
     }
 
-    public void setMusicBoss() {
-        media = new Media(getClass().getResource("/sound/boss.mp3").toExternalForm());
+    public static void setMusicBoss() {
+        media = new Media(MusicPlayer.class.getResource("/sound/boss.mp3").toExternalForm());
         player = new MediaPlayer(media);
     }
 
-    public void setMusicShooter() {
-        media = new Media(getClass().getResource("/sound/shooter.mp3").toExternalForm());
+    public static void setMusicShooter() {
+        media = new Media(MusicPlayer.class.getResource("/sound/shooter.mp3").toExternalForm());
         player = new MediaPlayer(media);
     }
 }

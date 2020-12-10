@@ -53,7 +53,7 @@ public class Level1 extends Application {
     };
     private Image bullet = new Image(getClass().getResource("images/bullet.png").toExternalForm());
 
-    private MusicPlayer musicPlayer = new MusicPlayer();
+//    private MusicPlayer musicPlayer = new MusicPlayer();
 
     /**
      * Create pane and add player, enemies, and bullets
@@ -228,8 +228,8 @@ public class Level1 extends Application {
      */
     @Override
     public void start(Stage primaryStage) {
-        musicPlayer.setMusicShooter();
-        musicPlayer.playMusic();
+        MusicPlayer.setMusicShooter();
+        MusicPlayer.playMusic();
 
         enemyDead.set(0);
         Scene scene = new Scene(createRoot());
@@ -327,7 +327,7 @@ public class Level1 extends Application {
      */
     private void deIncrementHP() {
         player.setHP(player.getHP() - 1);
-        musicPlayer.playMusicDamaged();
+        MusicPlayer.playMusicDamaged();
         System.out.println("Player Hit; " + player.getHP() + " HP remaining");
         HPBar.setWidth(HPBar.getWidth() - 40);
         if (player.getHP() <= 3 && player.getHP() > 1){
@@ -339,10 +339,10 @@ public class Level1 extends Application {
         if (player.getHP() <= 0) {
             playerEntity.dead = true;
             System.out.println("Player has died");
-            musicPlayer.playMusicDeath();
-            musicPlayer.stopMusic();
-            musicPlayer.setMusicMaze();
-            musicPlayer.playMusic();
+            MusicPlayer.playMusicDeath();
+            MusicPlayer.stopMusic();
+            MusicPlayer.setMusicMaze();
+            MusicPlayer.playMusic();
             stage.close();
             timer.stop();
             GameOverMenu gameOverMenu = new GameOverMenu();
@@ -427,6 +427,7 @@ public class Level1 extends Application {
                             enemy.dead = true;
                             s.dead = true;
                             enemyDead.getAndIncrement();
+                            MusicPlayer.playMusicEnemyHit();
                             System.out.println("Enemies Killed: " + enemyDead);
                         }
                     });
@@ -436,6 +437,7 @@ public class Level1 extends Application {
                             enemy.dead = true;
                             s.dead = true;
                             enemyDead.getAndIncrement();
+                            MusicPlayer.playMusicEnemyHit();
                             System.out.println("Enemies Killed: " + enemyDead);
                         }
                     });
@@ -445,6 +447,7 @@ public class Level1 extends Application {
                             enemy.dead = true;
                             s.dead = true;
                             enemyDead.getAndIncrement();
+                            MusicPlayer.playMusicEnemyHit();
                             System.out.println("Enemies Killed: " + enemyDead);
                         }
                     });
@@ -453,9 +456,10 @@ public class Level1 extends Application {
                     entities().stream().filter(e -> e.type.equals("obstacle")).forEach(enemy -> {
                         if (s.getBoundsInParent().intersects(enemy.getBoundsInParent())) {
                             s.dead = true;
+
                         }
                     });
-                    
+
                     break;
 
                 //Simulate enemy bullet impact, have game stop if hits player, adjust later for player health
@@ -467,6 +471,7 @@ public class Level1 extends Application {
                         if (player.getHP() <= 0) {
                             playerEntity.dead = true;
                             s.dead = true;
+
                             stage.close();
 
                             timer.stop();
@@ -509,10 +514,10 @@ public class Level1 extends Application {
 
         if (enemyDead.get() >= 30) {
             System.out.println("All enemies dead");
-            musicPlayer.stopMusic();
-            musicPlayer.setMusicMaze();
-            musicPlayer.playMusic();
-            musicPlayer.playMusicWinRound();
+            MusicPlayer.stopMusic();
+            MusicPlayer.setMusicMaze();
+            MusicPlayer.playMusic();
+            MusicPlayer.playMusicWinRound();
 
             stage.close();
 

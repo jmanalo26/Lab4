@@ -49,7 +49,7 @@ public class BossLevel extends Application {
 
     private Obstacle obstacle2 = new Obstacle();
 
-    private MusicPlayer musicPlayer = new MusicPlayer();
+//    private MusicPlayer musicPlayer = new MusicPlayer();
 
 
     boolean yGoal = false;
@@ -72,8 +72,8 @@ public class BossLevel extends Application {
      * @return Shooting game
      */
     private Parent createRoot() {
-        musicPlayer.setMusicBoss();
-        musicPlayer.playMusic();
+        MusicPlayer.setMusicBoss();
+        MusicPlayer.playMusic();
         playerEntity.setId("player");
         Image playerImage = new Image(getClass().getResource("images/player.png").toExternalForm());
         ImagePattern i = new ImagePattern(playerImage);
@@ -183,12 +183,12 @@ public class BossLevel extends Application {
      */
     private void deIncrementHP() {
         player.setHP(player.getHP() - 1);
-        musicPlayer.playMusicDamaged();
+        MusicPlayer.playMusicDamaged();
         //System.out.println("Player Hit; " + player.getHP() + " HP remaining");
         HPBar.setWidth(HPBar.getWidth() - 40);
         if (player.getHP() <= 0) {
             playerEntity.dead = true;
-            musicPlayer.playMusicDeath();
+            MusicPlayer.playMusicDeath();
             System.out.println("Player has died");
             stage.close();
             timer.stop();
@@ -232,7 +232,7 @@ public class BossLevel extends Application {
      */
     private void deIncrementBossHP() {
         BossHPBar.setWidth(BossHPBar.getWidth() - 10);
-        musicPlayer.playMusicEnemyHit();
+        MusicPlayer.playMusicEnemyHit();
     }
 
     /**

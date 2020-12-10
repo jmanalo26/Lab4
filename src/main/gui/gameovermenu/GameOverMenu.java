@@ -14,7 +14,7 @@ import main.gui.music.MusicPlayer;
 
 public class GameOverMenu extends Application {
 
-    private MusicPlayer player = new MusicPlayer();
+//    private MusicPlayer player = new MusicPlayer();
 
     public GameOverMenu() {
 
@@ -28,8 +28,8 @@ public class GameOverMenu extends Application {
      */
     @Override
     public void start(Stage primaryStage) throws Exception {
-        player.setMusicDeathScreen();
-        player.playMusic();
+        MusicPlayer.setMusicDeathScreen();
+        MusicPlayer.playMusic();
 
         Parent root = FXMLLoader.load(getClass().getResource("GameOverMenuSB.fxml"));
         root.setId("pane");

@@ -1,5 +1,6 @@
 package main.games.MazeGame;
 
+import javafx.animation.Animation;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -19,6 +20,8 @@ import javafx.stage.Popup;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.util.Duration;
+import main.gui.mazefront.SpriteAnimation;
 import main.gui.music.MusicPlayer;
 
 import java.awt.*;
@@ -33,7 +36,7 @@ public class Maze extends Application {
     private boolean fullVis = false;
     private BoardData bd;
     private Stage stage;
-    private MusicPlayer musicPlayer = new MusicPlayer();
+//    private MusicPlayer musicPlayer = new MusicPlayer();
 
     private final int[][] TUTORIAL1 = {{1, 1, 1, 1, 1, 1},
             {1, 0, 0, 0, 0, 1},
@@ -101,8 +104,10 @@ public class Maze extends Application {
         stage = s;
         bd = new BoardData(LEVEL_2_BOARD_SIZE, LEVEL_2_BOARD_SIZE);
         Scene scene = loadBoard(stage);
-        musicPlayer.setMusicMaze();
-        musicPlayer.playMusic();
+        MusicPlayer.setMusicMaze();
+        MusicPlayer.playMusic();
+//        musicPlayer.setMusicMaze();
+//        musicPlayer.playMusic();
 
 
         scene.setOnKeyPressed(
@@ -293,8 +298,12 @@ public class Maze extends Application {
     }
 
     public void addGraphic(Zombie z, int x, int y) {
-        Image zombie = new Image(z.getImage());
-        ImageView iv = new ImageView(zombie);
+//        Image zombie = new Image(z.getImage());
+//        ImageView iv = new ImageView(zombie);
+        ImageView iv = new ImageView(new Image("resources/images/spritesheet/zombie_lvl_1.png"));
+        SpriteAnimation zombieAnimation = new SpriteAnimation(iv, Duration.millis(700), 5, 5, 23, 192, 134, 171);
+        zombieAnimation.setCycleCount(Animation.INDEFINITE);
+        zombieAnimation.play();
         iv.setVisible(false);
         iv.setFitHeight(45);
         iv.setFitWidth(45);
