@@ -1,0 +1,17 @@
+# Default ignored files
+/.idea/shelf/
+/workspace.xml
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+out/production/Lab4/main/games/MazeGame/Maze$4.class
+# Created by .ignore support plugin (hsz.mobi)
+### Java template
+# Compiled class file
+*.class
+*.iml
+*.lib
+# Log file
+*.log

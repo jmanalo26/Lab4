@@ -1,0 +1,10 @@
+.button:hover{
+
+    -fx-text-fill: #FFFFFF;
+}
+
+#pane{
+    -fx-background-image: url("../images/ProjectZ.png");
+    -fx-background-repeat: stretch;
+    -fx-background-position: bottom center;
+}

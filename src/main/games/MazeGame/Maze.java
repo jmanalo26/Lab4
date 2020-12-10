@@ -1,5 +1,6 @@
 package main.games.MazeGame;
 
+import javafx.animation.Animation;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -13,10 +14,16 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.util.Duration;
+import main.gui.mazefront.SpriteAnimation;
+import main.gui.music.MusicPlayer;
+
 import java.awt.*;
 
 public class Maze extends Application {
@@ -29,58 +36,60 @@ public class Maze extends Application {
     private boolean fullVis = false;
     private BoardData bd;
     private Stage stage;
-    private final int[][] TUTORIAL1 = {{1,1,1,1,1,1},
-                                        {1,0,0,0,0,1},
-                                        {1,0,0,0,0,1},
-                                        {1,0,0,0,0,1},
-                                        {1,0,0,0,0,1},
-                                        {1,1,1,1,1,1}};
-    private final int[][] LEVEL1= {{1,1,1,1,1,1,1,1,1,1,1,1},
-                                   {1,0,0,0,0,0,0,0,0,0,0,1},
-                                   {1,0,0,0,0,0,0,0,0,0,0,1},
-                                   {1,0,0,0,0,0,0,0,0,0,0,1},
-                                   {1,0,0,0,0,0,0,0,0,0,0,1},
-                                   {1,0,0,0,0,0,0,0,0,0,0,1},
-                                   {1,0,0,0,0,0,0,0,0,0,0,1},
-                                   {1,0,0,0,0,0,0,0,0,0,0,1},
-                                   {1,0,0,0,0,0,0,0,0,0,0,1},
-                                   {1,0,0,0,0,0,0,0,0,0,0,1},
-                                   {1,0,0,0,0,0,0,0,0,0,0,-1},
-                                   {1,1,1,1,1,1,1,1,1,1,1,1}};
-    private final int[][] LEVEL2= {{1,1,1,1,1,1,1,1,1,1,1,1,1,1},
-                                   {1,0,0,0,0,0,0,0,0,0,0,0,0,1},
-                                   {1,0,0,0,0,0,0,0,0,0,0,0,0,1},
-                                   {1,1,1,1,1,1,0,0,0,0,0,0,0,1},
-                                   {1,1,1,1,1,1,0,0,0,0,0,0,0,1},
-                                   {1,1,1,1,1,0,0,0,0,0,0,0,0,1},
-                                   {1,1,1,0,0,0,0,0,1,1,1,0,0,1},
-                                   {1,1,1,0,0,0,0,1,1,1,1,0,0,1},
-                                   {1,1,1,0,0,0,0,0,0,0,1,0,0,1},
-                                   {1,1,1,0,0,0,0,0,0,0,0,0,0,1},
-                                   {1,1,1,1,0,0,0,0,0,0,0,0,0,-1},
-                                   {1,1,1,0,0,0,0,0,0,0,1,0,0,1},
-                                   {1,1,1,0,0,0,0,0,0,0,0,0,0,1},
-                                   {1,1,1,1,1,1,1,1,1,1,1,1,1,1}};
-    private final int[][] LEVEL3= {{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
-                                   {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-                                   {1,-2,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1},
-                                   {1,1,1,1,1,1,0,0,0,0,0,0,0,1,1,1,1,1,1,1},
-                                   {1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,0,1},
-                                   {1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-                                   {1,1,1,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1},
-                                   {1,1,1,0,0,0,0,1,1,1,1,0,1,1,1,1,1,0,0,1},
-                                   {1,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1},
-                                   {1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-                                   {1,1,1,1,0,0,0,0,0,0,0,0,0,0,-2,0,0,0,0,1},
-                                   {1,1,1,1,1,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1},
-                                   {1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1},
-                                   {1,1,1,1,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,1},
-                                   {1,1,1,0,0,0,0,0,0,0,1,0,0,0,0,1,1,1,1,1},
-                                   {1,1,1,0,0,-2,0,0,0,0,0,1,0,0,0,0,1,1,1,1},
-                                   {1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,1,1,1,1,1},
-                                   {1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1},
-                                   {1,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1,1},
-                                   {1,1,1,1,1,1,1,1,1,1,1,-1,1,1,1,1,1,1,1,1}};
+//    private MusicPlayer musicPlayer = new MusicPlayer();
+
+    private final int[][] TUTORIAL1 = {{1, 1, 1, 1, 1, 1},
+            {1, 0, 0, 0, 0, 1},
+            {1, 0, 0, 0, 0, 1},
+            {1, 0, 0, 0, 0, 1},
+            {1, 0, 0, 0, 0, 1},
+            {1, 1, 1, 1, 1, 1}};
+    private final int[][] LEVEL1 = {{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1},
+            {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}};
+    private final int[][] LEVEL2 = {{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1},
+            {1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1},
+            {1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1},
+            {1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1},
+            {1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1},
+            {1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}};
+    private final int[][] LEVEL3 = {{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1},
+            {1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1},
+            {1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1},
+            {1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+            {1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1},
+            {1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 1},
+            {1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+            {1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1},
+            {1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1},
+            {1, 1, 1, 0, 0, -2, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1},
+            {1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1},
+            {1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1},
+            {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1},
+            {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, -1, 1, 1, 1, 1, 1, 1, 1, 1}};
 
     public Maze() {
         instance = this;
@@ -89,13 +98,16 @@ public class Maze extends Application {
     public static Maze getInstance() {
         return instance;
     }
+
     @Override
     public void start(Stage s) throws Exception {
         stage = s;
         bd = new BoardData(LEVEL_2_BOARD_SIZE, LEVEL_2_BOARD_SIZE);
         Scene scene = loadBoard(stage);
-
-
+        MusicPlayer.setMusicMaze();
+        MusicPlayer.playMusic();
+//        musicPlayer.setMusicMaze();
+//        musicPlayer.playMusic();
 
 
         scene.setOnKeyPressed(
@@ -141,26 +153,25 @@ public class Maze extends Application {
                         stage.setTitle("Paused");
                         stage.setScene(pause_scene);
                         stage.show();
-                    } else if(!fullVis && (code.equalsIgnoreCase("w") || code.equalsIgnoreCase("a") || code.equalsIgnoreCase("s") || code.equalsIgnoreCase("d"))) {
+                    } else if (!fullVis && (code.equalsIgnoreCase("w") || code.equalsIgnoreCase("a") || code.equalsIgnoreCase("s") || code.equalsIgnoreCase("d"))) {
                         init_flashlight(bd.getPlayer(), code);
-                    }
-                    else {
+                    } else {
                         bd.move_player(code);
                     }
                 });
     }
+
     public void generatePopup() {
         Pane p = new Pane();
         Label label = new Label();
         label.setText("Congrats, you completed this level!");
         p.getChildren().add(label);
-        Scene s = new Scene(p,300,50);
+        Scene s = new Scene(p, 300, 50);
         //Button b = new Button("Continue to Level 2");
         EventHandler<ActionEvent> event =
                 new EventHandler<ActionEvent>() {
 
-                    public void handle(ActionEvent e)
-                    {
+                    public void handle(ActionEvent e) {
 
                     }
                 };
@@ -171,6 +182,7 @@ public class Maze extends Application {
         stage.setScene(s);
 
     }
+
     private void init_flashlight(int[] player, String direction) {
         int posX = player[0];
         int posY = player[1];
@@ -209,8 +221,7 @@ public class Maze extends Application {
         } catch (Exception e) {
             labels[posX][posY].setStyle("-fx-background-color: white");
         }
-        }
-
+    }
 
 
     public Scene loadBoard(Stage stage) {
@@ -232,8 +243,7 @@ public class Maze extends Application {
         EventHandler<ActionEvent> eventYes =
                 new EventHandler<ActionEvent>() {
 
-                    public void handle(ActionEvent e)
-                    {
+                    public void handle(ActionEvent e) {
                         Scene scene = new Scene(maze_board, 50 * LEVEL_2_BOARD_SIZE, 50 * LEVEL_2_BOARD_SIZE);
                         stage.setTitle("Maze");
                         stage.setScene(scene);
@@ -245,8 +255,7 @@ public class Maze extends Application {
         EventHandler<ActionEvent> eventNo =
                 new EventHandler<ActionEvent>() {
 
-                    public void handle(ActionEvent e)
-                    {
+                    public void handle(ActionEvent e) {
                         stage.setTitle("Tutorial");
                         stage.setScene(scene);
                         stage.show();
@@ -255,7 +264,7 @@ public class Maze extends Application {
         no.setOnAction(eventNo);
 
         tutorial.getChildren().addAll(prompt, yes, no);
-        Scene tut = new Scene(tutorial, 500,500);
+        Scene tut = new Scene(tutorial, 500, 500);
         stage.setScene(tut);
         stage.show();
 
@@ -263,7 +272,6 @@ public class Maze extends Application {
         bd.add_player();
         bd.add_enemies(15);
         bd.add_perk(2);
-
 
 
         return scene;
@@ -280,17 +288,22 @@ public class Maze extends Application {
         iv.setFitWidth(45);
         labels[p.getPosX()][p.getPosY()].setGraphic(iv);
         int[] pos = {p.getPosX(), p.getPosY()};
-        if(!fullVis) {
+        if (!fullVis) {
             init_flashlight(pos, "d");
         }
     }
+
     public void removeGraphic(int x, int y) {
         labels[x][y].setGraphic(null);
     }
 
     public void addGraphic(Zombie z, int x, int y) {
-        Image zombie = new Image(z.getImage());
-        ImageView iv = new ImageView(zombie);
+//        Image zombie = new Image(z.getImage());
+//        ImageView iv = new ImageView(zombie);
+        ImageView iv = new ImageView(new Image("resources/images/spritesheet/zombie_lvl_1.png"));
+        SpriteAnimation zombieAnimation = new SpriteAnimation(iv, Duration.millis(700), 5, 5, 23, 192, 134, 171);
+        zombieAnimation.setCycleCount(Animation.INDEFINITE);
+        zombieAnimation.play();
         iv.setVisible(false);
         iv.setFitHeight(45);
         iv.setFitWidth(45);

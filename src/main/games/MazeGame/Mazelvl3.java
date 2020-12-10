@@ -16,6 +16,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import main.gui.music.MusicPlayer;
 
 public class Mazelvl3 extends Application {
     private final int LEVEL_1_BOARD_SIZE = 12;
@@ -89,6 +90,8 @@ public class Mazelvl3 extends Application {
     }
     @Override
     public void start(Stage s) throws Exception {
+        MusicPlayer.setMusicMaze();
+        MusicPlayer.playMusic();
         stage = s;
         bd = new BoardData3(LEVEL_3_BOARD_SIZE, LEVEL_3_BOARD_SIZE);
         Scene scene = loadBoard(stage);
