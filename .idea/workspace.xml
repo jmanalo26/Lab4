@@ -25,7 +25,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="85fc612d-93d7-4169-9e13-5ba06e51792c" name="Default Changelist" comment="Music has been implemented for lvl 1 stuff" />
+    <list default="true" id="85fc612d-93d7-4169-9e13-5ba06e51792c" name="Default Changelist" comment="test" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,7 +60,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1kfGOmISl1sujfcUnnY4wjegwFA" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -73,9 +73,9 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/sound" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../../Program Files (x86)/JavaFX/javafx-sdk-11.0.2/lib" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="Shelf.Project.Settings" />
@@ -99,7 +99,7 @@
       <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\src\main\resources\images\tilesheet" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Level2">
+  <component name="RunManager" selected="Application.Level1">
     <configuration name="GameOverMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.gui.gameovermenu.GameOverMenu" />
       <module name="Lab4" />
@@ -197,8 +197,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Level2" />
         <item itemvalue="Application.Level1" />
+        <item itemvalue="Application.Level2" />
         <item itemvalue="Application.Maze" />
         <item itemvalue="Application.StartMenu" />
         <item itemvalue="Application.GameOverMenu" />
@@ -270,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607481259647</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="test">
+      <created>1607563196717</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1607563196717</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,7 +297,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/master" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>
@@ -310,7 +317,8 @@
     <MESSAGE value="Formatted the TileManager so it can work with any tilesheet and any level. Also, added some functionality to retrieve the information needed for the backend." />
     <MESSAGE value="Cleaning up some code and a few bug fixes." />
     <MESSAGE value="Music has been implemented for lvl 1 stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="Music has been implemented for lvl 1 stuff" />
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
   <component name="WindowStateProjectService">
     <state x="333" y="148" width="1174" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607561226759">
@@ -360,12 +368,12 @@
     </state>
     <state x="481" y="90" key="CommitChangelistDialog2/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606614114623" />
     <state x="-1439" y="95" key="CommitChangelistDialog2/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1606974341859" />
-    <state x="548" y="278" key="FileChooserDialogImpl" timestamp="1607131390944">
+    <state x="548" y="278" key="FileChooserDialogImpl" timestamp="1607563360160">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="685" y="338" key="FileChooserDialogImpl/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606084394412" />
     <state x="-1235" y="343" key="FileChooserDialogImpl/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1606953837715" />
-    <state x="548" y="278" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1607131390944" />
+    <state x="548" y="278" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1607563360160" />
     <state width="1493" height="331" key="GridCell.Tab.0.bottom" timestamp="1607561412657">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -418,40 +426,44 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="349" y="167" key="IDE.errors.dialog/0.0.1536.864@0.0.1536.864" timestamp="1607480143599" />
-    <state x="91" y="49" width="1360" height="726" key="MergeDialog" timestamp="1607560519507">
+    <state x="11" y="45" width="1448" height="726" key="MergeDialog" timestamp="1607563304328">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="91" y="49" width="1360" height="726" key="MergeDialog/0.0.1536.864@0.0.1536.864" timestamp="1607560519507" />
-    <state x="398" y="233" width="1081" height="263" key="MultipleFileMergeDialog" timestamp="1607560443028">
+    <state x="11" y="45" width="1448" height="726" key="MergeDialog/0.0.1536.864@0.0.1536.864" timestamp="1607563304327" />
+    <state x="398" y="54" width="1081" height="442" key="MultipleFileMergeDialog" timestamp="1607563326365">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="-1322" y="291" key="MultipleFileMergeDialog/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1606858120664" />
-    <state x="398" y="233" width="1081" height="263" key="MultipleFileMergeDialog/0.0.1536.864@0.0.1536.864" timestamp="1607560443028" />
+    <state x="398" y="54" width="1081" height="442" key="MultipleFileMergeDialog/0.0.1536.864@0.0.1536.864" timestamp="1607563326365" />
     <state x="621" y="228" key="RollbackChangesDialog" timestamp="1606545939094">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="621" y="228" key="RollbackChangesDialog/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606545939094" />
-    <state x="370" y="14" key="SettingsEditor" timestamp="1607467114603">
+    <state x="370" y="14" key="SettingsEditor" timestamp="1607563363786">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="462" y="170" key="SettingsEditor/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606548751578" />
     <state x="-1458" y="175" key="SettingsEditor/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1606953852423" />
-    <state x="370" y="14" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1607467114603" />
+    <state x="370" y="14" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1607563363786" />
     <state x="589" y="347" key="VCS.EditChangelistDialog" timestamp="1607562925912">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="589" y="347" key="VCS.EditChangelistDialog/0.0.1536.864@0.0.1536.864" timestamp="1607562925912" />
+    <state x="463" y="172" width="766" height="494" key="Vcs.Multiple.Commit.Info.Dialog.Key" timestamp="1607563289095">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="463" y="172" width="766" height="494" key="Vcs.Multiple.Commit.Info.Dialog.Key/0.0.1536.864@0.0.1536.864" timestamp="1607563289095" />
     <state x="361" y="165" width="986" height="533" key="Vcs.Push.Dialog.v2" timestamp="1607481462682">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="361" y="165" width="986" height="533" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1607481462682" />
-    <state x="623" y="360" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607560181132">
+    <state x="623" y="360" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607563158583">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="778" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606623205497" />
     <state x="-1141" y="443" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1606953669489" />
     <state x="519" y="288" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.690/-1920.5.1920.1050@0.0.1280.690" timestamp="1606765677613" />
-    <state x="623" y="360" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864@0.0.1536.864" timestamp="1607560181132" />
+    <state x="623" y="360" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864@0.0.1536.864" timestamp="1607563158583" />
     <state x="-1415" y="266" width="909" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1606958227166">
       <screen x="-1920" y="5" width="1920" height="1050" />
     </state>
@@ -460,6 +472,14 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="465" y="145" key="git4idea.branch.GitSmartOperationDialog/0.0.1536.864@0.0.1536.864" timestamp="1607560274194" />
+    <state x="420" y="221" key="git4idea.merge.GitPullDialog" timestamp="1607563214967">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="420" y="221" key="git4idea.merge.GitPullDialog/0.0.1536.864@0.0.1536.864" timestamp="1607563214967" />
+    <state x="209" y="93" key="new project wizard" timestamp="1607563005405">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="209" y="93" key="new project wizard/0.0.1536.864@0.0.1536.864" timestamp="1607563005405" />
     <state x="493" y="197" key="run.anything.popup" timestamp="1607466811017">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
