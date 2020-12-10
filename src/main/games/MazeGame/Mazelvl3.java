@@ -296,7 +296,7 @@ public class Mazelvl3 extends Application {
 
     public void addGraphic(Zombielvl3 z, int x, int y) {
         ImageView iv = new ImageView(new Image("resources/images/spritesheet/technoZombies.png"));
-        SpriteAnimation zombieAnimation = new SpriteAnimation(iv, Duration.millis(700), 5, 5, 23, 192, 134, 171);
+        SpriteAnimation zombieAnimation = new SpriteAnimation(iv, Duration.millis(700), 2, 2, 8, 194, 134, 162);
         zombieAnimation.setCycleCount(Animation.INDEFINITE);
         zombieAnimation.play();
         iv.setVisible(false);

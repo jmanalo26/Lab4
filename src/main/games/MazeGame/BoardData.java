@@ -65,9 +65,9 @@ public class BoardData {
     }
 
     public void add_player() {
-        player = new Player(1, 1);
+        player = new Player(18, 18);
         maze.addGraphic(player);
-        board[1][1] = "P";
+        board[18][18] = "P";
     }
 
     public void add_perk(int num) {
