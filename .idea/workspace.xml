@@ -16,39 +16,17 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="85fc612d-93d7-4169-9e13-5ba06e51792c" name="Default Changelist" comment="Formatted the TileManager so it can work with any tilesheet and any level. Also, added some functionality to retrieve the information needed for the backend.">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/spritesheet/zombie_christmas.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/tilesheet/furute_tex.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/tilesheet/level2texresource.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/level/Future.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/level/Winter.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab4/battlesprites.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab4/dungeon_tiles.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab4/level2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/gui/mazefront/MazeFront.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/gui/mazefront/MazeFront.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/gui/mazefront/TileManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/gui/mazefront/TileManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/gui/mazefront/actors/EntityFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/gui/mazefront/actors/EntityFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/gui/resources/spritesheet/battlesprites.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/gui/resources/spritesheet/dungeon_tiles.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/gui/resources/spritesheet/zombie_lvl_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/gui/resources/tilesheet/level2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab4/spritesheet/battlesprites.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab4/spritesheet/dungeon_tiles.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab4/spritesheet/zombie_lvl_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab4/tilesheet/level2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab4/zombie_lvl_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/mazefront/MazeFront.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/mazefront/MazeFront.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/mazefront/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/mazefront/TileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/mazefront/actors/EntityFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/mazefront/actors/EntityFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/resources/spritesheet/battlesprites.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/spritesheet/battlesprites.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/resources/spritesheet/dungeon_tiles.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/tilesheet/dungeon_tiles.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/resources/spritesheet/zombie_lvl_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/spritesheet/zombie_lvl_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/resources/tilesheet/level2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/level/level2.xml" afterDir="false" />
-    </list>
+    <list default="true" id="85fc612d-93d7-4169-9e13-5ba06e51792c" name="Default Changelist" comment="Added Music to the most aspects of the game, just need level 3 and boss 2 and 3." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,7 +45,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="ProjZ-88-Link_Maze_lvl_Games" />
+        <entry key="$PROJECT_DIR$" value="music" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -94,22 +72,22 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.language" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\src\main\resources\level" />
-      <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\src\main\resources\images\tilesheet" />
-      <recent name="C:\Users\rhass\Desktop\College\CMSC4380\CMSC4375\src\edu\ben\labs\Lab4Final\Lab4\src\main\games\MazeGame" />
-      <recent name="C:\Users\rhass\Desktop\College\CMSC4380\CMSC4375\src\edu\ben\labs\Lab4Final\Lab4\src\main\gui\images" />
-      <recent name="C:\Users\rhass\Desktop\College\CMSC4380\CMSC4375\src\edu\ben\labs\Lab4Final\Lab4\src\main\gui\levelmenu\lvl2" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="main.games.MazeGame" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\src\main\resources\level" />
       <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\src\main\resources\images\tilesheet" />
       <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\src\main\resources\images\spritesheet" />
       <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\src\main\gui\resources\spritesheet" />
       <recent name="C:\Users\rhass\Desktop\College\CMSC4380\CMSC4375\src\edu\ben\labs\Lab4Final\Lab4" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="main.games.MazeGame" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\src\main\resources\level" />
+      <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\src\main\resources\images\tilesheet" />
+      <recent name="C:\Users\rhass\Desktop\College\CMSC4380\CMSC4375\src\edu\ben\labs\Lab4Final\Lab4\src\main\games\MazeGame" />
+      <recent name="C:\Users\rhass\Desktop\College\CMSC4380\CMSC4375\src\edu\ben\labs\Lab4Final\Lab4\src\main\gui\images" />
+      <recent name="C:\Users\rhass\Desktop\College\CMSC4380\CMSC4375\src\edu\ben\labs\Lab4Final\Lab4\src\main\gui\levelmenu\lvl2" />
     </key>
   </component>
   <component name="RunManager" selected="Application.MazeFront">
@@ -267,6 +245,15 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.fxml" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
