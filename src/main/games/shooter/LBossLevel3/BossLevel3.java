@@ -11,6 +11,7 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import main.games.shooter.LBossLevel.BossLevel;
 import main.games.shooter.LBossLevel3.Boss3;
 import main.games.shooter.LBossLevel.Obstacle;
 import main.games.shooter.Player;
@@ -26,14 +27,17 @@ import java.util.stream.Collectors;
 
 public class BossLevel3 extends Application {
 
-    private static final Paint PURPLE = Color.PURPLE;
+    private static final Paint ORANGERED = Color.ORANGERED;
     private static final Paint RED = Color.RED;
+    private static final Paint ORANGE = Color.ORANGE;
 
     private Pane root = new Pane();
 
     private BossLevel3.Entity playerEntity = new BossLevel3.Entity(275, 600, 20, 20, "player", Color.BLUE);
 
     private  Entity bossEnemy = new Entity(280, 120, 70, 60, "enemy", Color.RED);
+
+    private Image bullet = new Image(getClass().getResource("images/bullet2.png").toExternalForm());
 
     private Entity HPBar;
 
@@ -136,8 +140,10 @@ public class BossLevel3 extends Application {
      * Displays ammo count
      */
     private void displayAmmo() {
+        ImagePattern b = new ImagePattern(bullet);
         for (int i = 0; i < player.getAmmo(); i++) {
-            Entity ammo = new Entity(400 + (20 * i), 730, 3, 20, "ammo" + i, Color.BLACK);
+            Entity ammo = new Entity(400 + (20 * i), 715, 30, 40, "ammo" + i, Color.BLACK);
+            ammo.setFill(b);
             bullets[i] = ammo;
             root.getChildren().add(ammo);
         }
@@ -157,10 +163,12 @@ public class BossLevel3 extends Application {
      * Ammo reloads for player
      */
     private void addAmmo() {
+        ImagePattern b = new ImagePattern(bullet);
         if (player.getAmmo() < 6) {
             int ammoUsed = 6 - player.getAmmo();
             for (int i = 0; i < ammoUsed; i++) {
-                Entity ammo = new Entity(400 + (20 * i), 730, 3, 20, "ammo" + i, Color.BLACK);
+                Entity ammo = new Entity(400 + (20 * i), 715, 30, 40, "ammo" + i, Color.BLACK);
+                ammo.setFill(b);
                 bullets[i] = ammo;
                 root.getChildren().add(ammo);
             }
@@ -171,7 +179,7 @@ public class BossLevel3 extends Application {
      * Creates a health bar entity at the bottom of the game window
      */
     private void addHealthBar() {
-        HPBar = new Entity(10, 730, 200, 15, "HP", Color.RED);
+        HPBar = new Entity(10, 730, 200, 15, "HP", Color.GREEN);
         Entity HPBorder = new Entity(0, 700, 1000, 100, "outline", Color.BLACK);
         HPBorder.setOpacity(0.3);
         root.getChildren().addAll(HPBar, HPBorder);
@@ -188,7 +196,11 @@ public class BossLevel3 extends Application {
         HPBar.setWidth(HPBar.getWidth() - 40);
         if (player.getHP() == 1)
         {
-            HPBar.setFill(PURPLE);
+            HPBar.setFill(RED);
+        }
+        if (player.getHP() == 3)
+        {
+            HPBar.setFill(ORANGE);
         }
         if (player.getHP() <= 0) {
             playerEntity.dead = true;
@@ -225,7 +237,7 @@ public class BossLevel3 extends Application {
      * Creates a health bar entity at the bottom of the game window
      */
     private void addBossHealthBar() {
-        BossHPBar = new Entity(45, 65, 510, 15, "HP", Color.ORANGE);
+        BossHPBar = new Entity(45, 65, 510, 15, "HP", Color.ORANGERED);
         Entity HPBorder = new Entity(0,  0, 1000, 100, "outline", Color.BLACK);
         HPBorder.setOpacity(0);
         root.getChildren().addAll(BossHPBar, HPBorder);
