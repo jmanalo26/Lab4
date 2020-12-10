@@ -33,6 +33,8 @@ public class Level1 extends Application {
 
     private Entity HPBar;
 
+    private Entity objective;
+
     private Player player;
 
     private double time = 0;
@@ -49,6 +51,7 @@ public class Level1 extends Application {
             update();
         }
     };
+    private Image bullet = new Image(getClass().getResource("images/bullet.png").toExternalForm());
 
     private MusicPlayer musicPlayer = new MusicPlayer();
 
@@ -70,6 +73,7 @@ public class Level1 extends Application {
         addEnemies();
         addObstacles();
         addHealthBar();
+        addObjective();
         dropHealthItem();
         displayAmmo();
         root.setId("pane");
@@ -117,44 +121,56 @@ public class Level1 extends Application {
     /**
      * Creates a health bar entity at the bottom of the game window
      */
-    private void addHealthBar() {
-        HPBar = new Entity(10, 530, 200, 15, "HP", Color.RED);
+    private void addHealthBar(){
+        HPBar = new Entity(10, 530, 200, 15, "HP", Color.GREEN);
         Entity HPBorder = new Entity(0, 500, 1000, 100, "outline", Color.BLACK);
         HPBorder.setOpacity(0.3);
         root.getChildren().addAll(HPBar, HPBorder);
         //root.getChildren().add(HPBar);
     }
 
-    private void displayAmmo() {
+    private void addObjective(){
+        Image obsImage = new Image(getClass().getResource("images/obj1.png").toExternalForm());
+        ImagePattern obj = new ImagePattern(obsImage);
+        objective = new Entity(230,465, 150,150,"Objective", Color.BLACK);
+        objective.setFill(obj);
+        root.getChildren().add(objective);
+    }
+
+    private void displayAmmo(){
+        ImagePattern b = new ImagePattern(bullet);
         for (int i = 0; i < player.getAmmo(); i++) {
-            Entity ammo = new Entity(400 + (20 * i), 530, 3, 20, "ammo" + i, Color.WHITE);
+            Entity ammo = new Entity(400 + ( 20 * i), 530, 30, 40, "ammo" + i, Color.WHITE);
+            ammo.setFill(b);
             bullets[i] = ammo;
             root.getChildren().add(ammo);
         }
     }
 
-    private void depleteAmmo() {
+    private void depleteAmmo(){
         if (player.getAmmo() < 6) {
             int ammoUsed = 5 - player.getAmmo();
             bullets[ammoUsed].dead = true;
         }
     }
 
-    private void addAmmo() {
+    private void addAmmo(){
+        ImagePattern b = new ImagePattern(bullet);
         if (player.getAmmo() < 6) {
             int ammoUsed = 6 - player.getAmmo();
-            for (int i = 0; i < ammoUsed; i++) {
-                Entity ammo = new Entity(400 + (20 * i), 530, 3, 20, "ammo" + i, Color.WHITE);
+            for (int i = 0; i < ammoUsed; i++){
+                Entity ammo = new Entity(400 + ( 20 * i), 530, 30, 40, "ammo" + i, Color.WHITE);
+                ammo.setFill(b);
                 bullets[i] = ammo;
                 root.getChildren().add(ammo);
             }
         }
     }
 
-    private void dropHealthItem() {
+    private void dropHealthItem(){
         Random random = new Random();
         int x = random.nextInt(550);
-        if (x == player.getX()) {
+        if (x == player.getX()){
             x += 100;
         }
         Image obsImage = new Image(getClass().getResource("images/health.png").toExternalForm());
@@ -192,7 +208,6 @@ public class Level1 extends Application {
 
     /**
      * Method to simulate Enemy AI movement
-     *
      * @param s Enemy entity
      */
     private void enemyTracking(Entity s) {
@@ -315,6 +330,12 @@ public class Level1 extends Application {
         musicPlayer.playMusicDamaged();
         System.out.println("Player Hit; " + player.getHP() + " HP remaining");
         HPBar.setWidth(HPBar.getWidth() - 40);
+        if (player.getHP() <= 3 && player.getHP() > 1){
+            HPBar.setFill(Color.ORANGE);
+        }
+        else if (player.getHP() <= 1){
+            HPBar.setFill(Color.RED);
+        }
         if (player.getHP() <= 0) {
             playerEntity.dead = true;
             System.out.println("Player has died");
@@ -323,6 +344,15 @@ public class Level1 extends Application {
             musicPlayer.setMusicMaze();
             musicPlayer.playMusic();
             stage.close();
+            timer.stop();
+            GameOverMenu gameOverMenu = new GameOverMenu();
+            Stage gameOverMenuStage = new Stage();
+            try {
+                gameOverMenu.start(gameOverMenuStage);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -332,6 +362,12 @@ public class Level1 extends Application {
     private void incrementHP() {
         player.setHP(player.getHP() + 1);
         HPBar.setWidth(HPBar.getWidth() + 40);
+        if (player.getHP() > 3){
+            HPBar.setFill(Color.LIMEGREEN);
+        }
+        else if (player.getHP() > 1){
+            HPBar.setFill(Color.ORANGE);
+        }
     }
 
     /**
@@ -340,13 +376,13 @@ public class Level1 extends Application {
     private void update() {
         time += 1;
         //Add new enemy wave every 10 seconds
-        if (time % 1000 == 0) {
+        if (time % 1000 == 0){
             addEnemies();
             //Drop HP item if player is below HP, drop rate should be 30%
-            if (player.getHP() < 5) {
+            if (player.getHP() < 5){
                 Random r = new Random();
                 int rNum = r.nextInt(10);
-                if (rNum <= 3) {
+                if (rNum <= 3){
                     dropHealthItem();
                 }
             }
@@ -361,7 +397,11 @@ public class Level1 extends Application {
                 case "enemyLeft":
                     if (time > 200) {
                         if (Math.random() < 0.015) {
-                            enemyTracking(s);
+                            if (s.getTranslateY() < 220){
+                                s.moveDown();
+                            } else {
+                                enemyTracking(s);
+                            }
                             entities().stream().filter(e -> e.type.equals("player")).forEach(p -> {
                                 if (s.getBoundsInParent().intersects(p.getBoundsInParent())) {
                                     deIncrementHP();
@@ -387,7 +427,6 @@ public class Level1 extends Application {
                             enemy.dead = true;
                             s.dead = true;
                             enemyDead.getAndIncrement();
-                            musicPlayer.playMusicEnemyHit();
                             System.out.println("Enemies Killed: " + enemyDead);
                         }
                     });
@@ -397,7 +436,6 @@ public class Level1 extends Application {
                             enemy.dead = true;
                             s.dead = true;
                             enemyDead.getAndIncrement();
-                            musicPlayer.playMusicEnemyHit();
                             System.out.println("Enemies Killed: " + enemyDead);
                         }
                     });
@@ -407,7 +445,6 @@ public class Level1 extends Application {
                             enemy.dead = true;
                             s.dead = true;
                             enemyDead.getAndIncrement();
-                            musicPlayer.playMusicEnemyHit();
                             System.out.println("Enemies Killed: " + enemyDead);
                         }
                     });
@@ -418,7 +455,7 @@ public class Level1 extends Application {
                             s.dead = true;
                         }
                     });
-
+                    
                     break;
 
                 //Simulate enemy bullet impact, have game stop if hits player, adjust later for player health
@@ -430,7 +467,6 @@ public class Level1 extends Application {
                         if (player.getHP() <= 0) {
                             playerEntity.dead = true;
                             s.dead = true;
-
                             stage.close();
 
                             timer.stop();
@@ -448,13 +484,13 @@ public class Level1 extends Application {
                     }
                     break;
 
-                // HP item interaction
+                    // HP item interaction
                 case "restore":
                     if (s.getBoundsInParent().intersects(playerEntity.getBoundsInParent())) {
                         if (player.getHP() < 5) {
                             incrementHP();
                             System.out.println("+1 HP restored");
-                        } else {
+                        } else{
                             System.out.println("HP Full");
                         }
                         s.dead = true;
@@ -471,7 +507,7 @@ public class Level1 extends Application {
             return s.dead;
         });
 
-        if (enemyDead.get() >= 25) {
+        if (enemyDead.get() >= 30) {
             System.out.println("All enemies dead");
             musicPlayer.stopMusic();
             musicPlayer.setMusicMaze();

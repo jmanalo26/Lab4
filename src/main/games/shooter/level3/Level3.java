@@ -1,4 +1,4 @@
-package main.games.shooter.level2;
+package main.games.shooter.level3;
 
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
@@ -6,13 +6,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import main.games.shooter.Player;
 import main.gui.gameovermenu.GameOverMenu;
-import main.gui.gamewonmenu.GameWonMenu;
 
 import java.util.List;
 import java.util.Random;
@@ -22,7 +23,7 @@ import java.util.stream.Collectors;
 /**
  * Shooting game class, this will represent the basic functionality of our shooting mini-game.
  */
-public class Level2 extends Application {
+public class Level3 extends Application {
 
     private Pane root = new Pane();
 
@@ -41,7 +42,7 @@ public class Level2 extends Application {
     private static Stage stage;
 
     private static Entity[] bullets = new Entity[6];
-    private Image bullet = new Image(getClass().getResource("images2/bullet.png").toExternalForm());
+    private Image bullet = new Image(getClass().getResource("images3/bullet.png").toExternalForm());
 
     public AnimationTimer timer = new AnimationTimer() {
         @Override
@@ -57,7 +58,7 @@ public class Level2 extends Application {
      */
     private Parent createRoot() {
         playerEntity.setId("player");
-        Image playerImage = new Image(getClass().getResource("images2/player.png").toExternalForm());
+        Image playerImage = new Image(getClass().getResource("images3/player.png").toExternalForm());
         ImagePattern i = new ImagePattern(playerImage);
         playerEntity.setFill(i);
         root.setPrefSize(600, 575);
@@ -89,7 +90,7 @@ public class Level2 extends Application {
      */
     private void addObstacles(){
         Random random = new Random();
-        Image obsImage = new Image(getClass().getResource("images2/tree2.png").toExternalForm());
+        Image obsImage = new Image(getClass().getResource("images3/treelvl3.png").toExternalForm());
         ImagePattern obs = new ImagePattern(obsImage);
 
         //Player shooting layer
@@ -117,7 +118,7 @@ public class Level2 extends Application {
      * Creates a health bar entity at the bottom of the game window
      */
     private void addHealthBar(){
-        HPBar = new Entity(10, 530, 200, 15, "HP", Color.GREEN);
+        HPBar = new Entity(10, 530, 200, 15, "HP", Color.LIMEGREEN);
         Entity HPBorder = new Entity(0, 500, 1000, 100, "outline", Color.BLACK);
         HPBorder.setOpacity(0.3);
         root.getChildren().addAll(HPBar, HPBorder);
@@ -125,7 +126,7 @@ public class Level2 extends Application {
     }
 
     private void addObjective(){
-        Image obsImage = new Image(getClass().getResource("images2/obj23.png").toExternalForm());
+        Image obsImage = new Image(getClass().getResource("images3/obj23.png").toExternalForm());
         ImagePattern obj = new ImagePattern(obsImage);
         objective = new Entity(230,465, 150,150,"Objective", Color.BLACK);
         objective.setFill(obj);
@@ -168,7 +169,7 @@ public class Level2 extends Application {
         if (x == player.getX()){
             x += 100;
         }
-        Image obsImage = new Image(getClass().getResource("images2/health.png").toExternalForm());
+        Image obsImage = new Image(getClass().getResource("images3/health.png").toExternalForm());
         ImagePattern obs = new ImagePattern(obsImage);
         Entity itemHP = new Entity(x, 450, 20, 20, "restore", Color.PINK);
         itemHP.setFill(obs);
@@ -181,20 +182,22 @@ public class Level2 extends Application {
      * Add enemies, currently set to 10
      */
     private void addEnemies() {
-        Image enemyImage = new Image(getClass().getResource("images2/zombie2.png").toExternalForm());
+        Image enemyImage = new Image(getClass().getResource("images3/zombie3.png").toExternalForm());
         ImagePattern en = new ImagePattern(enemyImage);
         for (int i = 0; i < 10; i++) {
-            Entity enemy = new Entity(30 + i * 50, 50, 30, 30, "enemy", Color.RED);
+            Entity enemy = new Entity(30 + i * 50, 50, 50, 50, "enemy", Color.RED);
             //Entity leftEnemy = new Entity(30, 90 + i * 30, 25, 25, "enemyLeft", Color.RED);
             //Entity rightEnemy = new Entity(30 + 9 * 50, 90 + i * 30, 25, 25, "enemyRight", Color.RED);
-            Entity leftEnemy = new Entity(30 + i * 50, 70, 30, 30, "enemyLeft", Color.RED);
+            Entity leftEnemy = new Entity(30 + i * 50, 70, 50, 50, "enemyLeft", Color.RED);
             Entity rightEnemy = new Entity(30 + i * 50, 90, 30, 30, "enemyRight", Color.PURPLE);
-            enemy.setId("enemy");
-            leftEnemy.setId("enemy");
+            enemy.setId("topEnemy");
+            leftEnemy.setId("topEnemy");
             rightEnemy.setId("rightenemy");
             enemy.setFill(en);
             leftEnemy.setFill(en);
             rightEnemy.setFill(en);
+            enemy.hp += 2;
+            leftEnemy.hp += 2;
             root.getChildren().add(enemy);
             root.getChildren().add(leftEnemy);
             root.getChildren().add(rightEnemy);
@@ -202,7 +205,7 @@ public class Level2 extends Application {
     }
 
     private void waveSpawn(){
-        Image enemyImage = new Image(getClass().getResource("images2/zombie2.png").toExternalForm());
+        Image enemyImage = new Image(getClass().getResource("images3/zombie2.png").toExternalForm());
         ImagePattern en = new ImagePattern(enemyImage);
         for (int i = 0; i < 10; i++) {
             Entity enemy = new Entity(30 + i * 50, 50, 30, 30, "enemy", Color.RED);
@@ -242,7 +245,7 @@ public class Level2 extends Application {
     public void start(Stage primaryStage) {
         enemyDead.set(0);
         Scene scene = new Scene(createRoot());
-        scene.getStylesheets().addAll(this.getClass().getResource("style2.css").toExternalForm());
+        scene.getStylesheets().addAll(this.getClass().getResource("style3.css").toExternalForm());
         System.out.println("Player Starting HP: " + player.getHP());
         scene.setOnKeyPressed(e -> {
             switch (e.getCode()) {
@@ -328,10 +331,14 @@ public class Level2 extends Application {
      * @param entity Bullet
      */
     private void createBullets(Entity entity) {
-        Entity s = new Entity((int) entity.getTranslateX() + 20, (int) entity.getTranslateY(), 2, 20, entity.type + "bullet", Color.WHITE);
+        Entity s = new Entity((int) entity.getTranslateX() + 20, (int) entity.getTranslateY(), 2, 15, entity.type + "bullet", Color.WHITE);
         if (s.type.contains("enemy")){
-            s.setFill(Color.ORANGE);
+            s.setFill(Color.RED);
             s.setId("rightenemybullet");
+            Entity s1 = new Entity((int) entity.getTranslateX() + 20, (int) entity.getTranslateY(), 2, 15, entity.type + "bullet2", Color.WHITE);
+            s1.setFill(Color.RED);
+            s1.setId("rightenemybullet");
+            root.getChildren().add(s1);
         }
         root.getChildren().add(s);
     }
@@ -434,7 +441,7 @@ public class Level2 extends Application {
                                     }
                                 });
                             } else {
-                                if (Math.random() < 0.4){
+                                if (Math.random() < 0.3){
                                     createBullets(s);
                                     if (Math.random() < 0.5){
                                         s.moveLeft();
@@ -455,27 +462,8 @@ public class Level2 extends Application {
                     //Simulate bullet hitting enemies
                     entities().stream().filter(e -> e.type.equals("enemy")).forEach(enemy -> {
                         if (s.getBoundsInParent().intersects(enemy.getBoundsInParent())) {
-                            enemy.dead = true;
-                            s.dead = true;
-                            enemyDead.getAndIncrement();
-                            System.out.println("Enemies Killed: " + enemyDead);
-                        }
-                    });
-
-                    entities().stream().filter(e -> e.type.equals("enemyLeft")).forEach(enemy -> {
-                        if (s.getBoundsInParent().intersects(enemy.getBoundsInParent())) {
-                            enemy.dead = true;
-                            s.dead = true;
-                            enemyDead.getAndIncrement();
-                            System.out.println("Enemies Killed: " + enemyDead);
-                        }
-                    });
-
-                    entities().stream().filter(e -> e.type.equals("enemyRight")).forEach(enemy -> {
-                        if (s.getBoundsInParent().intersects(enemy.getBoundsInParent())) {
                             s.dead = true;
                             enemy.hp -= 1;
-                            System.out.println(enemy.hp);
                             if (enemy.hp == 0) {
                                 enemy.dead = true;
                                 enemyDead.getAndIncrement();
@@ -484,10 +472,37 @@ public class Level2 extends Application {
                         }
                     });
 
-                    //Bullet Obstacle Interaction
-                    entities().stream().filter(e -> e.type.equals("obstacle")).forEach(enemy -> {
-                        if (s.getBoundsInParent().intersects(enemy.getBoundsInParent())) {
+                    entities().stream().filter(e -> e.type.equals("enemyLeft")).forEach(leftEnemy -> {
+                        if (s.getBoundsInParent().intersects(leftEnemy.getBoundsInParent())) {
                             s.dead = true;
+                            leftEnemy.hp -= 1;
+                            if (leftEnemy.hp == 0) {
+                                leftEnemy.dead = true;
+                                enemyDead.getAndIncrement();
+                                System.out.println("Enemies Killed: " + enemyDead);
+                            }
+                        }
+                    });
+
+                    entities().stream().filter(e -> e.type.equals("enemyRight")).forEach(rightEnemy -> {
+                        if (s.getBoundsInParent().intersects(rightEnemy.getBoundsInParent())) {
+                            s.dead = true;
+                            rightEnemy.hp -= 1;
+                            if (rightEnemy.hp == 0) {
+                                rightEnemy.dead = true;
+                                enemyDead.getAndIncrement();
+                                System.out.println("Enemies Killed: " + enemyDead);
+                            }
+                        }
+                    });
+
+                    //Bullet Obstacle Interaction
+                    entities().stream().filter(e -> e.type.equals("obstacle")).forEach(o -> {
+                        if (s.getBoundsInParent().intersects(o.getBoundsInParent())) {
+                            s.dead = true;
+                            if (o.getTranslateY() > 175) {
+                                o.dead = true;
+                            }
                         }
                     });
                     
@@ -499,11 +514,32 @@ public class Level2 extends Application {
                 case "enemyLeftbullet":
 
                 case "enemyRightbullet":
-                    s.moveDown();
+                    s.setTranslateY(s.getTranslateY() + 2);
+                    s.setTranslateX(s.getTranslateX() + 1);
                     if (s.getBoundsInParent().intersects(playerEntity.getBoundsInParent())) {
                         s.dead = true;
                         deIncrementHP();
                         }
+                    entities().stream().filter(e -> e.type.equals("obstacle")).forEach(enemy -> {
+                        if (s.getBoundsInParent().intersects(enemy.getBoundsInParent())) {
+                            s.dead = true;
+                            enemy.dead = true;
+                        }
+                    });
+                    entities().stream().filter(e -> e.type.equals("outline")).forEach(enemy -> {
+                        if (s.getBoundsInParent().intersects(enemy.getBoundsInParent())) {
+                            s.dead = true;
+                        }
+                    });
+                    break;
+
+                case "enemyRightbullet2":
+                    s.setTranslateY(s.getTranslateY() + 2);
+                    s.setTranslateX(s.getTranslateX() - 1);
+                    if (s.getBoundsInParent().intersects(playerEntity.getBoundsInParent())) {
+                        s.dead = true;
+                        deIncrementHP();
+                    }
                     entities().stream().filter(e -> e.type.equals("obstacle")).forEach(enemy -> {
                         if (s.getBoundsInParent().intersects(enemy.getBoundsInParent())) {
                             s.dead = true;
