@@ -242,6 +242,7 @@ public class Level2 extends Application {
     @Override
     public void start(Stage primaryStage) {
         enemyDead.set(0);
+        MusicPlayer.stopMusic();
         MusicPlayer.setMusicShooter();
         MusicPlayer.playMusic();
 

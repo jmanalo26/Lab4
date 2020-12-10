@@ -228,6 +228,7 @@ public class Level1 extends Application {
      */
     @Override
     public void start(Stage primaryStage) {
+        MusicPlayer.stopMusic();
         MusicPlayer.setMusicShooter();
         MusicPlayer.playMusic();
 

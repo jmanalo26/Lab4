@@ -74,8 +74,7 @@ public class BossLevel extends Application {
      * @return Shooting game
      */
     private Parent createRoot() {
-        MusicPlayer.setMusicBoss();
-        MusicPlayer.playMusic();
+
         playerEntity.setId("player");
         Image playerImage = new Image(getClass().getResource("images/player.png").toExternalForm());
         ImagePattern i = new ImagePattern(playerImage);
@@ -194,6 +193,7 @@ public class BossLevel extends Application {
         }
         if (player.getHP() <= 0) {
             playerEntity.dead = true;
+            MusicPlayer.stopMusic();
             MusicPlayer.playMusicDeath();
             System.out.println("Player has died");
             stage.close();
@@ -267,6 +267,9 @@ public class BossLevel extends Application {
      */
     @Override
     public void start(Stage primaryStage) {
+        MusicPlayer.stopMusic();
+        MusicPlayer.setMusicBoss();
+        MusicPlayer.playMusic();
         enemyDead.set(0);
         Scene scene = new Scene(createRoot());
         scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
@@ -648,6 +651,7 @@ public class BossLevel extends Application {
 
         if (enemyDead.get() == 1) {
             System.out.println("The boss is dead");
+            MusicPlayer.playMusicWinRound();
             stage.close();
 
             timer.stop();

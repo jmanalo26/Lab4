@@ -14,6 +14,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import main.games.shooter.Player;
 import main.gui.gameovermenu.GameOverMenu;
+import main.gui.music.MusicPlayer;
 
 import java.util.List;
 import java.util.Random;
@@ -243,6 +244,9 @@ public class Level3 extends Application {
      */
     @Override
     public void start(Stage primaryStage) {
+        MusicPlayer.stopMusic();
+        MusicPlayer.setMusicShooter();
+        MusicPlayer.playMusic();
         enemyDead.set(0);
         Scene scene = new Scene(createRoot());
         scene.getStylesheets().addAll(this.getClass().getResource("style3.css").toExternalForm());
@@ -348,6 +352,7 @@ public class Level3 extends Application {
      */
     private void deIncrementHP() {
         player.setHP(player.getHP() - 1);
+        MusicPlayer.playMusicDamaged();
         System.out.println("Player Hit; " + player.getHP() + " HP remaining");
         HPBar.setWidth(HPBar.getWidth() - 40);
         if (player.getHP() <= 3 && player.getHP() > 1){
@@ -359,6 +364,10 @@ public class Level3 extends Application {
         if (player.getHP() <= 0) {
             playerEntity.dead = true;
             System.out.println("Player has died");
+            MusicPlayer.playMusicDeath();
+            MusicPlayer.stopMusic();
+            MusicPlayer.setMusicMaze();
+            MusicPlayer.playMusic();
             stage.close();
             timer.stop();
             GameOverMenu gameOverMenu = new GameOverMenu();
@@ -578,6 +587,10 @@ public class Level3 extends Application {
 
         if (enemyDead.get() >= 30) {
             System.out.println("All enemies dead");
+            MusicPlayer.stopMusic();
+            MusicPlayer.setMusicMaze();
+            MusicPlayer.playMusic();
+            MusicPlayer.playMusicWinRound();
             stage.close();
 
             timer.stop();

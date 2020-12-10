@@ -25,7 +25,53 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="85fc612d-93d7-4169-9e13-5ba06e51792c" name="Default Changelist" comment="test" />
+    <list default="true" id="85fc612d-93d7-4169-9e13-5ba06e51792c" name="Default Changelist" comment="test">
+      <change afterPath="$PROJECT_DIR$/resources/images/spritesheet/technoZombies.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Maze.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Maze.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl2$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl2$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl2$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl2$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl2$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl2$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl2$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl2$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl2$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl2$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl2$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl3$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl3$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl3$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl3$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl3$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl3$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl3$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl3$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl3$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl3$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl3$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl3$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Mazelvl3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/LBossLevel/BossLevel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/LBossLevel/BossLevel$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/LBossLevel/BossLevel$Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/LBossLevel/BossLevel$Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/LBossLevel/BossLevel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/LBossLevel/BossLevel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/LBossLevel2/BossLevel2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/LBossLevel2/BossLevel2$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/LBossLevel2/BossLevel2$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/LBossLevel2/BossLevel2$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/LBossLevel2/BossLevel2$Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/LBossLevel2/BossLevel2$Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/LBossLevel2/BossLevel2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/LBossLevel2/BossLevel2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level1/Level1$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level1/Level1$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level1/Level1$Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level1/Level1$Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level1/Level1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level1/Level1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level2/Level2$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level2/Level2$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level2/Level2$Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level2/Level2$Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level2/Level2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level2/Level2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level3/Level3$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level3/Level3$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level3/Level3$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level3/Level3$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level3/Level3$Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level3/Level3$Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level3/Level3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/shooter/level3/Level3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/games/MazeGame/Maze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/games/MazeGame/Maze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/games/MazeGame/Mazelvl2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/games/MazeGame/Mazelvl2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/games/MazeGame/Mazelvl3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/games/MazeGame/Mazelvl3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/games/shooter/LBossLevel/BossLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/games/shooter/LBossLevel/BossLevel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/games/shooter/LBossLevel2/BossLevel2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/games/shooter/LBossLevel2/BossLevel2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/games/shooter/LBossLevel3/BossLevel3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/games/shooter/LBossLevel3/BossLevel3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/games/shooter/level1/Level1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/games/shooter/level1/Level1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/games/shooter/level2/Level2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/games/shooter/level2/Level2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/games/shooter/level3/Level3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/games/shooter/level3/Level3.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,11 +128,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\resources\images\spritesheet" />
       <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\resources\sound" />
       <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\src\main\resources\level" />
       <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\src\main\resources\images\tilesheet" />
       <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\src\main\resources\images\spritesheet" />
-      <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\src\main\gui\resources\spritesheet" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="main.games.MazeGame" />
@@ -99,14 +145,14 @@
       <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\src\main\resources\images\tilesheet" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Level1">
-    <configuration name="GameOverMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.gui.gameovermenu.GameOverMenu" />
+  <component name="RunManager" selected="Application.Maze">
+    <configuration name="BossLevel2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.games.shooter.LBossLevel2.BossLevel2" />
       <module name="Lab4" />
       <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files (x86)\JavaFX\javafx-sdk-11.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media --add-exports javafx.graphics/com.sun.javafx.sg.prism=ALL-UNNAMED" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="main.gui.gameovermenu.*" />
+          <option name="PATTERN" value="main.games.shooter.LBossLevel2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -115,13 +161,12 @@
         <option name="com.soywiz.korge.intellij.UpdateResourceBeforeRunTask" enabled="false" />
       </method>
     </configuration>
-    <configuration name="Level1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.games.shooter.level1.Level1" />
+    <configuration name="Level3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.games.shooter.level3.Level3" />
       <module name="Lab4" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files (x86)\JavaFX\javafx-sdk-11.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media --add-exports javafx.graphics/com.sun.javafx.sg.prism=ALL-UNNAMED" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="main.games.shooter.level1.*" />
+          <option name="PATTERN" value="main.games.shooter.level3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -130,13 +175,13 @@
         <option name="com.soywiz.korge.intellij.UpdateResourceBeforeRunTask" enabled="false" />
       </method>
     </configuration>
-    <configuration name="Level2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.games.shooter.level2.Level2" />
+    <configuration name="MainApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.MainApplication" />
       <module name="Lab4" />
       <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files (x86)\JavaFX\javafx-sdk-11.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media --add-exports javafx.graphics/com.sun.javafx.sg.prism=ALL-UNNAMED" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="main.games.shooter.level2.*" />
+          <option name="PATTERN" value="main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -160,13 +205,13 @@
         <option name="com.soywiz.korge.intellij.UpdateResourceBeforeRunTask" enabled="false" />
       </method>
     </configuration>
-    <configuration name="StartMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.gui.startmenu.StartMenu" />
+    <configuration name="Mazelvl3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.games.MazeGame.Mazelvl3" />
       <module name="Lab4" />
       <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files (x86)\JavaFX\javafx-sdk-11.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media --add-exports javafx.graphics/com.sun.javafx.sg.prism=ALL-UNNAMED" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="main.gui.startmenu.*" />
+          <option name="PATTERN" value="main.games.MazeGame.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -189,19 +234,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.StartMenu" />
-      <item itemvalue="Application.GameOverMenu" />
+      <item itemvalue="Application.BossLevel2" />
+      <item itemvalue="Application.Level3" />
+      <item itemvalue="Application.MainApplication" />
       <item itemvalue="Application.Maze" />
-      <item itemvalue="Application.Level1" />
-      <item itemvalue="Application.Level2" />
+      <item itemvalue="Application.Mazelvl3" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Level1" />
-        <item itemvalue="Application.Level2" />
         <item itemvalue="Application.Maze" />
-        <item itemvalue="Application.StartMenu" />
-        <item itemvalue="Application.GameOverMenu" />
+        <item itemvalue="Application.Mazelvl3" />
+        <item itemvalue="Application.MainApplication" />
+        <item itemvalue="Application.Level3" />
+        <item itemvalue="Application.BossLevel2" />
       </list>
     </recent_temporary>
   </component>
@@ -321,12 +366,12 @@
     <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="333" y="148" width="1174" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607561226759">
+    <state x="333" y="148" width="1174" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607566982045">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="416" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606619434253" />
     <state x="-1504" y="185" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1607012861438" />
-    <state x="333" y="148" width="1174" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1607561226759" />
+    <state x="333" y="148" width="1174" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1607566982045" />
     <state x="742" y="231" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1606545157993">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -368,40 +413,44 @@
     </state>
     <state x="481" y="90" key="CommitChangelistDialog2/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606614114623" />
     <state x="-1439" y="95" key="CommitChangelistDialog2/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1606974341859" />
+    <state x="147" y="69" key="DiffContextDialog" timestamp="1607564215760">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="147" y="69" key="DiffContextDialog/0.0.1536.864@0.0.1536.864" timestamp="1607564215760" />
     <state x="548" y="278" key="FileChooserDialogImpl" timestamp="1607563360160">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="685" y="338" key="FileChooserDialogImpl/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606084394412" />
     <state x="-1235" y="343" key="FileChooserDialogImpl/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1606953837715" />
     <state x="548" y="278" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1607563360160" />
-    <state width="1493" height="331" key="GridCell.Tab.0.bottom" timestamp="1607561412657">
+    <state width="1493" height="331" key="GridCell.Tab.0.bottom" timestamp="1607567801668">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1878" height="285" key="GridCell.Tab.0.bottom/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606623506422" />
     <state width="1877" height="96" key="GridCell.Tab.0.bottom/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1607012865773" />
     <state width="1238" height="87" key="GridCell.Tab.0.bottom/0.0.1280.690/-1920.5.1920.1050@0.0.1280.690" timestamp="1607016954196" />
-    <state width="1493" height="331" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1607561412657" />
-    <state width="1493" height="331" key="GridCell.Tab.0.center" timestamp="1607561412657">
+    <state width="1493" height="331" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1607567801668" />
+    <state width="1493" height="331" key="GridCell.Tab.0.center" timestamp="1607567801668">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1878" height="285" key="GridCell.Tab.0.center/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606623506422" />
     <state width="1877" height="96" key="GridCell.Tab.0.center/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1607012865773" />
     <state width="1238" height="87" key="GridCell.Tab.0.center/0.0.1280.690/-1920.5.1920.1050@0.0.1280.690" timestamp="1607016954194" />
-    <state width="1493" height="331" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1607561412657" />
-    <state width="1493" height="331" key="GridCell.Tab.0.left" timestamp="1607561412657">
+    <state width="1493" height="331" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1607567801668" />
+    <state width="1493" height="331" key="GridCell.Tab.0.left" timestamp="1607567801668">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1878" height="285" key="GridCell.Tab.0.left/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606623506422" />
     <state width="1877" height="96" key="GridCell.Tab.0.left/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1607012865773" />
     <state width="1238" height="87" key="GridCell.Tab.0.left/0.0.1280.690/-1920.5.1920.1050@0.0.1280.690" timestamp="1607016954194" />
-    <state width="1493" height="331" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1607561412657" />
-    <state width="1493" height="331" key="GridCell.Tab.0.right" timestamp="1607561412657">
+    <state width="1493" height="331" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1607567801668" />
+    <state width="1493" height="331" key="GridCell.Tab.0.right" timestamp="1607567801668">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1878" height="285" key="GridCell.Tab.0.right/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606623506422" />
     <state width="1877" height="96" key="GridCell.Tab.0.right/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1607012865773" />
     <state width="1238" height="87" key="GridCell.Tab.0.right/0.0.1280.690/-1920.5.1920.1050@0.0.1280.690" timestamp="1607016954195" />
-    <state width="1493" height="331" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1607561412657" />
+    <state width="1493" height="331" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1607567801668" />
     <state width="1493" height="277" key="GridCell.Tab.1.bottom" timestamp="1607467634950">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -435,10 +484,11 @@
     </state>
     <state x="-1322" y="291" key="MultipleFileMergeDialog/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1606858120664" />
     <state x="398" y="54" width="1081" height="442" key="MultipleFileMergeDialog/0.0.1536.864@0.0.1536.864" timestamp="1607563326365" />
-    <state x="621" y="228" key="RollbackChangesDialog" timestamp="1606545939094">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="497" y="188" key="RollbackChangesDialog" timestamp="1607564231295">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="621" y="228" key="RollbackChangesDialog/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606545939094" />
+    <state x="497" y="188" key="RollbackChangesDialog/0.0.1536.864@0.0.1536.864" timestamp="1607564231295" />
     <state x="370" y="14" key="SettingsEditor" timestamp="1607563363786">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
