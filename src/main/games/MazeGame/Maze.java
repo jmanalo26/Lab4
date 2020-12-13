@@ -501,6 +501,10 @@ public class Maze extends Application {
         instance = this;
     }
 
+    public Stage getStage() {
+        return stage;
+    }
+
     public static Maze getInstance() {
         return instance;
     }

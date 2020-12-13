@@ -88,6 +88,10 @@ public class Mazelvl2 extends Application {
         instance = this;
     }
 
+    public Stage getStage() {
+        return stage;
+    }
+
     public static Mazelvl2 getInstance() {
         return instance;
     }

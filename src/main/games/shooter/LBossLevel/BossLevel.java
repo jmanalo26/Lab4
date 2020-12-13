@@ -11,15 +11,15 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-import main.games.shooter.LBossLevel2.BossLevel2;
+
 import main.games.shooter.Player;
+import main.gui.gamebosswon.GameBossWonMenu;
 import main.gui.gameovermenu.GameOverMenu;
-import main.gui.gamewonmenu.GameWonMenu;
+
 import main.gui.music.MusicPlayer;
 
 
 import java.util.List;
-import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
@@ -670,7 +670,7 @@ public class BossLevel extends Application {
             timer.stop();
 
             //launches game over menu when game is lost
-            GameWonMenu gameWonMenu = new GameWonMenu();
+            GameBossWonMenu gameWonMenu = new GameBossWonMenu();
             Stage gameWonMenuStage = new Stage();
             try {
                 gameWonMenu.start(gameWonMenuStage);

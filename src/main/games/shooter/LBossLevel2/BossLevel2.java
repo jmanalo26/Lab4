@@ -11,8 +11,8 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import main.games.shooter.Player;
+import main.gui.gamebosswon.GameBoss2WonMenu;
 import main.gui.gameovermenu.GameOverMenu;
-import main.gui.gamewonmenu.GameWonMenu;
 import main.gui.music.MusicPlayer;
 
 
@@ -22,11 +22,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 public class BossLevel2 extends Application{
-    private Pane root = new Pane();
+    private final Pane root = new Pane();
 
-    private BossLevel2.Entity playerEntity = new BossLevel2.Entity(275, 600, 20, 20, "player", Color.BLUE);
+    private final BossLevel2.Entity playerEntity = new BossLevel2.Entity(275, 600, 20, 20, "player", Color.BLUE);
 
-    private  Entity bossEnemy = new Entity(280, 120, 60, 60, "enemy", Color.RED);
+    private final Entity bossEnemy = new Entity(280, 120, 60, 60, "enemy", Color.RED);
 
     private Entity HPBar;
 
@@ -36,17 +36,17 @@ public class BossLevel2 extends Application{
 
     private Player player;
 
-    private static Entity[] bullets = new Entity[6];
+    private static final Entity[] bullets = new Entity[6];
 
     private double time = 0;
 
-    private Boss2 bigBoss = new Boss2();
+    private final Boss2 bigBoss = new Boss2();
 
     boolean yGoal = false;
 
-    private Image bullet = new Image(getClass().getResource("images2/bullet2.png").toExternalForm());
+    private final Image bullet = new Image(getClass().getResource("images2/bullet2.png").toExternalForm());
 
-    private static AtomicInteger enemyDead = new AtomicInteger();
+    private static final AtomicInteger enemyDead = new AtomicInteger();
 
     private static Stage stage;
 
@@ -654,7 +654,7 @@ public class BossLevel2 extends Application{
             timer.stop();
 
             //launches game over menu when game is lost
-            GameWonMenu gameWonMenu = new GameWonMenu();
+            GameBoss2WonMenu gameWonMenu = new GameBoss2WonMenu();
             Stage gameWonMenuStage = new Stage();
             try {
                 gameWonMenu.start(gameWonMenuStage);

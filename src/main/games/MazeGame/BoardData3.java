@@ -2,6 +2,9 @@ package main.games.MazeGame;
 
 
 
+import javafx.stage.Stage;
+import main.games.shooter.LBossLevel3.BossLevel3;
+
 import java.util.Arrays;
 import java.util.Random;
 
@@ -109,7 +112,14 @@ public class BoardData3 {
 
 
             }else if(board[newX][newY].equals("E")) {
-                maze.generatePopup();
+                maze.getStage().close();
+                BossLevel3 bossLevel = new BossLevel3();
+                Stage bossStage = new Stage();
+                try {
+                    bossLevel.start(bossStage);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
 
             }else if(board[newX][newY].equals("C")) {
@@ -163,7 +173,15 @@ public class BoardData3 {
 
 
             }else if(board[newX][newY].equals("E")) {
-                maze.generatePopup();
+                maze.getStage().close();
+                BossLevel3 bossLevel = new BossLevel3();
+                Stage bossStage = new Stage();
+                try {
+                    bossLevel.start(bossStage);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
 
 
             }else if(board[newX][newY].equals("C")) {
@@ -217,7 +235,15 @@ public class BoardData3 {
 
 
             }else if(board[newX][newY].equals("E")) {
-                maze.generatePopup();
+                maze.getStage().close();
+                BossLevel3 bossLevel = new BossLevel3();
+                Stage bossStage = new Stage();
+                try {
+                    bossLevel.start(bossStage);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
 
 
             } else if(board[newX][newY].equals("C")) {
@@ -269,7 +295,15 @@ public class BoardData3 {
                 player.setPosY(newY);
                 board[player.getPosX()][player.getPosY()] = "P";
             } else if(board[newX][newY].equals("E")) {
-                maze.generatePopup();
+                maze.getStage().close();
+                BossLevel3 bossLevel = new BossLevel3();
+                Stage bossStage = new Stage();
+                try {
+                    bossLevel.start(bossStage);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
 
 
             }else if(board[newX][newY].equals("C")) {

@@ -114,6 +114,7 @@ public class BoardData {
 
 
             } else if (board[newX][newY].equals("E")) {
+                maze.getStage().close();
                 BossLevel bossLevel = new BossLevel();
                 Stage bossStage = new Stage();
                 try {
@@ -189,6 +190,7 @@ public class BoardData {
 
 
             } else if (board[newX][newY].equals("E")) {
+                maze.getStage().close();
                 BossLevel bossLevel = new BossLevel();
                 Stage bossStage = new Stage();
                 try {
@@ -264,6 +266,7 @@ public class BoardData {
 
 
             } else if (board[newX][newY].equals("E")) {
+                maze.getStage().close();
                 BossLevel bossLevel = new BossLevel();
                 Stage bossStage = new Stage();
                 try {
@@ -337,6 +340,7 @@ public class BoardData {
                 player.setPosY(newY);
                 board[player.getPosX()][player.getPosY()] = "P";
             } else if (board[newX][newY].equals("E")) {
+                maze.getStage().close();
                 BossLevel bossLevel = new BossLevel();
                 Stage bossStage = new Stage();
                 try {
