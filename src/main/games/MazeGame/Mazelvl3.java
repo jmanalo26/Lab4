@@ -88,13 +88,15 @@ public class Mazelvl3 extends Application {
         instance = this;
     }
 
+    public Stage getStage() {
+        return stage;
+    }
+
+
     public static Mazelvl3 getInstance() {
         return instance;
     }
 
-    public Stage getStage() {
-        return stage;
-    }
 
     @Override
     public void start(Stage s) throws Exception {
