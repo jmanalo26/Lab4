@@ -27,8 +27,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="85fc612d-93d7-4169-9e13-5ba06e51792c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/gui/levelmenu/PopUp1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/gui/levelmenu/PopUp2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/gui/levelmenu/PopUp3.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/games/MazeGame/BoardData3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/games/MazeGame/BoardData3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/levelmenu/Level1PopUpStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/levelmenu/Level1PopUpStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/levelmenu/Level2PopUpStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/levelmenu/Level2PopUpStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/levelmenu/Level3PopUpStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/levelmenu/Level3PopUpStyle.css" afterDir="false" />
     </list>
     <list id="81e5c9f1-5083-4765-b51b-3208929dd68f" name="Added some animations to the maze zombies and fixed a few font-end issues. Still can't connect my frontend with the maze." comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -98,14 +103,14 @@
       <recent name="main.games.MazeGame" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\rhass\Desktop\College\CMSC4380\CMSC4375\src\edu\ben\labs\Lab4\src\main\gui\levelmenu" />
       <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\resources\images\spritesheet" />
       <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\resources\sound" />
       <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\src\main\resources\level" />
       <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\src\main\resources\images\tilesheet" />
-      <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\src\main\resources\images\spritesheet" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Mazelvl3">
+  <component name="RunManager" selected="Application.Level1PopUp">
     <configuration name="Level1PopUp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.gui.levelmenu.Level1PopUp" />
       <module name="Lab4" />
@@ -199,10 +204,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Level1PopUp" />
         <item itemvalue="Application.Mazelvl3" />
         <item itemvalue="Application.Maze" />
         <item itemvalue="Application.Mazelvl2" />
-        <item itemvalue="Application.Level1PopUp" />
         <item itemvalue="Application.MazeFront" />
       </list>
     </recent_temporary>
@@ -300,7 +305,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607906621043</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="MAze 3 boarddata 3 fix and added lvl3 fix">
+      <created>1607974865880</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1607974865880</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,7 +367,8 @@
     <MESSAGE value="Animations added" />
     <MESSAGE value="Tran added for boss level and maze stage closes" />
     <MESSAGE value="MAze 1 boarddata 1 fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="MAze 1 boarddata 1 fix" />
+    <MESSAGE value="MAze 3 boarddata 3 fix and added lvl3 fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="MAze 3 boarddata 3 fix and added lvl3 fix" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="91" key="#Deployment" timestamp="1607578042901">
@@ -408,47 +421,47 @@
     </state>
     <state x="713" y="351" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606084398642" />
     <state x="-1207" y="356" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1606953847331" />
-    <state x="481" y="90" key="CommitChangelistDialog2" timestamp="1607906620198">
+    <state x="481" y="90" key="CommitChangelistDialog2" timestamp="1607974864682">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="481" y="90" key="CommitChangelistDialog2/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1607906620198" />
+    <state x="481" y="90" key="CommitChangelistDialog2/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1607974864682" />
     <state x="-1439" y="95" key="CommitChangelistDialog2/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1606974341859" />
     <state x="184" y="84" width="1536" height="868" key="DiffContextDialog" timestamp="1607903868624">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="184" y="84" width="1536" height="868" key="DiffContextDialog/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1607903868624" />
     <state x="147" y="69" key="DiffContextDialog/0.0.1536.864@0.0.1536.864" timestamp="1607564215760" />
-    <state x="685" y="338" key="FileChooserDialogImpl" timestamp="1607903064747">
+    <state x="685" y="338" key="FileChooserDialogImpl" timestamp="1607980167432">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="685" y="338" key="FileChooserDialogImpl/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1607903064747" />
+    <state x="685" y="338" key="FileChooserDialogImpl/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1607980167432" />
     <state x="-1235" y="343" key="FileChooserDialogImpl/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1606953837715" />
     <state x="548" y="278" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1607563360160" />
-    <state width="1878" height="324" key="GridCell.Tab.0.bottom" timestamp="1607973760794">
+    <state width="1878" height="231" key="GridCell.Tab.0.bottom" timestamp="1607980074768">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1878" height="324" key="GridCell.Tab.0.bottom/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1607973760794" />
+    <state width="1878" height="231" key="GridCell.Tab.0.bottom/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1607980074768" />
     <state width="1877" height="96" key="GridCell.Tab.0.bottom/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1607012865773" />
     <state width="1238" height="87" key="GridCell.Tab.0.bottom/0.0.1280.690/-1920.5.1920.1050@0.0.1280.690" timestamp="1607016954196" />
     <state width="1493" height="398" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1607578192119" />
-    <state width="1878" height="324" key="GridCell.Tab.0.center" timestamp="1607973760794">
+    <state width="1878" height="231" key="GridCell.Tab.0.center" timestamp="1607980074767">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1878" height="324" key="GridCell.Tab.0.center/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1607973760794" />
+    <state width="1878" height="231" key="GridCell.Tab.0.center/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1607980074767" />
     <state width="1877" height="96" key="GridCell.Tab.0.center/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1607012865773" />
     <state width="1238" height="87" key="GridCell.Tab.0.center/0.0.1280.690/-1920.5.1920.1050@0.0.1280.690" timestamp="1607016954194" />
     <state width="1493" height="398" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1607578192119" />
-    <state width="1878" height="324" key="GridCell.Tab.0.left" timestamp="1607973760793">
+    <state width="1878" height="231" key="GridCell.Tab.0.left" timestamp="1607980074766">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1878" height="324" key="GridCell.Tab.0.left/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1607973760793" />
+    <state width="1878" height="231" key="GridCell.Tab.0.left/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1607980074766" />
     <state width="1877" height="96" key="GridCell.Tab.0.left/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1607012865773" />
     <state width="1238" height="87" key="GridCell.Tab.0.left/0.0.1280.690/-1920.5.1920.1050@0.0.1280.690" timestamp="1607016954194" />
     <state width="1493" height="398" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1607578192119" />
-    <state width="1878" height="324" key="GridCell.Tab.0.right" timestamp="1607973760794">
+    <state width="1878" height="231" key="GridCell.Tab.0.right" timestamp="1607980074767">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1878" height="324" key="GridCell.Tab.0.right/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1607973760794" />
+    <state width="1878" height="231" key="GridCell.Tab.0.right/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1607980074767" />
     <state width="1877" height="96" key="GridCell.Tab.0.right/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1607012865773" />
     <state width="1238" height="87" key="GridCell.Tab.0.right/0.0.1280.690/-1920.5.1920.1050@0.0.1280.690" timestamp="1607016954195" />
     <state width="1493" height="398" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1607578192119" />
