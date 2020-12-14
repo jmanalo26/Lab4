@@ -27,12 +27,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="85fc612d-93d7-4169-9e13-5ba06e51792c" name="Default Changelist" comment="Animations added">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Lab4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Lab4.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/.idea/Lab4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/.idea/Lab4.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/.idea/libraries/lib.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/BoardData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/BoardData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Maze$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Maze$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Maze$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Maze$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Maze$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Maze$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Maze$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Maze$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Maze$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Maze$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Maze$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Maze$6.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Maze.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab4/main/games/MazeGame/Maze.class" afterDir="false" />
-    </list>
-    <list id="81e5c9f1-5083-4765-b51b-3208929dd68f" name="Added some animations to the maze zombies and fixed a few font-end issues. Still can't connect my frontend with the maze." comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/games/MazeGame/BoardData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/games/MazeGame/BoardData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/games/MazeGame/Maze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/games/MazeGame/Maze.java" afterDir="false" />
     </list>
+    <list id="81e5c9f1-5083-4765-b51b-3208929dd68f" name="Added some animations to the maze zombies and fixed a few font-end issues. Still can't connect my frontend with the maze." comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,24 +96,14 @@
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../../Program Files (x86)/JavaFX/javafx-sdk-11.0.2/lib" />
+    <property name="last_opened_file_path" value="$USER_HOME$/javafx-sdk-15.0.1/lib" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="Shelf.Project.Settings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\resources\images\spritesheet" />
-      <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\resources\sound" />
-      <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\src\main\resources\level" />
-      <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\src\main\resources\images\tilesheet" />
-      <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\src\main\resources\images\spritesheet" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="main.games.MazeGame" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\resources\sound" />
       <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\resources" />
@@ -106,27 +111,36 @@
       <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\src\main\resources\level" />
       <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\src\main\resources\images\tilesheet" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="main.games.MazeGame" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\resources\images\spritesheet" />
+      <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\resources\sound" />
+      <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\src\main\resources\level" />
+      <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\src\main\resources\images\tilesheet" />
+      <recent name="C:\Users\Anunay Jujjavarapu\OneDrive\Documents\Computer Science\CMSC_375\Lab4\src\main\resources\images\spritesheet" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.Mazelvl3">
-    <configuration name="MainApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.MainApplication" />
+  <component name="RunManager" selected="Application.Level1PopUp">
+    <configuration name="Level1PopUp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.gui.levelmenu.Level1PopUp" />
       <module name="Lab4" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files (x86)\JavaFX\javafx-sdk-11.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media --add-exports javafx.graphics/com.sun.javafx.sg.prism=ALL-UNNAMED" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\rhass\javafx-sdk-15.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media --add-exports javafx.graphics/com.sun.javafx.sg.prism=ALL-UNNAMED" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="main.*" />
+          <option name="PATTERN" value="main.gui.levelmenu.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <method v="2">
         <option name="Make" enabled="true" />
-        <option name="com.soywiz.korge.intellij.UpdateResourceBeforeRunTask" enabled="false" />
       </method>
     </configuration>
     <configuration name="Maze" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.games.MazeGame.Maze" />
       <module name="Lab4" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files (x86)\JavaFX\javafx-sdk-11.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media --add-exports javafx.graphics/com.sun.javafx.sg.prism=ALL-UNNAMED" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\rhass\javafx-sdk-15.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media --add-exports javafx.graphics/com.sun.javafx.sg.prism=ALL-UNNAMED" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="main.games.MazeGame.*" />
@@ -155,7 +169,7 @@
     <configuration name="Mazelvl2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.games.MazeGame.Mazelvl2" />
       <module name="Lab4" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files (x86)\JavaFX\javafx-sdk-11.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media --add-exports javafx.graphics/com.sun.javafx.sg.prism=ALL-UNNAMED" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\rhass\javafx-sdk-15.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media --add-exports javafx.graphics/com.sun.javafx.sg.prism=ALL-UNNAMED" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="main.games.MazeGame.*" />
@@ -182,37 +196,35 @@
         <option name="com.soywiz.korge.intellij.UpdateResourceBeforeRunTask" enabled="false" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.MainApplication" />
       <item itemvalue="Application.Maze" />
       <item itemvalue="Application.Mazelvl3" />
       <item itemvalue="Application.MazeFront" />
       <item itemvalue="Application.Mazelvl2" />
+      <item itemvalue="Application.Level1PopUp" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Mazelvl3" />
-        <item itemvalue="Application.Mazelvl2" />
-        <item itemvalue="Application.MazeFront" />
+        <item itemvalue="Application.Level1PopUp" />
         <item itemvalue="Application.Maze" />
-        <item itemvalue="Application.MainApplication" />
+        <item itemvalue="Application.Mazelvl2" />
+        <item itemvalue="Application.Mazelvl3" />
+        <item itemvalue="Application.MazeFront" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -307,6 +319,16 @@
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.fxml" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -341,7 +363,8 @@
     <MESSAGE value="test" />
     <MESSAGE value="Fixed a few bugs with the music in the levels" />
     <MESSAGE value="Animations added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Animations added" />
+    <MESSAGE value="Tran added for boss level and maze stage closes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tran added for boss level and maze stage closes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="91" key="#Deployment" timestamp="1607578042901">
@@ -352,10 +375,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="654" y="295" width="780" height="427" key="#Notifications/0.0.1536.864@0.0.1536.864" timestamp="1607578099604" />
-    <state x="333" y="148" width="1174" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607576971863">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="416" y="180" width="1174" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607906333103">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="416" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606619434253" />
+    <state x="416" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1607906333103" />
     <state x="-1504" y="185" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1607012861438" />
     <state x="333" y="148" width="1174" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1607576971863" />
     <state x="742" y="231" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1606545157993">
@@ -399,41 +422,42 @@
     </state>
     <state x="481" y="90" key="CommitChangelistDialog2/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606614114623" />
     <state x="-1439" y="95" key="CommitChangelistDialog2/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1606974341859" />
-    <state x="147" y="69" key="DiffContextDialog" timestamp="1607564215760">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="184" y="84" width="1536" height="868" key="DiffContextDialog" timestamp="1607903868624">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
+    <state x="184" y="84" width="1536" height="868" key="DiffContextDialog/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1607903868624" />
     <state x="147" y="69" key="DiffContextDialog/0.0.1536.864@0.0.1536.864" timestamp="1607564215760" />
-    <state x="548" y="278" key="FileChooserDialogImpl" timestamp="1607563360160">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="685" y="338" key="FileChooserDialogImpl" timestamp="1607903064747">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="685" y="338" key="FileChooserDialogImpl/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606084394412" />
+    <state x="685" y="338" key="FileChooserDialogImpl/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1607903064747" />
     <state x="-1235" y="343" key="FileChooserDialogImpl/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1606953837715" />
     <state x="548" y="278" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1607563360160" />
-    <state width="1493" height="398" key="GridCell.Tab.0.bottom" timestamp="1607578192119">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1878" height="324" key="GridCell.Tab.0.bottom" timestamp="1607906320322">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1878" height="285" key="GridCell.Tab.0.bottom/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606623506422" />
+    <state width="1878" height="324" key="GridCell.Tab.0.bottom/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1607906320322" />
     <state width="1877" height="96" key="GridCell.Tab.0.bottom/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1607012865773" />
     <state width="1238" height="87" key="GridCell.Tab.0.bottom/0.0.1280.690/-1920.5.1920.1050@0.0.1280.690" timestamp="1607016954196" />
     <state width="1493" height="398" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1607578192119" />
-    <state width="1493" height="398" key="GridCell.Tab.0.center" timestamp="1607578192119">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1878" height="324" key="GridCell.Tab.0.center" timestamp="1607906320322">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1878" height="285" key="GridCell.Tab.0.center/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606623506422" />
+    <state width="1878" height="324" key="GridCell.Tab.0.center/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1607906320322" />
     <state width="1877" height="96" key="GridCell.Tab.0.center/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1607012865773" />
     <state width="1238" height="87" key="GridCell.Tab.0.center/0.0.1280.690/-1920.5.1920.1050@0.0.1280.690" timestamp="1607016954194" />
     <state width="1493" height="398" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1607578192119" />
-    <state width="1493" height="398" key="GridCell.Tab.0.left" timestamp="1607578192119">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1878" height="324" key="GridCell.Tab.0.left" timestamp="1607906320322">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1878" height="285" key="GridCell.Tab.0.left/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606623506422" />
+    <state width="1878" height="324" key="GridCell.Tab.0.left/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1607906320322" />
     <state width="1877" height="96" key="GridCell.Tab.0.left/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1607012865773" />
     <state width="1238" height="87" key="GridCell.Tab.0.left/0.0.1280.690/-1920.5.1920.1050@0.0.1280.690" timestamp="1607016954194" />
     <state width="1493" height="398" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1607578192119" />
-    <state width="1493" height="398" key="GridCell.Tab.0.right" timestamp="1607578192119">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1878" height="324" key="GridCell.Tab.0.right" timestamp="1607906320322">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1878" height="285" key="GridCell.Tab.0.right/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606623506422" />
+    <state width="1878" height="324" key="GridCell.Tab.0.right/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1607906320322" />
     <state width="1877" height="96" key="GridCell.Tab.0.right/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1607012865773" />
     <state width="1238" height="87" key="GridCell.Tab.0.right/0.0.1280.690/-1920.5.1920.1050@0.0.1280.690" timestamp="1607016954195" />
     <state width="1493" height="398" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1607578192119" />
@@ -470,15 +494,15 @@
     </state>
     <state x="-1322" y="291" key="MultipleFileMergeDialog/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1606858120664" />
     <state x="398" y="54" width="1081" height="442" key="MultipleFileMergeDialog/0.0.1536.864@0.0.1536.864" timestamp="1607563326365" />
-    <state x="497" y="188" key="RollbackChangesDialog" timestamp="1607564231295">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="621" y="228" key="RollbackChangesDialog" timestamp="1607903635873">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="621" y="228" key="RollbackChangesDialog/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606545939094" />
+    <state x="621" y="228" key="RollbackChangesDialog/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1607903635873" />
     <state x="497" y="188" key="RollbackChangesDialog/0.0.1536.864@0.0.1536.864" timestamp="1607564231295" />
-    <state x="370" y="14" key="SettingsEditor" timestamp="1607563363786">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="462" y="170" key="SettingsEditor" timestamp="1607904143937">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="462" y="170" key="SettingsEditor/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1606548751578" />
+    <state x="462" y="170" key="SettingsEditor/-2560.0.1280.690/3840.0.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1607904143937" />
     <state x="-1458" y="175" key="SettingsEditor/0.0.1280.690/-1920.5.1920.1050@-1920.5.1920.1050" timestamp="1606953852423" />
     <state x="370" y="14" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1607563363786" />
     <state x="589" y="347" key="VCS.EditChangelistDialog" timestamp="1607562925912">
