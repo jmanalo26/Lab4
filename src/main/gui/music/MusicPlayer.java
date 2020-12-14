@@ -92,7 +92,7 @@ public class MusicPlayer {
         private static int control;
 
         public Handler(int control) {
-            this.control = control;
+            Handler.control = control;
         }
 
         @Override
