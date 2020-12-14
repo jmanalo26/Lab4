@@ -162,13 +162,13 @@ public class MazeFront extends Application {
 //
         root.getChildren().add(canvas);
 
-        SpriteSheet tileSheet = new SpriteSheet(new ImageView("resources/images/tilesheet/furute_tex.png"), 16, 16);
-        TileManager t = new TileManager(root, tileSheet, "resources/level/Future.xml");
-        t.buildMap();
-
-//        SpriteSheet tileSheet = new SpriteSheet(new ImageView("resources/images/tilesheet/level2texresource.png"), 16, 16);
-//        TileManager t = new TileManager(root, tileSheet, "resources/level/Winter.xml");
+//        SpriteSheet tileSheet = new SpriteSheet(new ImageView("resources/images/tilesheet/furute_tex.png"), 16, 16);
+//        TileManager t = new TileManager(root, tileSheet, "resources/level/Future.xml");
 //        t.buildMap();
+
+        SpriteSheet tileSheet = new SpriteSheet(new ImageView("resources/images/tilesheet/level2texresource.png"), 16, 16);
+        TileManager t = new TileManager(root, tileSheet, "resources/level/Winter.xml");
+        t.buildMap();
 
 //        Block[][] temp = t.getBlocks();
 //        for (int i = 0; i < temp.length; i++) {
