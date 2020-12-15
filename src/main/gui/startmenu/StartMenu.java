@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import main.gui.music.MusicPlayer;
 
 
 /**
@@ -28,6 +29,8 @@ public class StartMenu extends Application {
      */
     @Override
     public void start(Stage primaryStage) throws Exception{
+        MusicPlayer.setMusicMain();
+        MusicPlayer.playMusic();
         Parent root = FXMLLoader.load(getClass().getResource("StartMenuSB.fxml"));
         root.setId("pane");
         primaryStage.setTitle("Project Z");

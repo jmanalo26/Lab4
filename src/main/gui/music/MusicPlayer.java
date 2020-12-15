@@ -29,22 +29,32 @@ public class MusicPlayer {
         }
     }
 
+    public static void setMusicMain(){
+        MusicPlayer.stopMusic();
+        media = new Media(MusicPlayer.class.getResource("/sound/theme.mp3").toExternalForm());
+        player = new MediaPlayer(media);
+    }
+
     public static void setMusicMaze() {
+        MusicPlayer.stopMusic();
         media = new Media(MusicPlayer.class.getResource("/sound/mazeTheme.mp3").toExternalForm());
         player = new MediaPlayer(media);
     }
 
     public static void setMusicDeathScreen() {
+        MusicPlayer.stopMusic();
         media = new Media(MusicPlayer.class.getResource("/sound/death_screen.mp3").toExternalForm());
         player = new MediaPlayer(media);
     }
 
     public static void setMusicBoss() {
+        MusicPlayer.stopMusic();
         media = new Media(MusicPlayer.class.getResource("/sound/boss.mp3").toExternalForm());
         player = new MediaPlayer(media);
     }
 
     public static void setMusicShooter() {
+        MusicPlayer.stopMusic();
         media = new Media(MusicPlayer.class.getResource("/sound/shooter.mp3").toExternalForm());
         player = new MediaPlayer(media);
     }
