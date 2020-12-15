@@ -3,7 +3,7 @@ package main.games.MazeGame;
 public class Player {
     private int posX;
     private int posY;
-    private String imagePlayer = "main/games/MazeGame/sprite1.png";
+    private String imagePlayer = "resources/images/spritesheet/battlesprites.png";
     public Player(int x, int y) {
         posX = x;
         posY = y;

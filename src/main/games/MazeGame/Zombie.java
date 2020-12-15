@@ -4,7 +4,7 @@ public class Zombie {
 
     private int posX;
     private int posY;
-    private String imageZombie = "main/games/MazeGame/zombie.png";
+    private String imageZombie = "resources/images/spritesheet/zombie_lvl_1.png";
 
     public Zombie(int x, int y) {
         posX = x;
@@ -24,5 +24,13 @@ public class Zombie {
 
     public int getPosY() {
         return posY;
+    }
+
+    public void setPosX(int posX) {
+        this.posX = posX;
+    }
+
+    public void setPosY(int posY) {
+        this.posY = posY;
     }
 }

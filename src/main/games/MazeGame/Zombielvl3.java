@@ -4,7 +4,7 @@ public class Zombielvl3 {
 
     private int posX;
     private int posY;
-    private String imageZombie = "main/games/MazeGame/zombielvl3.png";
+    private String imageZombie = "main/games/MazeGame/zombie.jpg";
 
     public Zombielvl3(int x, int y) {
         posX = x;
@@ -15,7 +15,7 @@ public class Zombielvl3 {
     }
 
     public void setImage(String image) {
-         imageZombie = image;
+        imageZombie = image;
     }
 
     public int getPosX() {
@@ -25,4 +25,13 @@ public class Zombielvl3 {
     public int getPosY() {
         return posY;
     }
+
+    public void setPosX(int posX) {
+        this.posX = posX;
+    }
+
+    public void setPosY(int posY) {
+        this.posY = posY;
+    }
 }
+
